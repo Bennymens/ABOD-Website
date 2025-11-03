@@ -302,3 +302,89 @@ if (window.__site_search_installed) {
     });
   }
 }
+// Reveal-on-scroll: animate elements with .reveal when they enter the viewport
+(function () {
+  if (typeof window === "undefined") return;
+  function installReveal() {
+    var items = Array.prototype.slice.call(
+      document.querySelectorAll(".services-list .reveal")
+    );
+    if (!items.length) return;
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            // if element already visible, skip
+            if (el.classList.contains("visible")) {
+              io.unobserve(el);
+              return;
+            }
+            // small stagger based on index of element among reveal siblings
+            var idx = items.indexOf(el);
+            if (idx >= 0)
+              el.style.transitionDelay = Math.min(idx, 6) * 40 + "ms";
+            el.classList.add("visible");
+            io.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    items.forEach(function (it) {
+      io.observe(it);
+    });
+  }
+
+  // install on DOMContentLoaded and after PJAX-like replacements
+  document.addEventListener("DOMContentLoaded", installReveal);
+  // Also in case content is injected later
+  window.addEventListener("load", installReveal);
+})();
+
+/* Contact accordions: init smooth slide toggles for panels defined in contact.html */
+(function () {
+  if (typeof window === "undefined") return;
+
+  function initContactAccordions() {
+    var toggles = Array.prototype.slice.call(
+      document.querySelectorAll(".accordion-toggle")
+    );
+    if (!toggles.length) return;
+
+    toggles.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var expanded = btn.getAttribute("aria-expanded") === "true";
+        var panelId = btn.getAttribute("aria-controls");
+        var panel = panelId ? document.getElementById(panelId) : null;
+        if (!panel) return;
+
+        if (expanded) {
+          btn.setAttribute("aria-expanded", "false");
+          panel.style.maxHeight = null;
+          panel.classList.remove("open");
+        } else {
+          btn.setAttribute("aria-expanded", "true");
+          panel.classList.add("open");
+          // set explicit maxHeight for the transition
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+
+    // Ensure any panels marked open on load expand to their content height
+    Array.prototype.slice
+      .call(document.querySelectorAll(".accordion-content.open"))
+      .forEach(function (panel) {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initContactAccordions);
+  } else {
+    initContactAccordions();
+  }
+})();

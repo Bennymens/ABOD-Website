@@ -111,12 +111,53 @@
       Explore our services across the built and
       <div class="tagline-bottom-row">
         <div class="tagline-last-line">environments</div>
+        <div class="tagline-subtext">Designing sustainable places and systems — making long-term, people-centred change.</div>
        
     </div>
     </div>
   </div>
 
+    <div class="tagline-divider" aria-hidden="true"></div>
+
+    <!-- Rounded search bar (services) -->
+    <div class="services-search-wrapper">
+      <form action="{% url 'services' %}" method="get" class="services-search-form" role="search" aria-label="Search services">
+        <div class="services-search-bar">
+          <input type="text" name="q" value="{{ query|default_if_none:'' }}" placeholder="search services" aria-label="Search services" />
+          <button type="submit" class="services-search-submit" aria-label="Search">
+            <!-- magnifier icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+              <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+
+  <div class="tagline-divider" aria-hidden="true"></div>
+
   <main class="site-main">
+
+    <!-- Services listing (left-aligned, similar to search results) -->
+  <div class="services-list container">
+      {% if query %}
+        <div style="margin-bottom:12px; color:#333;">Search results for "{{ query }}"</div>
+      {% endif %}
+      <div class="results-list">
+        {% for s in services_list %}
+          <a class="search-result" href="{% url 'service_detail' s.slug %}">
+            <div class="result-left">
+              <div class="result-title reveal">{{ s.title }}</div>
+              <div class="result-source reveal delay-1">{{ s.description }}</div>
+            </div>
+            <div class="result-right">
+              <span class="arrow" aria-hidden="true">&#x2192;</span>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
 
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobile-menu">

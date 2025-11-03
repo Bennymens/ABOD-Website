@@ -472,6 +472,23 @@ nav.navbar .navbar-right a.active::after,
     max-width: 100%;
   }
 }
+/* Services page: left-aligned list and hover-enlarge behavior */
+.services-list {
+  max-width: 1100px;
+  margin: 0 0 24px 2vw; /* keep a small left offset from the page edge */
+  padding: 28px 0;
+}
+.services-list .results-list {
+  margin: 0;
+}
+.services-list .search-result {
+  transform-origin: left center;
+  transition: transform 180ms ease, background 120ms ease;
+}
+.services-list .search-result:hover {
+  transform: scale(1.035);
+  background: rgba(0, 0, 0, 0.02);
+}
 .results-search-bar input::placeholder {
   color: #222;
   opacity: 0.45; /* reduced opacity for placeholder */
@@ -596,6 +613,420 @@ nav.navbar .navbar-right a.active::after,
   max-width: none !important;
 }
 
+/* Contact page: same left-alignment override so the "Contact us" tagline
+   lines up under the logo like the services page. */
+.contact-page .tagline-below-navbar {
+  margin: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+  max-width: none !important;
+}
+
+/* Services page: smaller subtext under the tagline to improve visual hierarchy */
+.services-page .tagline-subtext {
+  font-size: 1.9rem; /* ~16px */
+  line-height: 1.35;
+  opacity: 0.45;
+  margin-top: 6px;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+}
+
+/* Contact page: slightly larger subtext for better readability. Matches
+   the left-aligned layout via the .contact-page body class. */
+.contact-page .tagline-subtext {
+  font-size: 2.2rem; /* ~22px */
+  line-height: 1.35;
+  opacity: 0.6;
+  margin-top: 6px;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+}
+
+/* Contact accordions and form styles */
+.contact-accordions {
+  width: 100%;
+  max-width: 920px;
+  /* left-align the accordions under the logo/content column */
+  margin: 28px 0 48px 2vw; /* top right bottom left */
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.contact-accordion {
+  background: transparent;
+  position: relative; /* needed for full-bleed divider pseudo-element */
+}
+.accordion-toggle {
+  display: flex;
+  /* stack the title (row) above the subtext */
+  flex-direction: column;
+  justify-content: flex-start; /* keep content left-aligned */
+  align-items: flex-start;
+  width: 100%;
+  gap: 8px;
+  padding: 18px 20px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.accordion-toggle:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.08);
+}
+.accordion-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 auto;
+  flex-direction: row;
+}
+.accordion-title h3 {
+  margin: 0;
+  font-family: "Georgia Pro", Georgia, serif;
+  font-weight: 300;
+  font-size: 2rem; /* increased for better prominence */
+}
+.accordion-subtext {
+  margin: 6px 0 0 0;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: "Poppins", Arial, sans-serif;
+}
+.accordion-inner {
+  padding-bottom: 10px;
+  width: min(720px, 100%); /* content width */
+  box-sizing: border-box;
+}
+.accordion-arrow {
+  transform: rotate(0deg);
+  transition: transform 0.25s ease;
+  font-size: 20px;
+  line-height: 1;
+  display: inline-block;
+  margin-left: 6px;
+}
+.contact-accordion .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.25s ease;
+  padding: 0 20px;
+  /* border moved to full-bleed pseudo-element on the accordion container */
+}
+
+/* Full-bleed divider under each accordion (one per accordion) */
+.contact-accordion::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  bottom: 0;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.contact-accordion .accordion-content.open {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.contact-accordion .accordion-toggle[aria-expanded="true"] .accordion-arrow {
+  transform: rotate(90deg);
+}
+
+/* Form layout */
+.contact-form {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contact-form .form-row {
+  margin-bottom: 18px;
+}
+.contact-form .two-up {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #000000;
+  font-size: 1.4rem;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background: transparent;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 0.9rem;
+}
+.contact-form textarea {
+  resize: vertical;
+}
+
+/* Reduce space between the 'What would you like to discuss?' label and its textarea */
+.contact-form .form-row.message-row label {
+  margin-bottom: 4px; /* bring the label closer to the textarea */
+}
+.contact-form .form-row.message-row textarea {
+  padding-top: 8px; /* slightly reduce top padding so the visual line sits a bit closer */
+}
+/* Short-line inputs: narrower underline and constrained width for first/last name rows */
+.contact-form .short-line {
+  width: 280px; /* short visual line suitable for names */
+  max-width: 100%;
+  padding-left: 0; /* keep caret near label */
+  margin-bottom: 10px; /* space between this input's underline and the next row */
+}
+
+/* Remove black/bold focus rectangle on tap for contact inputs while keeping an underline change */
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-bottom-color: #111 !important; /* darker underline when focused */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Override browser autofill background (Chrome/Safari) and keep colors consistent */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: #111 !important;
+  background-color: transparent !important;
+}
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: #111 !important;
+}
+.privacy-note {
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 8px 0;
+}
+.btn-submit {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 28px;
+  cursor: pointer;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Panel body generic padding for non-form panels */
+.panel-body {
+  padding: 6px 0 12px 0;
+}
+
+/* Full-bleed horizontal divider used under the services tagline/subtext */
+.tagline-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  /* increased top margin so the divider sits lower under the subtext */
+  margin-top: 80px;
+  margin-bottom: 22px;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Nearest office card styles */
+.nearest-office {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 2vw; /* align with contact accordions */
+  margin-bottom: 32px;
+}
+.nearest-office .office-card {
+  background: #fff;
+  border-radius: 18px;
+  /* reduced vertical padding to lower card height; slightly wider horizontal padding */
+  padding: 12px 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  /* increase max width so the card can expand more across the page */
+  max-width: 1100px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.nearest-office .office-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+}
+.nearest-office-heading {
+  padding-left: 2vw; /* align with accordions */
+  margin: 18px 0 8px 0;
+  font-size: 1.25rem;
+  font-weight: 250;
+}
+.nearest-office h4 {
+  display: none; /* heading is shown outside the container */
+}
+.nearest-office .office-location {
+  font-size: 0.98rem;
+  text-align: right;
+  color: #111;
+}
+.nearest-office .office-country {
+  font-weight: 600;
+}
+.nearest-office .office-address {
+  margin: 6px 0 4px 0; /* tighter vertical spacing */
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+.nearest-office .office-phone {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.nearest-office .office-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end; /* move actions to the right of the card */
+}
+.nearest-office .office-actions {
+  /* Nudge the button slightly upwards to align better with the card content */
+  margin-top: -19px;
+}
+.btn-contact-office {
+  background: transparent; /* outlined button */
+  color: #111;
+  border: 1px solid #111;
+  padding: 8px 14px;
+  border-radius: 28px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 0.98rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.btn-contact-office:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+.btn-contact-office .btn-arrow {
+  display: inline-block;
+}
+
+@media (max-width: 680px) {
+  .nearest-office .office-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nearest-office .office-location {
+    text-align: left;
+  }
+  /* Reset the upward nudge on small screens so spacing remains natural */
+  .nearest-office .office-actions {
+    margin-top: 10;
+  }
+}
+
+/* Services page rounded search bar */
+.services-search-wrapper {
+  width: 100%;
+  /* keep default flow spacing; the visible shift is handled with transform
+     on the inner pill so the divider below doesn't move */
+  margin: 0 auto 22px auto;
+  display: flex;
+  justify-content: flex-start; /* align to left under logo */
+  padding-left: 2vw; /* match tagline left offset */
+}
+.services-search-form {
+  /* narrower maximum width for a more compact look */
+  width: min(620px, 92vw);
+  max-width: 620px;
+}
+.services-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  /* taller pill */
+  border-radius: 36px;
+  padding: 14px 14px;
+  /* remove soft shadow and add a clean black stroke */
+  box-shadow: none;
+  border: 1px solid #000;
+  /* visually nudge the pill down without affecting document flow */
+  /* increased slightly to move the pill a bit lower */
+  transform: translateY(26px);
+  will-change: transform;
+}
+.services-search-bar input[type="text"] {
+  flex: 1 1 auto;
+  border: none;
+  outline: none;
+  font-size: 1.05rem;
+  padding: 12px 14px; /* increases visual height */
+  background: transparent;
+  font-family: "Poppins", Arial, sans-serif;
+}
+.services-search-submit {
+  background: transparent; /* remove dark background */
+  color: #222; /* darker icon color */
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px; /* larger tap area */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.services-search-submit svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  color: currentColor; /* inherit color */
+}
+.services-search-submit:focus,
+.services-search-submit:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 480px) {
+  .services-search-form {
+    width: calc(100% - 32px);
+  }
+  /* smaller visual nudge on very small screens; keep wrapper flow unchanged */
+  .services-search-bar {
+    transform: translateY(16px);
+  }
+  .services-search-bar {
+    padding: 8px;
+  }
+  .services-search-submit {
+    padding: 8px;
+  }
+}
+
 @media (max-width: 768px) {
   /* Responsively reduce tagline/subtext sizes for small screens */
   .tagline-below-navbar {
@@ -604,6 +1035,9 @@ nav.navbar .navbar-right a.active::after,
   .below-rectangle-subtext-left {
     font-size: 1em;
     opacity: 0.45; /* slightly higher opacity on small screens for readability */
+  }
+  .services-page .tagline-subtext {
+    font-size: 0.95rem;
   }
 }
 
@@ -851,6 +1285,27 @@ nav.navbar .navbar-right a.active::after,
 .masonry-card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+/* Reveal-on-scroll helpers: fade+slide up for textual elements */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 420ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    transform 420ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  will-change: opacity, transform;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal.delay-1 {
+  transition-delay: 60ms;
+}
+.reveal.delay-2 {
+  transition-delay: 120ms;
+}
+.reveal.delay-3 {
+  transition-delay: 180ms;
 }
 
 .masonry-card img {

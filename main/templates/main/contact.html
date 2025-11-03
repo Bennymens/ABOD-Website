@@ -17,7 +17,7 @@
     />
     <link rel="stylesheet" href="{% static 'main/style.css' %}" />
   </head>
-  <body>
+  <body class="contact-page">
     <nav class="navbar">
       <div class="navbar-left-group">
         <div
@@ -107,6 +107,572 @@
         <span></span><span></span><span></span>
       </div>
     </nav>
+
+  <!-- Tagline below the navbar -->
+  <div class="tagline-row">
+    <div class="tagline-below-navbar">
+      Contact us
+    </div>
+    <div class="tagline-subtext">Designing sustainable places and systems — making long-term, people-centred change.</div>
+  </div>
+  <!-- Full-bleed divider under the tagline -->
+  <div class="tagline-divider" aria-hidden="true"></div>
+
+  <!-- Contact accordions: tappable headings that slide open a form/content -->
+  <section class="contact-accordions container">
+    <!-- Business enquiries -->
+    <div class="contact-accordion">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="business-panel">
+        <div class="accordion-inner">
+          <div class="accordion-title">
+            <h3>Business enquiries</h3>
+            <span class="accordion-arrow" aria-hidden="true">▸</span>
+          </div>
+          <p class="accordion-subtext">Speak to an Arup expert about a project, service, or partnership enquiry.</p>
+        </div>
+      </button>
+      <div id="business-panel" class="accordion-content">
+        <form class="contact-form business-form" action="#" method="post" autocomplete="off">
+          {% csrf_token %}
+          <!-- Area of business (full width) -->
+          <div class="form-row">
+            <label>Area of business</label>
+            <select name="area_of_business">
+              <option value="">Select...</option>
+              <option value="buildings">Buildings</option>
+              <option value="infrastructure">Infrastructure</option>
+              <option value="transport">Transport</option>
+              <option value="energy">Energy</option>
+              <option value="water">Water</option>
+              <option value="environment">Environment</option>
+              <option value="cities">Cities &amp; Urban Design</option>
+              <option value="digital">Digital &amp; Technology</option>
+              <option value="advisory">Advisory</option>
+              <option value="health">Health</option>
+              <option value="education">Education</option>
+              <option value="defence">Defence</option>
+              <option value="mining">Mining</option>
+              <option value="maritime">Maritime</option>
+              <option value="property">Property &amp; Real Estate</option>
+            </select>
+          </div>
+
+          <!-- Service of interest (full width) -->
+          <div class="form-row">
+            <label>Select your service of interest (if known)</label>
+            <select name="service_interest">
+              <option value="">Select...</option>
+            </select>
+          </div>
+
+          <!-- First / Last name: two columns -->
+          <div class="form-row two-up">
+            <div>
+              <label>First name</label>
+              <input class="short-line" type="text" name="first_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Last name</label>
+              <input class="short-line" type="text" name="last_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+
+          <!-- Email / Phone: two columns, label above input -->
+          <div class="form-row two-up">
+            <div>
+              <label>Email address</label>
+              <input class="short-line" type="email" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Phone number</label>
+              <input class="short-line" type="tel" name="phone" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+
+          <!-- Company / Job title: two columns -->
+          <div class="form-row two-up">
+            <div>
+              <label>Company name</label>
+              <input class="short-line" type="text" name="company" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Job title</label>
+              <input class="short-line" type="text" name="job_title" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+
+          <!-- Country/Location (full width long select) -->
+          <div class="form-row">
+            <label>Country/Location</label>
+            <select name="country">
+              <option value="">Select</option>
+              <option value="united-kingdom">United Kingdom</option>
+              <option value="united-states">United States</option>
+              <option value="canada">Canada</option>
+              <option value="australia">Australia</option>
+              <option value="ireland">Ireland</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+              <option value="netherlands">Netherlands</option>
+              <option value="spain">Spain</option>
+              <option value="italy">Italy</option>
+              <option value="sweden">Sweden</option>
+              <option value="norway">Norway</option>
+              <option value="denmark">Denmark</option>
+              <option value="finland">Finland</option>
+              <option value="belgium">Belgium</option>
+              <option value="switzerland">Switzerland</option>
+              <option value="austria">Austria</option>
+              <option value="poland">Poland</option>
+              <option value="portugal">Portugal</option>
+              <option value="greece">Greece</option>
+              <option value="turkey">Turkey</option>
+              <option value="russia">Russia</option>
+              <option value="china">China</option>
+              <option value="india">India</option>
+              <option value="japan">Japan</option>
+              <option value="south-korea">South Korea</option>
+              <option value="singapore">Singapore</option>
+              <option value="hong-kong">Hong Kong SAR</option>
+              <option value="united-arab-emirates">United Arab Emirates</option>
+              <option value="saudi-arabia">Saudi Arabia</option>
+              <option value="south-africa">South Africa</option>
+              <option value="kenya">Kenya</option>
+              <option value="nigeria">Nigeria</option>
+              <option value="egypt">Egypt</option>
+              <option value="brazil">Brazil</option>
+              <option value="mexico">Mexico</option>
+              <option value="argentina">Argentina</option>
+              <option value="chile">Chile</option>
+              <option value="colombia">Colombia</option>
+              <option value="new-zealand">New Zealand</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- City/Town (full width input) -->
+          <div class="form-row">
+            <label>City/Town</label>
+            <input type="text" name="city" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </div>
+
+          <!-- Message (full width) -->
+          <div class="form-row message-row">
+            <label>What would you like to discuss?</label>
+            <textarea name="message" rows="4" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+          </div>
+
+          <div class="form-row">
+            <button type="submit" class="btn-submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Media and press -->
+    <div class="contact-accordion">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="media-panel">
+        <div class="accordion-inner">
+          <div class="accordion-title">
+            <h3>Media and press</h3>
+            <span class="accordion-arrow" aria-hidden="true">▸</span>
+          </div>
+          <p class="accordion-subtext">Speak to our communications team about any media or press correspondence.</p>
+        </div>
+      </button>
+      <div id="media-panel" class="accordion-content">
+        <form class="contact-form media-form" action="#" method="post" autocomplete="off">
+          {% csrf_token %}
+          <!-- Area of business (full width) -->
+          <div class="form-row">
+            <label>Area of business</label>
+            <select name="area_of_business">
+              <option value="">Select...</option>
+              <option value="buildings">Buildings</option>
+              <option value="infrastructure">Infrastructure</option>
+              <option value="transport">Transport</option>
+              <option value="energy">Energy</option>
+              <option value="water">Water</option>
+              <option value="environment">Environment</option>
+              <option value="cities">Cities &amp; Urban Design</option>
+              <option value="digital">Digital &amp; Technology</option>
+              <option value="advisory">Advisory</option>
+              <option value="health">Health</option>
+              <option value="education">Education</option>
+              <option value="defence">Defence</option>
+              <option value="mining">Mining</option>
+              <option value="maritime">Maritime</option>
+              <option value="property">Property &amp; Real Estate</option>
+            </select>
+          </div>
+
+          <!-- Service of interest (full width) -->
+          <div class="form-row">
+            <label>Select your service of interest (if known)</label>
+            <select name="service_interest">
+              <option value="">Select...</option>
+            </select>
+          </div>
+
+          <!-- First / Last name: two columns -->
+          <div class="form-row two-up">
+            <div>
+              <label>First name</label>
+              <input class="short-line" type="text" name="first_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Last name</label>
+              <input class="short-line" type="text" name="last_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+
+          <!-- Email / Phone: two columns, label above input -->
+          <div class="form-row two-up">
+            <div>
+              <label>Email address</label>
+              <input class="short-line" type="email" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Phone number</label>
+              <input class="short-line" type="tel" name="phone" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+
+          <!-- Company / Job title: two columns -->
+          <div class="form-row two-up">
+            <div>
+              <label>Company name</label>
+              <input class="short-line" type="text" name="company" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Job title</label>
+              <input class="short-line" type="text" name="job_title" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+
+          <!-- Country/Location (full width long select) -->
+          <div class="form-row">
+            <label>Country/Location</label>
+            <select name="country">
+              <option value="">Select</option>
+              <option value="united-kingdom">United Kingdom</option>
+              <option value="united-states">United States</option>
+              <option value="canada">Canada</option>
+              <option value="australia">Australia</option>
+              <option value="ireland">Ireland</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+              <option value="netherlands">Netherlands</option>
+              <option value="spain">Spain</option>
+              <option value="italy">Italy</option>
+              <option value="sweden">Sweden</option>
+              <option value="norway">Norway</option>
+              <option value="denmark">Denmark</option>
+              <option value="finland">Finland</option>
+              <option value="belgium">Belgium</option>
+              <option value="switzerland">Switzerland</option>
+              <option value="austria">Austria</option>
+              <option value="poland">Poland</option>
+              <option value="portugal">Portugal</option>
+              <option value="greece">Greece</option>
+              <option value="turkey">Turkey</option>
+              <option value="russia">Russia</option>
+              <option value="china">China</option>
+              <option value="india">India</option>
+              <option value="japan">Japan</option>
+              <option value="south-korea">South Korea</option>
+              <option value="singapore">Singapore</option>
+              <option value="hong-kong">Hong Kong SAR</option>
+              <option value="united-arab-emirates">United Arab Emirates</option>
+              <option value="saudi-arabia">Saudi Arabia</option>
+              <option value="south-africa">South Africa</option>
+              <option value="kenya">Kenya</option>
+              <option value="nigeria">Nigeria</option>
+              <option value="egypt">Egypt</option>
+              <option value="brazil">Brazil</option>
+              <option value="mexico">Mexico</option>
+              <option value="argentina">Argentina</option>
+              <option value="chile">Chile</option>
+              <option value="colombia">Colombia</option>
+              <option value="new-zealand">New Zealand</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- City/Town (full width input) -->
+          <div class="form-row">
+            <label>City/Town</label>
+            <input type="text" name="city" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </div>
+
+          <!-- Message (full width) -->
+          <div class="form-row message-row">
+            <label>What would you like to discuss?</label>
+            <textarea name="message" rows="4" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+          </div>
+
+          <div class="form-row">
+            <button type="submit" class="btn-submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Careers -->
+    <div class="contact-accordion">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="careers-panel">
+        <div class="accordion-inner">
+          <div class="accordion-title">
+            <h3>Careers</h3>
+            <span class="accordion-arrow" aria-hidden="true">▸</span>
+          </div>
+          <p class="accordion-subtext">Speak to Arup’s recruitment teams about job opportunities and careers. Before sending a general enquiry, kindly review our application process to see if your question has already been addressed.</p>
+        </div>
+      </button>
+      <div id="careers-panel" class="accordion-content">
+        <form class="contact-form careers-form" action="#" method="post" autocomplete="off">
+          {% csrf_token %}
+          <div class="form-row two-up">
+            <div>
+              <label>First name</label>
+              <input class="short-line" type="text" name="first_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Last name</label>
+              <input class="short-line" type="text" name="last_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+          <div class="form-row two-up">
+            <div>
+              <label>Email address</label>
+              <input class="short-line" type="email" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Phone number</label>
+              <input class="short-line" type="tel" name="phone" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+          <div class="form-row two-up">
+            <div>
+              <label>Company name</label>
+              <input class="short-line" type="text" name="company" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Job title</label>
+              <input class="short-line" type="text" name="job_title" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+          <div class="form-row two-up">
+            <div>
+              <label>Country/Location</label>
+              <select name="country">
+                <option value="">Select</option>
+              </select>
+            </div>
+            <div>
+              <label>City/Town</label>
+              <input type="text" name="city" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+          <div class="form-row two-up">
+            <div>
+              <label>Experience level</label>
+              <select name="experience">
+                <option value="">Select...</option>
+              </select>
+            </div>
+            <div>
+              <label>How did you hear about us?</label>
+              <select name="how_hear">
+                <option value="">Select...</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row message-row">
+            <label>What would you like to discuss?</label>
+            <textarea name="message" rows="4" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+          </div>
+          <div class="form-row">
+            <p class="privacy-note">Arup will only process your data in accordance with its <a href="#">privacy policy</a>.</p>
+          </div>
+          <div class="form-row">
+            <button type="submit" class="btn-submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Other -->
+    <div class="contact-accordion">
+      <button class="accordion-toggle" aria-expanded="false" aria-controls="other-panel">
+        <div class="accordion-inner">
+          <div class="accordion-title">
+            <h3>Other</h3>
+            <span class="accordion-arrow" aria-hidden="true">▸</span>
+          </div>
+          <p class="accordion-subtext">Speak to us about anything else.</p>
+        </div>
+      </button>
+      <div id="other-panel" class="accordion-content">
+        <form class="contact-form other-form" action="#" method="post" autocomplete="off">
+          {% csrf_token %}
+          <!-- Area of business (full width) -->
+          <div class="form-row">
+            <label>Area of business</label>
+            <select name="area_of_business">
+              <option value="">Select...</option>
+              <option value="buildings">Buildings</option>
+              <option value="infrastructure">Infrastructure</option>
+              <option value="transport">Transport</option>
+              <option value="energy">Energy</option>
+              <option value="water">Water</option>
+              <option value="environment">Environment</option>
+              <option value="cities">Cities &amp; Urban Design</option>
+              <option value="digital">Digital &amp; Technology</option>
+              <option value="advisory">Advisory</option>
+              <option value="health">Health</option>
+              <option value="education">Education</option>
+              <option value="defence">Defence</option>
+              <option value="mining">Mining</option>
+              <option value="maritime">Maritime</option>
+              <option value="property">Property &amp; Real Estate</option>
+            </select>
+          </div>
+
+          <!-- Service of interest (full width) -->
+          <div class="form-row">
+            <label>Select your service of interest (if known)</label>
+            <select name="service_interest">
+              <option value="">Select...</option>
+            </select>
+          </div>
+
+          <!-- First / Last name: two columns -->
+          <div class="form-row two-up">
+            <div>
+              <label>First name</label>
+              <input class="short-line" type="text" name="first_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Last name</label>
+              <input class="short-line" type="text" name="last_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+
+          <!-- Email / Phone: two columns, label above input -->
+          <div class="form-row two-up">
+            <div>
+              <label>Email address</label>
+              <input class="short-line" type="email" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Phone number</label>
+              <input class="short-line" type="tel" name="phone" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+
+          <!-- Company / Job title: two columns -->
+          <div class="form-row two-up">
+            <div>
+              <label>Company name</label>
+              <input class="short-line" type="text" name="company" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+            <div>
+              <label>Job title</label>
+              <input class="short-line" type="text" name="job_title" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+          </div>
+
+          <!-- Country/Location (full width long select) -->
+          <div class="form-row">
+            <label>Country/Location</label>
+            <select name="country">
+              <option value="">Select</option>
+              <option value="united-kingdom">United Kingdom</option>
+              <option value="united-states">United States</option>
+              <option value="canada">Canada</option>
+              <option value="australia">Australia</option>
+              <option value="ireland">Ireland</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+              <option value="netherlands">Netherlands</option>
+              <option value="spain">Spain</option>
+              <option value="italy">Italy</option>
+              <option value="sweden">Sweden</option>
+              <option value="norway">Norway</option>
+              <option value="denmark">Denmark</option>
+              <option value="finland">Finland</option>
+              <option value="belgium">Belgium</option>
+              <option value="switzerland">Switzerland</option>
+              <option value="austria">Austria</option>
+              <option value="poland">Poland</option>
+              <option value="portugal">Portugal</option>
+              <option value="greece">Greece</option>
+              <option value="turkey">Turkey</option>
+              <option value="russia">Russia</option>
+              <option value="china">China</option>
+              <option value="india">India</option>
+              <option value="japan">Japan</option>
+              <option value="south-korea">South Korea</option>
+              <option value="singapore">Singapore</option>
+              <option value="hong-kong">Hong Kong SAR</option>
+              <option value="united-arab-emirates">United Arab Emirates</option>
+              <option value="saudi-arabia">Saudi Arabia</option>
+              <option value="south-africa">South Africa</option>
+              <option value="kenya">Kenya</option>
+              <option value="nigeria">Nigeria</option>
+              <option value="egypt">Egypt</option>
+              <option value="brazil">Brazil</option>
+              <option value="mexico">Mexico</option>
+              <option value="argentina">Argentina</option>
+              <option value="chile">Chile</option>
+              <option value="colombia">Colombia</option>
+              <option value="new-zealand">New Zealand</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- City/Town (full width input) -->
+          <div class="form-row">
+            <label>City/Town</label>
+            <input type="text" name="city" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </div>
+
+          <!-- Message (full width) -->
+          <div class="form-row message-row">
+            <label>What would you like to discuss?</label>
+            <textarea name="message" rows="4" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+          </div>
+
+          <div class="form-row">
+            <button type="submit" class="btn-submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nearest office header (outside container) -->
+  <div class="nearest-office-heading">Your nearest office</div>
+
+  <!-- Nearest office card -->
+  <section class="nearest-office container">
+    <div class="office-card">
+      <div class="office-header">
+        <div class="office-location">Lagos<br/><span class="office-country">Nigeria</span></div>
+      </div>
+      <address class="office-address">
+        Ove Arup &amp; Partners Nigeria Ltd, 26 McCarthy Street, Onikan, PO Box 2088, Lagos
+      </address>
+      <div class="office-phone">+234 902 002 4954</div>
+      <div class="office-actions">
+        <button class="btn-contact-office" type="button">
+          Contact office
+          <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l6 7-6 7" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
 
   <!-- Mobile menu -->
   <main class="site-main">

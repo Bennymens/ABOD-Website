@@ -1,7 +1,80 @@
 from django.shortcuts import render
+from django.http import Http404
 from pathlib import Path
 import re
 import html
+
+# Structured services data (easy to search and render)
+SERVICES = [
+
+	{
+		'title': 'Advisory and Planning',
+		'slug': 'advisory-and-planning',
+		'description': """Expert guidance through feasibility studies,
+business and investor advisory, urban and
+regional planning, policy development, and
+stakeholder engagement to support sustainable
+growth and informed decision-making."""
+	},
+	{
+		'title': 'Architecture and Design',
+		'slug': 'Architecture-and-Design',
+		'description': """Creating iconic, user-centric designs for commercial,
+         institutional, residential, science and industry,
+         and hospitality projects, including refurbishments,
+       teaching and research spaces, and inclusive, accessible
+       environments.."""
+	},
+	{
+		'title': '3D modeling and Visualization',
+		'slug': '3d-modeling-visualization',
+		'description': """Delivering robust structural, mechanical, civil, and
+        bridge engineering, with a focus on
+        efficiency and resilience."""
+	},
+	{
+		'title': 'Urban Design & Masterplanning',
+		'slug': 'urban-design-masterplanning',
+		'description': """Designing sustainable, smart cities, urban
+        frameworks, and campus energy masterplans,
+        integrating intelligent mobility."""
+	},
+	{
+	    'title': 'Sustainability & Environmental Solutions',
+		'slug': 'sustainability-environmental-solutions',
+		'description': 'Guiding clients towards net-zero goals with ESG '
+		'strategies, environmental consulting, nature-based solutions '
+		'and certifications like EDGE.'
+	},
+  {
+	    'title': 'Digital innovation and Experimental Design',
+	    'slug': 'digital-innovation-experimental-design',
+	    'description': 'Utilizing BIM, digital twinning, and parametric design for'
+	    ' creating lighting design,night-time design, and immersive experience design for '
+	    'cultural, public, and event spaces, including major event overlay design.'
+	},
+	{
+		'title': 'Interior and Landscape Design',
+		'slug': 'Interior-and-Landscape-Design',
+		'description': 'Designing standout interiors and landscape to support'
+		' the building taking into consideration sustainability,and saint'
+		' gobain comfort goals.'
+	},
+	{
+		'title': 'Project Management',
+		'slug': 'project-management',
+		'description': 'Employing Agile methodologies for client-centric project management, '
+		'alongside innovative product design and sustainable material specification.'
+	},
+	{
+		'title': 'Specialized Services',
+		'slug': 'specialized-services',
+		'description': 'Offering expertise in specialized services such as retrofit, at scale, research, and organizational development to support diverse project needs.'
+	}
+
+
+
+]
 
 
 def home(request):
@@ -37,7 +110,27 @@ def news(request):
 
 
 def services(request):
-	return render(request, 'main/services.html')
+	# Render the services page and optionally filter services by query
+	query = request.GET.get('q', '').strip()
+	if query:
+		q = query.lower()
+		filtered = [s for s in SERVICES if q in s['title'].lower() or q in s['description'].lower()]
+	else:
+		filtered = SERVICES
+	return render(request, 'main/services.html', {'services_list': filtered, 'query': query})
+
+
+def service_detail(request, slug):
+	"""Render a dedicated page for a single service identified by slug."""
+	svc = None
+	for s in SERVICES:
+		if s.get('slug') == slug:
+			svc = s
+			break
+	if svc is None:
+		raise Http404('Service not found')
+	# You could add richer content per-service here later
+	return render(request, 'main/service_detail.html', {'service': svc})
 
 
 def search(request):
@@ -48,9 +141,58 @@ def search(request):
 	template source contains the query (case-insensitive).
 	"""
 	query = request.GET.get('q', '').strip()
+	scope = request.GET.get('scope', '').strip().lower()
 	results = []
 	if query:
 		q = query.lower()
+		# If the search was scoped to services, parse the services template
+		# and return section-level matches (headings and nearby text).
+		if scope == 'services':
+			templates_dir = Path(__file__).resolve().parent / 'templates' / 'main'
+			path = templates_dir / 'services.html'
+			if path.exists():
+				try:
+					text = path.read_text(encoding='utf-8')
+				except Exception:
+					text = ''
+				# Find h2/h3 headings and their following block (until next heading)
+				sections = []
+				for m in re.finditer(r'<h([2-3])[^>]*>(.*?)</h\1>', text, re.IGNORECASE | re.DOTALL):
+					title = re.sub(r'<[^>]+>', '', m.group(2)).strip()
+					start = m.end()
+					# find next heading
+					next_m = re.search(r'<h[2-3][^>]*>', text[start:], re.IGNORECASE)
+					end = start + (next_m.start() if next_m else min(3000, len(text)-start))
+					body = re.sub(r'<[^>]+>', '', text[start:end]).strip()
+					sections.append({'title': html.unescape(title), 'body': html.unescape(body)})
+				# If no h2/h3 found, try tokens in the whole page
+				if not sections:
+					# fall back to splitting by paragraphs
+					for m in re.finditer(r'<p[^>]*>(.*?)</p>', text, re.IGNORECASE | re.DOTALL):
+						ptext = re.sub(r'<[^>]+>', '', m.group(1)).strip()
+						if ptext:
+							sections.append({'title': ptext[:60], 'body': ptext})
+				# Search sections for query
+				for s in sections:
+					st = s['title'].lower() + '\n' + s['body'].lower()
+					if q in st:
+						# simple snippet around first occurrence
+						idx = st.find(q)
+						start = max(0, idx - 80)
+						end = min(len(st), idx + 80)
+						snippet = s['body'][start:end].strip() if s['body'] else ''
+						# create an anchor-like slug for per-section links
+						slug = re.sub(r"[^a-z0-9]+", '-', s['title'].lower()).strip('-') or 'section'
+						results.append({'title': s['title'], 'url': f'/services/#{slug}', 'snippet': snippet, 'source': 'Services'})
+			# remove duplicates (by title)
+			seen = set()
+			unique = []
+			for r in results:
+				if r['title'] not in seen:
+					seen.add(r['title'])
+					unique.append(r)
+			results = unique
+			return render(request, 'main/search_results.html', {'query': query, 'results': results})
 		templates_dir = Path(__file__).resolve().parent / 'templates' / 'main'
 		if templates_dir.exists():
 			for path in templates_dir.glob('*.html'):
