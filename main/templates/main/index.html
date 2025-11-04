@@ -182,13 +182,15 @@
         class="four-cards-grid slide-up"
         style="
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
           grid-auto-rows: 100px;
           gap: 30px;
-          max-width: 96vw;
-          margin: 40px auto 0 auto;
-          padding: 0 2vw;
-          justify-items: center;
+          width: 100%;
+          box-sizing: border-box;
+          margin: 40px 0 0 0;
+          /* reduce card widths and shift grid slightly to the right */
+          padding: 0 2vw 0 6vw;
+          justify-items: stretch;
         "
       >
         <div
@@ -206,6 +208,36 @@
             style="width: 100%; height: 500px; object-fit: cover"
           />
         </div>
+
+        <!-- Issues: force it to column 1 and start on the row below the first card -->
+        <div
+          class="card-link issues-under-card"
+          style="text-align:left; width:100%; max-width:350px; padding:12px 0 0 0; margin-top:8px; grid-column:1; grid-row-start:6; justify-self:start;"
+        >
+          <a
+            href="{% url 'insights' %}"
+            style="
+              display:block;
+              text-decoration: none;
+              color: #222;
+              font-family: 'Georgia Pro', Georgia, serif;
+              font-size: 0.9em;
+              opacity: 0.9;
+            "
+            >Issues</a
+          >
+          <p
+            style="
+              font-size: 1.9em;
+              color: #222;
+              margin-top: 6px;
+              font-family: 'Georgia Pro', Georgia, serif;
+            "
+          >
+            Our experts are leading the way in sustainable engineering.
+          </p>
+        </div>
+
         <div
           class="card masonry-card"
           style="
@@ -275,6 +307,53 @@
             </p>
           </div>
         </div>
+
+        <!-- News link placed directly BELOW the third card -->
+        <div
+          class="card-link news-under-card"
+          style="text-align:center; width:100%; max-width:350px; padding:12px 0 0 0; margin-top:8px; grid-column:3; grid-row-start:5; justify-self:center;"
+        >
+          <a
+            href="/news/"
+            style="
+              opacity: 0.45;
+              text-decoration: none;
+              color: #222;
+              font-family: 'Georgia Pro', Georgia, serif;
+              font-size: 0.9em;
+            "
+            >News</a
+          >
+        </div>
+
+        <!-- MOVED: Projects link + description placed directly BELOW the third card (no duplicate) -->
+        <div
+          class="card-link projects-under-card"
+          style="text-align:center; width:100%; max-width:350px; padding:12px 0 0 0; margin-top:8px; grid-column:3; grid-row-start:6; justify-self:center;"
+        >
+          <a
+            href="/projects/"
+            style="
+              opacity: 0.45;
+              text-decoration: none;
+              color: #222;
+              font-family: 'Georgia Pro', Georgia, serif;
+              font-size: 0.9em;
+            "
+            >Projects</a
+          >
+          <p
+            style="
+              font-size: 1.9em;
+              color: #222;
+              margin-top: 5px;
+              font-family: 'Georgia Pro', Georgia, serif;
+            "
+          >
+            Discover our innovative projects shaping the future.
+          </p>
+        </div>
+        
         <div
           class="card masonry-card"
           style="
@@ -290,65 +369,7 @@
             style="width: 100%; height: 550px; object-fit: cover"
           />
         </div>
-        <!-- Additional links around the cards -->
-        <div class="card-link" style="text-align: center; padding: 20px">
-          <a
-            href="/news/"
-            style="
-              opacity: 0.45;
-              text-decoration: none;
-              color: #222;
-              font-family: 'Georgia Pro', Georgia, serif;
-              font-size: 0.9em;
-            "
-            >News</a
-          >
-        </div>
-        <div class="card-link" style="text-align: center; padding: 20px">
-          <a
-            href="{% url 'insights' %}"
-            style="
-              opacity: 0.45;
-              text-decoration: none;
-              color: #222;
-              font-family: 'Georgia Pro', Georgia, serif;
-              font-size: 0.9em;
-            "
-            >Issues</a
-          >
-          <p
-            style="
-              font-size: 2em;
-              color: #222;
-              margin-top: 5px;
-              font-family: 'Georgia Pro', Georgia, serif;
-            "
-          >
-            Our experts are leading the way in sustainable engineering.
-          </p>
-        </div>
-        <div class="card-link" style="text-align: center; padding: 20px">
-          <a
-            href="/projects/"
-            style="
-              opacity: 0.45;
-              text-decoration: none;
-              color: #222;
-              font-family: 'Georgia Pro', Georgia, serif;
-              font-size: 0.9em;
-            "
-            >Projects</a
-          >
-          <p
-            style="
-              font-size: 2em;
-              color: #222;
-              margin-top: 5px;
-              font-family: 'Georgia Pro', Georgia, serif;
-            "
-          >
-            Discover our innovative projects shaping the future.
-          </p>
+
         </div>
       </div>
 
