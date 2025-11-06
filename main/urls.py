@@ -1,7 +1,9 @@
-from django.urls import path
+from django.urls import path, include
+from django.conf.urls.i18n import i18n_patterns
 from . import views
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
     path('', views.home, name='home'),
     path('projects/', views.projects, name='projects'),
     path('insights/', views.insights, name='insights'),
@@ -12,6 +14,7 @@ urlpatterns = [
     path('news/', views.news, name='news'),
     path('services/', views.services, name='services'),
     path('services/<slug:slug>/', views.service_detail, name='service_detail'),
+    path('projects/<slug:slug>/', views.project_detail, name='project_detail'),
     path('home/', views.home, name='home'),
     path('search/', views.search, name='search'),
 ]

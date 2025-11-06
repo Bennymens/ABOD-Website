@@ -642,6 +642,32 @@ nav.navbar .navbar-right a.active::after,
   font-family: "poppins", Arial, Helvetica, sans-serif;
 }
 
+/* Projects page: smaller fonts for tagline and subtext */
+.projects-page .tagline-below-navbar h1 {
+  font-size: 4rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 300;
+}
+.projects-page .tagline-below-navbar .tagline-subtext {
+  font-size: 1.8rem;
+  line-height: 1.35;
+  opacity: 0.6;
+  margin-top: 6px;
+  font-family: "georgia", serif;
+}
+
+/* Projects page: position tagline to the left below the ABOD logo */
+.projects-page .tagline-row {
+  margin-left: 30px;
+}
+.projects-page .tagline-below-navbar {
+  margin: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+  max-width: none !important;
+  font-family: Georgia, serif;
+}
+
 /* Contact accordions and form styles */
 .contact-accordions {
   width: 100%;
@@ -1023,6 +1049,84 @@ select:-webkit-autofill:focus {
     padding: 8px;
   }
   .services-search-submit {
+    padding: 8px;
+  }
+}
+
+/* Projects page rounded search bar */
+.projects-search-wrapper {
+  width: 100%;
+  /* keep default flow spacing; the visible shift is handled with transform
+     on the inner pill so the divider below doesn't move */
+  margin: 0 auto 22px auto;
+  display: flex;
+  justify-content: flex-start; /* align to left under logo */
+  padding-left: 2vw; /* match tagline left offset */
+}
+.projects-search-form {
+  /* narrower maximum width for a more compact look */
+  width: min(620px, 92vw);
+  max-width: 620px;
+}
+.projects-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  /* taller pill */
+  border-radius: 36px;
+  padding: 14px 14px;
+  /* remove soft shadow and add a clean black stroke */
+  box-shadow: none;
+  border: 1px solid #000;
+  /* visually nudge the pill down without affecting document flow */
+  /* increased slightly to move the pill a bit lower */
+  transform: translateY(26px);
+  will-change: transform;
+}
+.projects-search-bar input[type="text"] {
+  flex: 1 1 auto;
+  border: none;
+  outline: none;
+  font-size: 1.05rem;
+  padding: 12px 14px; /* increases visual height */
+  background: transparent;
+  font-family: "Poppins", Arial, sans-serif;
+}
+.projects-search-submit {
+  background: transparent; /* remove dark background */
+  color: #222; /* darker icon color */
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px; /* larger tap area */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.projects-search-submit svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  color: currentColor; /* inherit color */
+}
+.projects-search-submit:focus,
+.projects-search-submit:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 480px) {
+  .projects-search-form {
+    width: calc(100% - 32px);
+  }
+  /* smaller visual nudge on very small screens; keep wrapper flow unchanged */
+  .projects-search-bar {
+    transform: translateY(16px);
+  }
+  .projects-search-bar {
+    padding: 8px;
+  }
+  .projects-search-submit {
     padding: 8px;
   }
 }
@@ -3200,4 +3304,134 @@ select:-webkit-autofill:focus {
 }
 .footer-col a:hover {
   text-decoration: underline;
+}
+/* Projects page header and subtext */
+.projects-header {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 2rem 0 0.5rem 0;
+  color: #333;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.projects-subtext {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  line-height: 1.6;
+  font-family: "Georgia Pro", Georgia, serif;
+}
+
+@media (max-width: 768px) {
+  .projects-header {
+    font-size: 2.5rem;
+    margin: 1.5rem 1rem 0.5rem;
+  }
+
+  .projects-subtext {
+    font-size: 1rem;
+    margin: 0 1rem 2rem;
+  }
+}
+
+/* Projects page styles */
+.intro-section {
+  padding: 3rem 5%;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.intro-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  padding: 2rem 5%;
+  margin-top: 4rem;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-card {
+  width: 100%;
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-content {
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.project-content h3 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-family: Georgia;
+}
+
+.project-content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  font-family: Georgia;
+  opacity: 0.9;
+}
+
+.projects-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  margin: 20px 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+.second-grid {
+  margin-top: 0.5rem;
+}
+
+.project-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+a {
+  text-decoration: none;
 }

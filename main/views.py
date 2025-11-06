@@ -3,6 +3,7 @@ from django.http import Http404
 from pathlib import Path
 import re
 import html
+from django.utils.translation import gettext as _
 
 # Structured services data (easy to search and render)
 SERVICES = [
@@ -76,6 +77,94 @@ growth and informed decision-making."""
 
 ]
 
+# Structured projects data
+PROJECTS = [
+    {
+        'title': _('amadia'),
+        'slug': 'amadia',
+        'description': _('Development of a retail showcase of a warehouse combined with restaurants.'),
+        'location': _('Accra, Ghana'),
+        'image': 'amadia.jpg'
+    },
+    {
+        'title': 'Aseda Garden Estate',
+        'slug': 'aseda-garden-estate',
+        'description': 'Luxury home featuring innovative architecture. A bespoke residence with modern amenities and green spaces.',
+        'location': 'Tema, Ghana',
+        'image': 'Aseda Garden Estate.jpg'
+    },
+    {
+        'title': 'Beach House',
+        'slug': 'beach-house',
+        'description': 'Seaside retreat with panoramic ocean views. A coastal property designed for relaxation and harmony with nature.',
+        'location': 'Kokrobite, Ghana',
+        'image': 'Beach House.jpg'
+    },
+    {
+        'title': 'First love center',
+        'slug': 'first-love-center',
+        'description': 'Developing multiple components, from Internal to the new tower block.',
+        'location': 'East Legon, Ghana',
+        'image': 'First love center.jpg'
+    },
+    {
+        'title': 'Gardenia',
+        'slug': 'gardenia',
+        'description': 'Commercial complex with modern retail spaces. A vibrant hub for shopping and entertainment in the city center.',
+        'location': 'Accra, Ghana',
+        'image': 'Gardenia.jpg'
+    },
+    {
+        'title': 'NetZero House',
+        'slug': 'netzero-house',
+        'description': 'Rustic retreat nestled in the hills. An eco-lodge offering tranquility and adventure experiences.',
+        'location': 'Akwapim Hills, Ghana',
+        'image': 'NetZero HOuse.jpg'
+    },
+    {
+        'title': 'private residence tema',
+        'slug': 'private-residence-tema',
+        'description': 'High-rise residential towers with city views. Luxury apartments featuring smart home technology and amenities.',
+        'location': 'Accra, Ghana',
+        'image': 'private residence tema.jpg'
+    },
+    {
+        'title': 'The Exchange apartments',
+        'slug': 'the-exchange-apartments',
+        'description': 'Exclusive villas along the riverbank. Private estates with lush gardens and waterfront access.',
+        'location': 'Volta Region, Ghana',
+        'image': 'The Exchange apartments.jpg'
+    },
+    {
+        'title': 'Theatre',
+        'slug': 'theatre-tema',
+        'description': 'Sustainable community living spaces. A green development promoting environmental consciousness.',
+        'location': 'Kumasi, Ghana',
+        'image': 'Theatre, tema.jpg'
+    },
+    {
+        'title': 'TSC Commercial, Tema',
+        'slug': 'tsc-commercial-tema',
+        'description': 'Luxury accommodation with cultural significance. A boutique hotel preserving local heritage and traditions.',
+        'location': 'Cape Coast, Ghana',
+        'image': 'TSC Commercial, Tema.jpg'
+    },
+    {
+        'title': 'roof top',
+        'slug': 'roof-top',
+        'description': 'Tech and startup incubation center. A modern facility fostering entrepreneurship and innovation.',
+        'location': 'Accra, Ghana',
+        'image': 'roof top.jpg'
+    },
+    {
+        'title': 'Private Residence Ashongman',
+        'slug': 'private-residence-ashongman',
+        'description': 'Spa and wellness retreat destination. A serene oasis for relaxation and rejuvenation.',
+        'location': 'Takoradi, Ghana',
+        'image': 'Private Residence Ashongman.jpg'
+    }
+]
+
 
 def home(request):
 	return render(request, 'main/index.html')
@@ -86,7 +175,13 @@ def about(request):
 
 
 def projects(request):
-	return render(request, 'main/projects.html')
+	query = request.GET.get('q', '').strip()
+	if query:
+		q = query.lower()
+		filtered = [p for p in PROJECTS if q in p['title'].lower() or q in p['description'].lower() or q in p['location'].lower()]
+	else:
+		filtered = PROJECTS
+	return render(request, 'main/projects.html', {'projects_list': filtered, 'query': query})
 
 
 def insights(request):
@@ -131,6 +226,19 @@ def service_detail(request, slug):
 		raise Http404('Service not found')
 	# You could add richer content per-service here later
 	return render(request, 'main/service_detail.html', {'service': svc})
+
+
+def project_detail(request, slug):
+	"""Render a dedicated page for a single project identified by slug."""
+	proj = None
+	for p in PROJECTS:
+		if p.get('slug') == slug:
+			proj = p
+			break
+	if proj is None:
+		raise Http404('Project not found')
+	# You could add richer content per-project here later
+	return render(request, 'main/project_detail.html', {'project': proj})
 
 
 def search(request):

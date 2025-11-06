@@ -71,9 +71,9 @@
             </svg>
           </a>
           <ul class="lang-menu" id="lang-menu">
-            <li><a href="?lang=en">English</a></li>
-            <li><a href="?lang=fr">French</a></li>
-            <li><a href="?lang=de">German</a></li>
+            <li><a href="{% url 'set_language' %}?language=en&next={{ request.get_full_path }}">English</a></li>
+            <li><a href="{% url 'set_language' %}?language=fr&next={{ request.get_full_path }}">French</a></li>
+            <li><a href="{% url 'set_language' %}?language=de&next={{ request.get_full_path }}">German</a></li>
           </ul>
         </li>
         <li>
@@ -347,5 +347,24 @@
       </div>
     </footer>
     <script src="{% static 'main/site-search.js' %}"></script>
+    <script>
+      // Language dropdown toggle
+      const langToggle = document.getElementById("lang-toggle");
+      const langMenu = document.getElementById("lang-menu");
+      if (langToggle && langMenu) {
+        langToggle.addEventListener("click", function (e) {
+          e.preventDefault();
+          langMenu.classList.toggle("show");
+        });
+        document.addEventListener("click", function (e) {
+          if (
+            !langToggle.contains(e.target) &&
+            !langMenu.contains(e.target)
+          ) {
+            langMenu.classList.remove("show");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
