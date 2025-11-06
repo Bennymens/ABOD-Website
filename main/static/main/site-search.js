@@ -344,6 +344,162 @@ if (window.__site_search_installed) {
   window.addEventListener("load", installReveal);
 })();
 
+/* Work showcase slide watcher: on mobile, highlight the visible card and show its text */
+(function () {
+  if (typeof window === "undefined") return;
+
+  function initWorkSlideWatcher() {
+    var showcase = document.querySelector(".work-showcase");
+    if (!showcase) return;
+
+    var scroller = showcase; // we've made the container horizontally scrollable
+    var items = Array.prototype.slice.call(
+      showcase.querySelectorAll(".work-images a")
+    );
+    var texts = Array.prototype.slice.call(
+      showcase.querySelectorAll(".work-texts .work-text")
+    );
+    if (!items.length || !texts.length) return;
+
+    // ensure initial state: mark first as active and create floating description
+    var floating = showcase.querySelector(".work-floating-text");
+    if (!floating) {
+      floating = document.createElement("div");
+      floating.className = "work-floating-text";
+      showcase.appendChild(floating);
+    }
+
+    function positionFloatingForItem(item, htmlContent) {
+      // Use offsets and scrollLeft so the floating text follows the item while
+      // the scroller is horizontally scrolled (avoids snapping to first card).
+      var scrollerEl = showcase.querySelector(".work-images") || showcase;
+      var itemOffsetLeft = item.offsetLeft; // offset relative to .work-images
+      var scrollLeft = scroller.scrollLeft;
+      var itemWidth = item.offsetWidth;
+
+      // compute width for the floating box (not wider than showcase)
+      var width = Math.min(
+        itemWidth,
+        Math.max(200, showcase.clientWidth * 0.88)
+      );
+
+      // left within showcase: itemOffsetLeft - scrollLeft + center adjustment
+      var left = itemOffsetLeft - scrollLeft + (itemWidth - width) / 2;
+
+      // vertical position: place below the scroller's visible area
+      var imagesRect = scrollerEl.getBoundingClientRect();
+      var scRect = showcase.getBoundingClientRect();
+      var top = imagesRect.bottom - scRect.top + 8; // gap under images
+
+      floating.style.width = Math.round(width) + "px";
+      floating.style.left = Math.round(left) + "px";
+      floating.style.top = Math.round(top) + "px";
+      floating.innerHTML = htmlContent;
+      floating.classList.add("visible");
+    }
+
+    function clearFloating() {
+      floating.classList.remove("visible");
+    }
+
+    var currentActiveIndex = 0;
+    function setActive(index) {
+      currentActiveIndex = index;
+      items.forEach(function (it, i) {
+        if (i === index) it.classList.add("active");
+        else it.classList.remove("active");
+      });
+      texts.forEach(function (t, i) {
+        if (i === index) t.classList.add("active");
+        else t.classList.remove("active");
+      });
+
+      var it = items[index];
+      var txt = texts[index];
+      if (it && txt) {
+        positionFloatingForItem(it, txt.innerHTML);
+      } else {
+        clearFloating();
+      }
+    }
+
+    // IntersectionObserver on the anchors with root the showcase container
+
+    // Debounced scroll fallback: on fast swipes IntersectionObserver can miss updates
+    var scrollTimeout = null;
+    function onScroll() {
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function () {
+        // compute center of scroller viewport
+        var rect = scroller.getBoundingClientRect();
+        var centerX = rect.left + rect.width / 2;
+
+        var closest = { idx: 0, dist: Infinity };
+        items.forEach(function (it, i) {
+          var r = it.getBoundingClientRect();
+          var itemCenter = r.left + r.width / 2;
+          var d = Math.abs(itemCenter - centerX);
+          if (d < closest.dist) {
+            closest = { idx: i, dist: d };
+          }
+        });
+        if (closest && typeof closest.idx === "number") setActive(closest.idx);
+      }, 80);
+    }
+
+    scroller.addEventListener("scroll", onScroll, { passive: true });
+    // also trigger once after load to align state
+    setTimeout(onScroll, 120);
+
+    // While the user is actively scrolling, reposition the floating text so it
+    // stays visually below the moving item. Use requestAnimationFrame for smoothness.
+    var rafId = null;
+    function repositionDuringScroll() {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(function () {
+        var idx =
+          typeof currentActiveIndex === "number" ? currentActiveIndex : 0;
+        var it = items[idx];
+        var txt = texts[idx];
+        if (it && txt && floating.classList.contains("visible")) {
+          positionFloatingForItem(it, txt.innerHTML);
+        }
+      });
+    }
+    scroller.addEventListener("scroll", repositionDuringScroll, {
+      passive: true,
+    });
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            // find index
+            var idx = items.indexOf(entry.target);
+            if (idx >= 0) setActive(idx);
+          }
+        });
+      },
+      { root: scroller, threshold: 0.5 }
+    );
+
+    items.forEach(function (it) {
+      io.observe(it);
+    });
+
+    // If user resizes or the page loads, snap to nearest item and ensure active updates
+    window.addEventListener("resize", function () {
+      // no-op; IntersectionObserver will re-evaluate
+    });
+
+    // initial set
+    setActive(0);
+  }
+
+  if (document.readyState === "loading")
+    document.addEventListener("DOMContentLoaded", initWorkSlideWatcher);
+  else initWorkSlideWatcher();
+})();
+
 /* Contact accordions: init smooth slide toggles for panels defined in contact.html */
 (function () {
   if (typeof window === "undefined") return;

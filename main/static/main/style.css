@@ -588,6 +588,7 @@ nav.navbar .navbar-right a.active::after,
   font-weight: 200;
   color: #1a1a1a;
   letter-spacing: 0.5px;
+  text-align: left;
 }
 
 /* Slight left offset for the tagline block so it aligns more closely with the
@@ -1029,7 +1030,8 @@ select:-webkit-autofill:focus {
 @media (max-width: 768px) {
   /* Responsively reduce tagline/subtext sizes for small screens */
   .tagline-below-navbar {
-    font-size: 1.6em;
+    font-size: 2.5em;
+    text-align: left;
   }
   .below-rectangle-subtext-left {
     font-size: 1em;
@@ -1236,25 +1238,54 @@ select:-webkit-autofill:focus {
   margin: 0 0 36px 0;
   padding: 0 2vw;
 }
-.core-list {
-  list-style: disc;
-  margin: 0 0 0 1.25rem;
-  padding: 0;
-  font-family: "Georgia Pro", Georgia, serif;
-  font-size: 1.5rem;
-  line-height: 1.8;
-  color: #222;
+.client-logo {
+  flex: 0 0 auto; /* prevent shrinking/wrapping */
+  width: 160px; /* slightly larger so logos are clearer */
+  display: flex;
+  flex-direction: column; /* stack image above caption */
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 8px 6px 6px 6px;
+  box-sizing: border-box;
 }
-.core-list li {
-  margin: 8px 0;
+.client-logo img {
+  max-width: 100%;
+  max-height: 72px; /* constrain logo height */
+  object-fit: contain;
+  display: block;
 }
-
-/* WHY ABOD styling */
-.why-heading {
-  font-family: "georgia pro", georgia, serif;
-  font-size: 3rem;
-  font-weight: 300;
-  margin: 18px 0 8px 0;
+.client-caption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  line-height: 1.1;
+  color: #333;
+  text-align: center;
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .client-logo {
+    width: 140px;
+  }
+  .client-logo img {
+    max-height: 64px;
+  }
+  .client-caption {
+    font-size: 0.82rem;
+  }
+}
+@media (max-width: 600px) {
+  .client-logo {
+    width: 120px;
+  }
+  .client-logo img {
+    max-height: 56px;
+  }
+  .client-caption {
+    font-size: 0.78rem;
+  }
 }
 .why-values {
   max-width: 980px;
@@ -1357,7 +1388,7 @@ select:-webkit-autofill:focus {
 
 /* Masonry Card Styles */
 .masonry-card {
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -1482,9 +1513,37 @@ select:-webkit-autofill:focus {
 /* Design Philosophy cards */
 .design-heading {
   font-family: "georgia pro", georgia, serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 300;
   margin: 24px 0 12px 0;
+}
+/* WHY ABOD heading - match requested 2.5rem size */
+.why-heading {
+  font-family: "Georgia Pro", Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 18px 0 8px 0;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .why-heading {
+    font-size: 1.9rem;
+  }
+}
+/* OUR CLIENTS heading - slightly larger to match visual weight of other H2s */
+.clients-heading {
+  font-family: "Georgia Pro", Georgia, serif;
+  font-size: 2.5rem; /* increased size per request */
+  font-weight: 300;
+  margin: 20px 0 8px 0;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .clients-heading {
+    font-size: 2.1rem;
+  }
 }
 .design-philosophy {
   max-width: 1200px;
@@ -1513,20 +1572,25 @@ select:-webkit-autofill:focus {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  height: 300px;
 }
 .design-card img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
 }
 .design-card figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
   padding: 14px;
   font-family: "Georgia Pro", Georgia, serif;
   font-size: 0.98rem;
   line-height: 1.6;
-  color: #222;
 }
 
 @media (min-width: 1100px) {
@@ -1617,6 +1681,76 @@ select:-webkit-autofill:focus {
   }
   .design-controls .design-prev svg {
     transform: scaleX(-1);
+  }
+  /* Clients row: small, single-line logos left-to-right; allow horizontal scroll on narrow viewports */
+  .clients-cards {
+    max-width: 1200px;
+    margin: 12px auto 24px auto;
+    padding: 0 2vw;
+    box-sizing: border-box;
+  }
+  .clients-row {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto; /* allow horizontal scroll if viewport is too narrow */
+    white-space: nowrap; /* keep items on a single line */
+    padding: 8px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .clients-row::-webkit-scrollbar {
+    height: 6px;
+  }
+  .clients-row::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+  }
+  .client-logo {
+    flex: 0 0 auto; /* prevent shrinking/wrapping */
+    width: 200px; /* increased so logos read more clearly */
+    height: 96px;
+    display: flex;
+    flex-direction: column; /* stack image above caption */
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1),
+      box-shadow 220ms ease;
+  }
+  .client-logo:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(15, 15, 15, 0.12);
+  }
+  .client-logo img {
+    max-width: 100%;
+    max-height: 72px; /* keep logo visually balanced inside larger card */
+    object-fit: contain;
+    display: block;
+  }
+  .client-caption {
+    margin-top: 8px;
+    font-family: "Georgia Pro", Georgia, serif;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    color: #222;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    .client-logo {
+      width: 140px;
+      height: 60px;
+      padding: 6px;
+    }
+    .client-logo img {
+      max-height: 48px;
+    }
+    .client-caption {
+      font-size: 0.88rem;
+    }
   }
 }
 
@@ -1722,14 +1856,14 @@ select:-webkit-autofill:focus {
   width: 100%;
   height: 600px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 20px;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.3s;
 }
 
 .work-images img:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .work-texts {
@@ -2052,11 +2186,23 @@ select:-webkit-autofill:focus {
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   nav.navbar {
-    padding: 10px 20px;
+    /* full-width navbar on mobile; keep compact height */
+    width: 100%;
+    height: auto;
+    padding: 8px 16px;
+    align-items: center;
+  }
+  /* Ensure client logos inside the navbar center stay compact on small screens */
+  .navbar-center .client-logo img {
+    max-height: 60px;
+  }
+  .navbar-center .client-caption {
+    font-size: 0.9rem;
   }
 
+  /* hide the full desktop nav on mobile and show the hamburger */
   .navbar-center {
-    display: none;
+    display: none; /* collapse center nav into mobile menu */
   }
 
   .navbar-right {
@@ -2065,6 +2211,11 @@ select:-webkit-autofill:focus {
 
   .hamburger {
     display: flex;
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    z-index: 1100;
+    pointer-events: auto;
   }
 
   .search-bar {
@@ -2072,8 +2223,13 @@ select:-webkit-autofill:focus {
   }
 
   .tagline-below-navbar {
-    font-size: 0.9em;
-    text-align: center;
+    font-size: 2.5rem;
+    text-align: left;
+  }
+
+  .see-projects-button {
+    padding: 6px 12px;
+    font-size: 0.8em;
   }
 
   /* On small screens, keep the tagline and subtext centered */
@@ -2090,28 +2246,29 @@ select:-webkit-autofill:focus {
     min-height: 250px;
   }
 
+  /* make hero image much shorter on small phones to avoid long scrolls */
   .rectangle-image {
-    height: 400px;
+    height: 320px;
   }
 
   .below-rectangle-header {
     font-size: 1.8em;
-    text-align: center;
+    text-align: left;
   }
 
   .below-rectangle-subtext {
     font-size: 1em;
-    text-align: center;
+    text-align: left;
   }
 
   .section-header {
     font-size: 1.5em;
-    text-align: center;
+    text-align: left;
   }
 
   .section-subtext {
     font-size: 0.9em;
-    text-align: center;
+    text-align: left;
   }
 
   .four-cards-grid {
@@ -2120,8 +2277,272 @@ select:-webkit-autofill:focus {
     padding: 0 10px;
   }
 
+  /* Mobile card layout improvements: normalize card heights and spacing */
+  .four-cards-grid .masonry-card img,
+  .four-cards-grid img,
+  .four-cards-grid .card img,
+  .four-cards-grid .card .card-fill {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 320px !important;
+    object-fit: cover !important;
+    display: block;
+  }
+
+  .four-cards-grid .card-link,
+  .four-cards-grid .card-link a {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  /* Make each visual card use consistent padding and a small shadow to separate */
+  .four-cards-grid .card,
+  .four-cards-grid .card-link {
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Ensure uniform card heights and proper stacking on mobile */
+  .four-cards-grid .card {
+    grid-row-end: span 1 !important;
+  }
+  .four-cards-grid .masonry-card img {
+    height: 250px !important;
+  }
+  .four-cards-grid .card-link {
+    grid-column: auto !important;
+    grid-row-start: auto !important;
+    margin-top: 10px !important;
+  }
+  .four-cards-grid .card-link p {
+    font-size: 1.5em !important;
+  }
+
   .work-showcase {
     flex-direction: column;
+  }
+
+  /* Make the Our Work area full-bleed and horizontally scrollable on mobile */
+  .work-showcase {
+    /* full-bleed left-to-right but keep a comfortable inset so cards don't
+       visually disappear into the viewport edges when partially scrolled */
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: 4vw;
+    padding-right: 4vw;
+    width: 100vw;
+    box-sizing: border-box;
+    position: relative; /* for floating description positioning */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    scroll-padding-inline-start: 4vw; /* ensure first slide snaps with a small inset */
+    touch-action: pan-x;
+  }
+
+  .work-showcase .work-images {
+    display: flex;
+    gap: 6px; /* small breathing room but no heavy visual gutters */
+    flex-wrap: nowrap;
+    align-items: stretch;
+    padding-bottom: 8px;
+  }
+
+  .work-showcase .work-images a {
+    flex: 0 0 98%; /* occupy most of viewport so one card shows at a time */
+    max-width: 98%;
+    display: inline-block;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .work-showcase .work-images img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 220px !important;
+    object-fit: cover !important;
+    /* remove visual borders and shadows so cards flow seamlessly left→right */
+    border-radius: 20px !important;
+    box-shadow: none !important;
+    border: none !important;
+    display: block;
+    outline: none !important;
+  }
+
+  .work-showcase .work-images a:focus,
+  .work-showcase .work-images img:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .work-showcase .work-images img:hover {
+    transform: none !important;
+  }
+
+  .work-showcase .work-images a {
+    width: 80% !important;
+  }
+
+  .work-showcase .work-images {
+    display: flex !important;
+  }
+
+  /* Floating description that appears under the active card */
+  .work-floating-text {
+    position: absolute;
+    left: 0;
+    top: 100%; /* will be positioned by JS */
+    transform: translateY(8px);
+    opacity: 0;
+    transition: opacity 300ms ease, transform 300ms ease;
+    pointer-events: none;
+    z-index: 2000;
+    background: transparent; /* keep transparent so it doesn't cover edges */
+    color: #111;
+    text-align: left;
+  }
+
+  .work-floating-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .work-floating-text h3 {
+    font-size: 1.05rem;
+    margin: 0 0 6px 0;
+    font-weight: 600;
+  }
+
+  .work-floating-text p {
+    font-size: 0.95rem;
+    margin: 0;
+    color: #333;
+    line-height: 1.35;
+  }
+
+  /* Work text fade-in for active slide */
+  .work-texts {
+    margin-top: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: center; /* center descriptions under the focused slide */
+  }
+
+  /* On mobile we use a floating description under the active card; hide the static list */
+  .work-texts {
+    display: none !important;
+  }
+
+  .work-texts .work-text {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 300ms ease, transform 300ms ease;
+    display: none; /* hide inactive text to avoid long page */
+    max-width: 92vw;
+    margin: 0 auto;
+  }
+
+  /* reduce typography for mobile descriptions */
+  .work-texts .work-text h3 {
+    font-size: 1.05rem;
+    margin: 0 0 6px 0;
+    line-height: 1.2;
+  }
+
+  .work-texts .work-text p {
+    font-size: 0.95rem;
+    margin: 0;
+    color: #333;
+    line-height: 1.35;
+  }
+
+  .work-texts .work-text.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* --- Mobile: stack Issues cards as rounded rectangles --- */
+  .issues-section {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    box-sizing: border-box;
+  }
+
+  .issues-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px;
+    margin-top: 12px;
+    padding-bottom: 18px;
+  }
+
+  .issue-card {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: none !important;
+  }
+
+  .issue-card .card-fill {
+    width: 100%;
+    height: 100px !important;
+    object-fit: cover;
+    display: block;
+  }
+
+  .issue-card .card-content {
+    padding: 8px 10px;
+  }
+
+  .issue-card .card-label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.65);
+    margin-bottom: 6px;
+  }
+
+  .issue-card .card-title {
+    font-size: 1.05rem;
+    line-height: 1.3;
+    margin: 0;
+    color: #111;
+  }
+
+  /* Tighten spacing for small phones */
+  @media (max-width: 420px) {
+    .issue-card .card-fill {
+      height: 140px;
+    }
+    .issue-card .card-content {
+      padding: 12px;
+    }
+    .issue-card .card-title {
+      font-size: 1rem;
+    }
+  }
+
+  /* small scrollbar styling to keep it tidy */
+  .work-showcase::-webkit-scrollbar {
+    height: 8px;
+  }
+  .work-showcase::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
   }
 
   .work-images,
@@ -2136,8 +2557,11 @@ select:-webkit-autofill:focus {
   }
 
   .work-images img {
-    width: calc(50% - 5px);
-    height: 150px;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 180px !important;
+    object-fit: cover !important;
+    border-radius: 6px;
   }
 
   .work-texts {
@@ -2164,9 +2588,55 @@ select:-webkit-autofill:focus {
 
   .staff-images img {
     width: 100%;
-    height: 150px;
+    height: auto !important;
+    max-height: 160px !important;
+    object-fit: cover !important;
   }
 
+  /* Extra small screens: tighter adjustments */
+  @media (max-width: 420px) {
+    .tagline-below-navbar {
+      font-size: 1.5rem;
+      padding-left: 4vw;
+      padding-right: 4vw;
+    }
+
+    .rectangle-image {
+      height: 240px;
+    }
+
+    .work-images img {
+      width: 100%;
+      height: 140px;
+    }
+
+    /* Ensure issues section doesn't force a full-viewport tall panel on tiny devices */
+    .issues-section {
+      min-height: auto;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .issues-content {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+    }
+
+    /* Stack footer columns for mobile */
+    .footer-right-columns {
+      display: block;
+      gap: 1rem;
+    }
+
+    .footer-col {
+      margin-bottom: 18px;
+    }
+
+    .footer-bottom .footer-bottom-inner {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
   .staff-texts {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -2489,7 +2959,11 @@ select:-webkit-autofill:focus {
   }
 
   .card-image-wrapper {
-    height: 60px;
+    height: 40px;
+  }
+
+  .issues-section .issue-card {
+    min-height: 70px !important;
   }
 }
 
