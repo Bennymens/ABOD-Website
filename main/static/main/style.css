@@ -1144,6 +1144,40 @@ select:-webkit-autofill:focus {
   .services-page .tagline-subtext {
     font-size: 0.95rem;
   }
+
+  /* Issues cards: Make them uniform on mobile */
+  .issues-section .issue-card {
+    height: 50px !important; /* Same height for all cards */
+    min-height: 50px !important;
+    padding-bottom: 0 !important; /* Remove extra padding */
+  }
+
+  .issues-section .card-fill {
+    display: block !important; /* Show images again */
+  }
+
+  .issues-section .issue-card::before {
+    height: 20% !important; /* Thin rectangle overlay for all */
+  }
+
+  .issues-section .card-content {
+    padding: 5px 10px !important; /* Consistent padding */
+  }
+
+  .issues-section .card-label {
+    font-size: 0.7rem !important; /* Uniform font sizes */
+  }
+
+  .issues-section .card-title {
+    font-size: 0.9rem !important;
+  }
+
+  /* Remove individual height overrides to ensure uniformity */
+  .issue-card.card-orange,
+  .issue-card.card-red,
+  .issue-card.card-green {
+    height: 50px !important;
+  }
 }
 
 /* Right-aligned variant for taglines (used on About page) */
@@ -2004,6 +2038,88 @@ select:-webkit-autofill:focus {
   line-height: 1.5;
 }
 
+.four-image-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 96vw;
+  margin: 60px auto 0 auto;
+  padding: 0 2vw;
+}
+
+.image-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.four-image-cards a {
+  text-decoration: none;
+  display: block;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-link-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-link {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9em;
+  color: #666;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.card-link:hover {
+  opacity: 1;
+}
+
+.card-link-text {
+  text-align: center;
+  max-width: 300px;
+}
+
+.card-link-main {
+  font-family: "Georgia Pro", Georgia, serif;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.card-link-sub {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85em;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
 .our-people-header {
   max-width: 96vw;
   margin: 100px auto 0 auto;
@@ -2179,12 +2295,15 @@ select:-webkit-autofill:focus {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  padding: 10px;
+  padding: 15px;
+  min-width: 44px;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
+  width: 30px;
+  height: 4px;
   background: #333;
   margin: 3px 0;
   transition: 0.3s;
@@ -2316,10 +2435,12 @@ select:-webkit-autofill:focus {
   .hamburger {
     display: flex;
     position: absolute;
-    right: 16px;
-    top: 12px;
-    z-index: 1100;
+    right: 24px; /* Moved slightly to the right */
+    top: 8px;
+    z-index: 1200;
     pointer-events: auto;
+    justify-content: center;
+    align-items: center;
   }
 
   .search-bar {
@@ -2747,6 +2868,33 @@ select:-webkit-autofill:focus {
     gap: 15px;
     margin-top: 20px;
   }
+
+  .four-image-cards {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    margin: 40px auto 0 auto;
+    padding: 0 2vw;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  }
+
+  .card-container {
+    flex: 0 0 auto;
+    width: 280px;
+  }
+
+  .image-card img {
+    height: 300px;
+  }
+
+  .card-link-main {
+    font-size: 1em;
+  }
+
+  .card-link-sub {
+    font-size: 0.8em;
+  }
 }
 
 /* Updated Issues Section Styles - Smaller Cards */
@@ -2944,6 +3092,21 @@ select:-webkit-autofill:focus {
   );
 }
 
+.card-blue {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  /* blue overlay */
+  --issue-overlay: linear-gradient(
+    135deg,
+    rgba(52, 152, 219, 1) 0%,
+    rgba(41, 128, 185, 1) 100%
+  );
+}
+
+/* Hide the 4th issue card on desktop */
+.issues-content .issue-card:nth-child(4) {
+  display: none;
+}
+
 .issue-card:focus {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
@@ -3038,8 +3201,26 @@ select:-webkit-autofill:focus {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding: 0; /* Remove body padding to eliminate white space around the page */
+  }
+
   .issues-section {
     padding: 2rem 1rem 1rem;
+  }
+
+  .issues-content {
+    display: none !important; /* Hide cards on mobile */
+  }
+
+  .footer-right .container {
+    padding: 0; /* Remove side padding on mobile to eliminate white space */
+    max-width: 100%; /* Ensure full width on mobile */
+  }
+
+  .footer-bottom .footer-bottom-inner {
+    padding: 0; /* Remove side padding on mobile */
+    max-width: 100%; /* Ensure full width on mobile */
   }
 
   .issues-title {
@@ -3050,24 +3231,54 @@ select:-webkit-autofill:focus {
     font-size: 1rem;
   }
 
-  .card-content {
-    padding: 0.75rem;
-  }
-
-  .card-label {
-    font-size: 0.9rem;
-  }
-
-  .card-title {
-    font-size: 1.2rem;
-  }
-
-  .card-image-wrapper {
-    height: 40px;
-  }
-
   .issues-section .issue-card {
-    min-height: 70px !important;
+    height: 60px !important;
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+
+  .issue-card::before {
+    display: none !important; /* Remove color background on mobile */
+  }
+
+  .issue-card {
+    padding-bottom: 0; /* No extra padding needed */
+  }
+
+  .card-fill {
+    display: block !important; /* Show images on mobile */
+    width: 60px;
+    height: 100%;
+    flex-shrink: 0;
+  }
+
+  .card-content {
+    display: none !important; /* Hide text on mobile, show only images */
+  }
+
+  /* Individual card heights */
+  .issue-card.card-orange {
+    height: 60px !important;
+  }
+
+  .issue-card.card-red {
+    height: 60px !important;
+  }
+
+  .issue-card.card-green {
+    height: 60px !important;
+  }
+
+  .issue-card.card-blue {
+    height: 60px !important;
+  }
+
+  /* Remove color backgrounds on mobile */
+  .card-orange,
+  .card-red,
+  .card-green,
+  .card-blue {
+    background: transparent !important;
   }
 }
 
@@ -3081,11 +3292,33 @@ select:-webkit-autofill:focus {
   }
 
   .card-content {
-    padding: 0.5rem;
+    padding: 5px 0;
   }
 
   .card-image-wrapper {
     height: 50px;
+  }
+
+  /* Existing base styles (do not change these) */
+  .issue-card {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 500px; /* Base height for desktop/tablet */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  /* Add or update this mobile media query */
+  @media (max-width: 480px) {
+    /* Targets mobile devices (adjust breakpoint if needed) */
+    .issue-card {
+      height: 200px; /* Reduced height for mobile - change this value as desired */
+      max-width: 100%; /* Optional: Make cards full-width on mobile for better fit */
+    }
   }
 }
 
@@ -3396,7 +3629,7 @@ select:-webkit-autofill:focus {
 .project-content h3 {
   font-size: 1.8rem;
   font-weight: 300;
-  margin-bottom: 0.5rem;
+  margin: 0 0 10px 0;
   color: #333;
   font-family: Georgia;
 }
@@ -3404,7 +3637,7 @@ select:-webkit-autofill:focus {
 .project-content p {
   font-size: 1rem;
   color: #666;
-  margin-bottom: 0.5rem;
+  margin: 0 0 10px 0;
   line-height: 1.4;
   font-family: Georgia;
   opacity: 0.9;
@@ -3434,4 +3667,42 @@ select:-webkit-autofill:focus {
 
 a {
   text-decoration: none;
+}
+
+/* Mobile-friendly styles for projects page */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+    padding: 1rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .project-card {
+    height: 200px; /* Shorter cards on mobile */
+  }
+
+  .project-content h3 {
+    font-size: 1.1rem; /* Smaller title */
+  }
+
+  .project-content p {
+    font-size: 0.9rem; /* Smaller location text */
+  }
+
+  .projects-search-wrapper {
+    padding: 0 1rem;
+  }
+
+  .tagline-below-navbar h1 {
+    font-size: 2.5rem; /* Smaller tagline on mobile */
+  }
+
+  .tagline-subtext {
+    font-size: 1rem;
+  }
+
+  .our-work-section {
+    margin: 100px 0 0 0; /* Reduced top margin on mobile to bring section up */
+  }
 }

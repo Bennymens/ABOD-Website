@@ -166,210 +166,63 @@
       <p class="below-rectangle-subtext slide-up">
         Our experts are leading the way
       </p>
-      <a href="{% url 'services' %}" class="below-rectangle-link slide-up"
-        >Services</a
-      >
 
-      <h2 class="section-header slide-up">Building Information Modeling</h2>
-      <p class="section-subtext slide-up">
-        Creating and managing digital information about built assets, from
-        design
-        <br />and construction through to operatioin and maintenance.
-      </p>
-
-      <!-- 4 Cards below the building section -->
-      <div
-        class="four-cards-grid slide-up"
-        style="
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-          grid-auto-rows: 100px;
-          gap: 30px;
-          width: 100%;
-          box-sizing: border-box;
-          margin: 40px 0 0 0;
-          /* reduce card widths and shift grid slightly to the right */
-          padding: 0 2vw 0 6vw;
-          justify-items: stretch;
-        "
-      >
-        <div
-          class="card masonry-card"
-          style="
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-            grid-row-end: span 5;
-          "
-        >
-          <img
-            src="{% static 'main/img/chisinau-arena-sunset-moldova.jpg' %}"
-            alt="Card 1"
-            style="width: 100%; height: 500px; object-fit: cover"
-          />
-        </div>
-
-        <!-- Issues: force it to column 1 and start on the row below the first card -->
-        <div
-          class="card-link issues-under-card"
-          style="text-align:left; width:100%; max-width:350px; padding:12px 0 0 0; margin-top:8px; grid-column:1; grid-row-start:6; justify-self:start;"
-        >
-          <a
-            href="{% url 'insights' %}"
-            style="
-              display:block;
-              text-decoration: none;
-              color: #222;
-              font-family: 'Georgia Pro', Georgia, serif;
-              font-size: 0.9em;
-              opacity: 0.9;
-            "
-            >Issues</a
-          >
-          <p
-            style="
-              font-size: 1.9em;
-              color: #222;
-              margin-top: 6px;
-              font-family: 'Georgia Pro', Georgia, serif;
-            "
-          >
-            Our experts are leading the way in sustainable engineering.
-          </p>
-        </div>
-
-        <div
-          class="card masonry-card"
-          style="
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-            grid-row-end: span 6;
-          "
-        >
-          <img
-            src="{% static 'main/img/low-angle-red-geometrical-structure-blue-sky.jpg' %}"
-            alt="Card 2"
-            style="width: 100%; height: 600px; object-fit: cover"
-          />
-        </div>
-        <div
-          class="card masonry-card"
-          style="
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-            grid-row-end: span 4;
-            position: relative;
-          "
-        >
-          <img
-            src="{% static 'main/img/looking-up.jpg' %}"
-            alt="Card 3"
-            style="width: 100%; height: 400px; object-fit: cover"
-          />
-          <div
-            class="card-overlay"
-            style="
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              background: rgba(0, 0, 0, 0.7);
-              color: white;
-              padding: 15px;
-              opacity: 0;
-              transition: opacity 0.3s;
-              text-align: center;
-            "
-          >
-            <a
-              href="/issues/"
-              style="
-                color: white;
-                text-decoration: none;
-                font-family: 'Georgia Pro', Georgia, serif;
-                font-size: 1.15em;
-                opacity: 1;
-              "
-              >Issues</a
-            >
-            <p
-              style="
-                font-size: 0.9em;
-                margin-top: 5px;
-                font-family: 'Georgia Pro', Georgia, serif;
-              "
-            >
-              Our experts are leading the way in sustainable engineering,
-              combining innovation with environmental responsibility to create
-              structures that stand the test of time.
-            </p>
+      <!-- 4 Image Cards -->
+      <div class="four-image-cards slide-up">
+        <div class="card-container">
+          <a href="{% url 'service_detail' 'Architecture-and-Design' %}">
+          <div class="image-card">
+            <img src="{% static 'main/img/projects/Gardenia.jpg' %}" alt="Urban Development" />
+          </div>
+          </a>
+          <div class="card-link-container">
+            <a href="{% url 'services' %}" class="card-link">Services</a>
+            <div class="card-link-text">
+              <p class="card-link-main">Architecture and Design</p>
+              <p class="card-link-sub">Creating iconic, user-centric designs for commercial, <br> institutional, residential, science and industry, and hospitality projects.</p></p>
+            </div>
           </div>
         </div>
-
-        <!-- News link placed directly BELOW the third card -->
-        <div
-          class="card-link news-under-card"
-          style="text-align:center; width:100%; max-width:350px; padding:12px 0 0 0; margin-top:8px; grid-column:3; grid-row-start:5; justify-self:center;"
-        >
-          <a
-            href="/news/"
-            style="
-              opacity: 0.45;
-              text-decoration: none;
-              color: #222;
-              font-family: 'Georgia Pro', Georgia, serif;
-              font-size: 0.9em;
-            "
-            >News</a
-          >
+        <div class="card-container">
+          <a href="{% url 'insights' %}">
+          <div class="image-card">
+            <img src="{% static 'main/img/1753531971197.jpg' %}" alt="3D Modeling" />
+          </div>
+          </a>
+          <div class="card-link-container">
+            <a href="{% url 'insights' %}" class="card-link">Issues</a>
+            <div class="card-link-text">
+              <p class="card-link-main">how do you solve tight spaces with smart design and precise engineering</p>
+              <p class="card-link-sub">we believe complex challenges can be catalysts for better design</p>
+            </div>
+          </div>
         </div>
-
-        <!-- MOVED: Projects link + description placed directly BELOW the third card (no duplicate) -->
-        <div
-          class="card-link projects-under-card"
-          style="text-align:center; width:100%; max-width:350px; padding:12px 0 0 0; margin-top:8px; grid-column:3; grid-row-start:6; justify-self:center;"
-        >
-          <a
-            href="/projects/"
-            style="
-              opacity: 0.45;
-              text-decoration: none;
-              color: #222;
-              font-family: 'Georgia Pro', Georgia, serif;
-              font-size: 0.9em;
-            "
-            >Projects</a
-          >
-          <p
-            style="
-              font-size: 1.9em;
-              color: #222;
-              margin-top: 5px;
-              font-family: 'Georgia Pro', Georgia, serif;
-            "
-          >
-            Discover our innovative projects shaping the future.
-          </p>
+        <div class="card-container">
+          <a href="{% url 'project_detail' 'the-exchange-apartments' %}">
+          <div class="image-card">
+            <img src="{% static 'main/img/projects/The Exchange apartments.jpg' %}" alt="Sustainable Architecture" />
+          </div>
+          </a>
+          <div class="card-link-container">
+            <a href="{% url 'projects' %}" class="card-link">Projects</a>
+            <div class="card-link-text">
+              <p class="card-link-main">The exchange apartments</p>
+              <p class="card-link-sub">Modern living spaces designed for contemporary urban lifestyles</p>
+            </div>
+          </div>
         </div>
-        
-        <div
-          class="card masonry-card"
-          style="
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-            grid-row-end: span 6;
-          "
-        >
-          <img
-            src="{% static 'main/img/clear-glass-walled-building-blue-sky.jpg' %}"
-            alt="Clear Glass Walled Building Blue Sky"
-            style="width: 100%; height: 550px; object-fit: cover"
-          />
-        </div>
-
+        <div class="card-container">
+          <a href="{% url 'news' %}">
+          <div class="image-card">
+            <img src="{% static 'main/img/projects/Beach house.1.jpg' %}" alt="Modern Construction" />
+          </div>
+          </a>
+          <div class="card-link-container">
+            <a href="{% url 'news' %}" class="card-link">News</a>
+            <div class="card-link-text">
+              <p class="card-link-main">ABOD founder along with others win IFC Edge Design Competition</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -455,7 +308,7 @@
         </div>
 
         <div class="issues-content">
-          <a href="#" class="issue-card card-orange">
+          <a href="#" class="issue-card">
             <img
               src="{% static 'main/img/chisinau-arena-sunset-moldova.jpg' %}"
               alt="City skyline"
@@ -469,7 +322,7 @@
             </div>
           </a>
 
-          <a href="#" class="issue-card card-red">
+          <a href="#" class="issue-card">
             <img
               src="{% static 'main/img/low-angle-red-geometrical-structure-blue-sky.jpg' %}"
               alt="High-speed rail"
@@ -483,7 +336,7 @@
             </div>
           </a>
 
-          <a href="#" class="issue-card card-green">
+          <a href="#" class="issue-card">
             <img
               src="{% static 'main/img/looking-up.jpg' %}"
               alt="Industrial community"
@@ -493,6 +346,20 @@
               <span class="card-label">Issue</span>
               <h2 class="card-title">
                 How do we Prioritize inclusive, user-focused solutions?
+              </h2>
+            </div>
+          </a>
+
+          <a href="#" class="issue-card">
+            <img
+              src="{% static 'main/img/modern-building.jpg' %}"
+              alt="Modern building"
+              class="card-fill"
+            />
+            <div class="card-content">
+              <span class="card-label">Issue</span>
+              <h2 class="card-title">
+                How do we integrate technology with sustainable design?
               </h2>
             </div>
           </a>
