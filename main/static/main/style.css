@@ -130,6 +130,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrolling of the entire page */
 }
 
 /* main content should grow to fill available space */
