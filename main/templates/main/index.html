@@ -167,6 +167,7 @@
         Our experts are leading the way
       </p>
 
+
       <!-- 4 Image Cards -->
       <div class="four-image-cards slide-up">
         <div class="card-container">
@@ -178,8 +179,8 @@
           <div class="card-link-container">
             <a href="{% url 'services' %}" class="card-link">Services</a>
             <div class="card-link-text">
-              <p class="card-link-main">Architecture and Design</p>
-              <p class="card-link-sub">Creating iconic, user-centric designs for commercial, <br> institutional, residential, science and industry, and hospitality projects.</p></p>
+              <p class="card-link-main">Creating iconic, user-centric designs</p>
+              <p class="card-link-sub">Expert architecture and design solutions for diverse projects</p>
             </div>
           </div>
         </div>
@@ -308,7 +309,7 @@
         </div>
 
         <div class="issues-content">
-          <a href="#" class="issue-card">
+          <a href="#" class="issue-card card-orange">
             <img
               src="{% static 'main/img/chisinau-arena-sunset-moldova.jpg' %}"
               alt="City skyline"
@@ -322,7 +323,7 @@
             </div>
           </a>
 
-          <a href="#" class="issue-card">
+          <a href="#" class="issue-card card-red">
             <img
               src="{% static 'main/img/low-angle-red-geometrical-structure-blue-sky.jpg' %}"
               alt="High-speed rail"
@@ -336,7 +337,7 @@
             </div>
           </a>
 
-          <a href="#" class="issue-card">
+          <a href="#" class="issue-card card-green">
             <img
               src="{% static 'main/img/looking-up.jpg' %}"
               alt="Industrial community"
@@ -346,20 +347,6 @@
               <span class="card-label">Issue</span>
               <h2 class="card-title">
                 How do we Prioritize inclusive, user-focused solutions?
-              </h2>
-            </div>
-          </a>
-
-          <a href="#" class="issue-card">
-            <img
-              src="{% static 'main/img/modern-building.jpg' %}"
-              alt="Modern building"
-              class="card-fill"
-            />
-            <div class="card-content">
-              <span class="card-label">Issue</span>
-              <h2 class="card-title">
-                How do we integrate technology with sustainable design?
               </h2>
             </div>
           </a>
@@ -584,5 +571,44 @@
       });
     </script>
     <script src="{% static 'main/site-search.js' %}"></script>
+    <script>
+      // Card text fade-in on horizontal scroll for mobile
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get all the image cards and text containers
+        const cards = document.querySelectorAll('.four-image-cards .image-card');
+        const textContainers = document.querySelectorAll('.four-image-cards .card-link-container');
+        
+        // Create Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            // Find the index of the current card
+            const cardIndex = Array.from(cards).indexOf(entry.target);
+            
+            if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+              // Card is in view - fade in corresponding text
+              if (textContainers[cardIndex]) {
+                textContainers[cardIndex].classList.add('fade-in');
+                textContainers[cardIndex].classList.remove('fade-out');
+              }
+            } else {
+              // Card is out of view - fade out corresponding text
+              if (textContainers[cardIndex]) {
+                textContainers[cardIndex].classList.add('fade-out');
+                textContainers[cardIndex].classList.remove('fade-in');
+              }
+            }
+          });
+        }, {
+          root: null, // Use viewport as root for better mobile horizontal scroll detection
+          threshold: 0.5, // Trigger when 50% of card is visible
+          rootMargin: '0px'
+        });
+        
+        // Observe each card
+        cards.forEach(card => {
+          observer.observe(card);
+        });
+      });
+    </script>
   </body>
 </html>
