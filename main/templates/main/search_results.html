@@ -135,8 +135,11 @@
         {% for r in results %}
           <a class="search-result" href="{{ r.url }}">
             <div class="result-left">
-              <div class="result-title">{{ r.title }}</div>
+              <div class="result-title">{{ r.title|safe }}</div>
               <div class="result-source">{{ r.source }}</div>
+              {% if r.snippet %}
+                <div class="result-snippet">{{ r.snippet|safe }}</div>
+              {% endif %}
             </div>
             <div class="result-right">
               <span class="arrow" aria-hidden="true">&#x2192;</span>
@@ -145,7 +148,8 @@
         {% endfor %}
       {% else %}
         <div class="search-result">
-          <div class="result-title">No results found</div>
+          <div class="result-title">No results found for "{{ query }}"</div>
+          <div class="result-source">Try adjusting your search terms</div>
         </div>
       {% endif %}
     </div>

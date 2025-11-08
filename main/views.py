@@ -51,7 +51,7 @@ growth and informed decision-making."""
 	    'title': 'Digital innovation and Experimental Design',
 	    'slug': 'digital-innovation-experimental-design',
 	    'description': 'Utilizing BIM, digital twinning, and parametric design for'
-	    ' creating lighting design,night-time design, and immersive experience design for '
+	    ' creating lighting design, night-time design, and immersive experience design for '
 	    'cultural, public, and event spaces, including major event overlay design.'
 	},
 	{
@@ -64,7 +64,7 @@ growth and informed decision-making."""
 	{
 		'title': 'Project Management',
 		'slug': 'project-management',
-		'description': 'Employing Agile methodologies for client-centric project management, '
+		'description': 'Employing agile methodologies for client-centric project management, '
 		'alongside innovative product design and sustainable material specification.'
 	},
 	{
@@ -289,6 +289,90 @@ def search(request):
 						start = max(0, idx - 80)
 						end = min(len(st), idx + 80)
 						snippet = s['body'][start:end].strip() if s['body'] else ''
+						# remove Django template tags
+						snippet = re.sub(r'{%.*?%}', '', snippet, flags=re.DOTALL)
+						snippet = re.sub(r'{{.*?}}', '', snippet, flags=re.DOTALL)
+						# highlight the query
+						snippet = re.sub(re.escape(q), lambda m: f'<mark>{m.group()}</mark>', snippet, flags=re.IGNORECASE)
+						# create an anchor-like slug for per-section links
+						slug = re.sub(r"[^a-z0-9]+", '-', s['title'].lower()).strip('-') or 'section'
+						results.append({'title': s['title'], 'url': f'/services/#{slug}', 'snippet': snippet, 'source': 'Services'})
+			# remove duplicates (by title)
+			seen = set()
+			unique = []
+			for r in results:
+				if r['title'] not in seen:
+					seen.add(r['title'])
+					unique.append(r)
+			results = unique
+			return render(request, 'main/search_results.html', {'query': query, 'results': results})
+
+		# Search projects
+		for proj in PROJECTS:
+			title_lower = proj['title'].lower()
+			desc_lower = proj['description'].lower()
+			if q in title_lower or q in desc_lower:
+				snippet = proj['description']
+				# highlight
+				snippet = re.sub(re.escape(q), lambda m: f'<mark>{m.group()}</mark>', snippet, flags=re.IGNORECASE)
+				results.append({
+					'title': proj['title'],
+					'url': f'/projects/{proj["slug"]}/',
+					'snippet': snippet,
+					'source': 'Projects',
+					'score': 50 if q in title_lower else 40
+				})
+
+		templates_dir = Path(__file__).resolve().parent / 'templates' / 'main'
+		if templates_dir.exists():
+			for path in templates_dir.glob('*.html'):
+				try:
+					text = path.read_text(encoding='utf-8')
+				except Exception:
+					continue
+				name = path.stem
+				# Skip the home page and projects page as they are handled separately
+				if name in ('index', 'projects'):
+					continue
+				lower = text.lower()
+			templates_dir = Path(__file__).resolve().parent / 'templates' / 'main'
+			path = templates_dir / 'services.html'
+			if path.exists():
+				try:
+					text = path.read_text(encoding='utf-8')
+				except Exception:
+					text = ''
+				# Find h2/h3 headings and their following block (until next heading)
+				sections = []
+				for m in re.finditer(r'<h([2-3])[^>]*>(.*?)</h\1>', text, re.IGNORECASE | re.DOTALL):
+					title = re.sub(r'<[^>]+>', '', m.group(2)).strip()
+					start = m.end()
+					# find next heading
+					next_m = re.search(r'<h[2-3][^>]*>', text[start:], re.IGNORECASE)
+					end = start + (next_m.start() if next_m else min(3000, len(text)-start))
+					body = re.sub(r'<[^>]+>', '', text[start:end]).strip()
+					sections.append({'title': html.unescape(title), 'body': html.unescape(body)})
+				# If no h2/h3 found, try tokens in the whole page
+				if not sections:
+					# fall back to splitting by paragraphs
+					for m in re.finditer(r'<p[^>]*>(.*?)</p>', text, re.IGNORECASE | re.DOTALL):
+						ptext = re.sub(r'<[^>]+>', '', m.group(1)).strip()
+						if ptext:
+							sections.append({'title': ptext[:60], 'body': ptext})
+				# Search sections for query
+				for s in sections:
+					st = s['title'].lower() + '\n' + s['body'].lower()
+					if q in st:
+						# simple snippet around first occurrence
+						idx = st.find(q)
+						start = max(0, idx - 80)
+						end = min(len(st), idx + 80)
+						snippet = s['body'][start:end].strip() if s['body'] else ''
+						# remove Django template tags
+						snippet = re.sub(r'{%.*?%}', '', snippet, flags=re.DOTALL)
+						snippet = re.sub(r'{{.*?}}', '', snippet, flags=re.DOTALL)
+						# highlight the query
+						snippet = re.sub(re.escape(q), lambda m: f'<mark>{m.group()}</mark>', snippet, flags=re.IGNORECASE)
 						# create an anchor-like slug for per-section links
 						slug = re.sub(r"[^a-z0-9]+", '-', s['title'].lower()).strip('-') or 'section'
 						results.append({'title': s['title'], 'url': f'/services/#{slug}', 'snippet': snippet, 'source': 'Services'})
@@ -310,6 +394,9 @@ def search(request):
 					continue
 				lower = text.lower()
 				name = path.stem
+				# Skip the home page as it's not a content page
+				if name == 'index':
+					continue
 				url = '/' if name == 'index' else f'/{name}/'
 				_source_map = {
 					'markets': 'Markets',
@@ -327,11 +414,17 @@ def search(request):
 				# Find <title>
 				m_title = re.search(r'<title>(.*?)</title>', text, re.IGNORECASE | re.DOTALL)
 				page_title = m_title.group(1).strip() if m_title else source
+				# If title contains template syntax, use source instead
+				if '{{' in page_title or '{%' in page_title:
+					page_title = source
 
 				# Extract headings (h1-h3) with positions for context lookup
 				headings = []
 				for mh in re.finditer(r'<h([1-3])[^>]*>(.*?)</h\1>', text, re.IGNORECASE | re.DOTALL):
 					h_text = re.sub(r'<[^>]+>', '', mh.group(2)).strip()
+					# remove Django template tags
+					h_text = re.sub(r'\{%.*?%\}', '', h_text, flags=re.DOTALL)
+					h_text = re.sub(r'\{\{.*?\}\}', '', h_text, flags=re.DOTALL)
 					headings.append({'pos': mh.start(), 'text': html.unescape(h_text)})
 
 				score = 0
@@ -350,41 +443,42 @@ def search(request):
 						chosen_title = h['text']
 						# snippet is the heading and small surrounding text
 						snippet = h['text']
+						# remove Django template tags if any
+						snippet = re.sub(r'{%.*?%}', '', snippet, flags=re.DOTALL)
+						snippet = re.sub(r'{{.*?}}', '', snippet, flags=re.DOTALL)
+						# highlight the query
+						snippet = re.sub(re.escape(q), lambda m: f'<mark>{m.group()}</mark>', snippet, flags=re.IGNORECASE)
 						break
 
 				# If not matched in headings, search the body
 				if chosen_title is None and q in lower:
-					# find first occurrence
-					idx = lower.find(q)
-					# find nearest preceding heading to use as title
-					prev_heading = None
-					for h in reversed(headings):
-						if h['pos'] <= idx:
-							prev_heading = h['text']
-							break
-					if prev_heading:
-						chosen_title = prev_heading
-						score += 30
-					else:
-						# fall back to page title
-						chosen_title = page_title
-						score += 10
+					# Strip HTML and template tags from the entire text first
+					clean_text = re.sub(r'<[^>]+>', '', text)
+					clean_text = re.sub(r'{%.*?%}', '', clean_text, flags=re.DOTALL)
+					clean_text = re.sub(r'{{.*?}}', '', clean_text, flags=re.DOTALL)
+					clean_lower = clean_text.lower()
+					idx = clean_lower.find(q)
+					if idx != -1:
+						# find nearest preceding heading to use as title
+						prev_heading = None
+						for h in reversed(headings):
+							if h['pos'] <= idx:
+								prev_heading = h['text']
+								break
+						if prev_heading and q in prev_heading.lower():
+							chosen_title = prev_heading
+							score += 30
+						else:
+							# fall back to page title
+							chosen_title = page_title
+							score += 10
 
-					# build a snippet around the match
-					start = max(0, idx - 80)
-					end = min(len(text), idx + 80)
-					snippet = re.sub(r'<[^>]+>', '', text[start:end]).strip()
-
-				# If nothing matched, attempt loose token matching (OR)
-				if chosen_title is None:
-					tokens = re.findall(r"\w{3,}", q)
-					token_hits = 0
-					for t in tokens:
-						token_hits += lower.count(t)
-					if token_hits > 0:
-						chosen_title = page_title
-						score += token_hits * 5
-						snippet = re.sub(r'<[^>]+>', '', text[:160]).strip()
+						# build a snippet around the match in clean text
+						start = max(0, idx - 80)
+						end = min(len(clean_text), idx + 80)
+						snippet = clean_text[start:end].strip()
+						# highlight the query in the snippet
+						snippet = re.sub(re.escape(q), lambda m: f'<mark>{m.group()}</mark>', snippet, flags=re.IGNORECASE)
 
 				if chosen_title and score > 0:
 					results.append({
@@ -400,5 +494,36 @@ def search(request):
 			# remove score before returning
 			for r in results:
 				r.pop('score', None)
+
+		# Also search in PROJECTS data
+		for p in PROJECTS:
+			p_lower = (p['title'] + ' ' + p['description'] + ' ' + p['location']).lower()
+			if q in p_lower:
+				idx = p_lower.find(q)
+				snippet = p['description']
+				# highlight
+				snippet = re.sub(re.escape(q), lambda m: f'<mark>{m.group()}</mark>', snippet, flags=re.IGNORECASE)
+				results.append({
+					'title': p['title'],
+					'url': '/projects/',
+					'snippet': snippet,
+					'source': 'Projects',
+				})
+
+		# Also search in SERVICES data
+		for s in SERVICES:
+			s_lower = (s['title'] + ' ' + s['description']).lower()
+			if q in s_lower:
+				idx = s_lower.find(q)
+				snippet = s['description']
+				# highlight
+				snippet = re.sub(re.escape(q), lambda m: f'<mark>{m.group()}</mark>', snippet, flags=re.IGNORECASE)
+				results.append({
+					'title': s['title'],
+					'url': '/services/',
+					'snippet': snippet,
+					'source': 'Services',
+				})
+
 	return render(request, 'main/search_results.html', {'query': query, 'results': results})
 

@@ -1,0 +1,546 @@
+// Site-wide search modal and toggle
+if (window.__site_search_installed) {
+  // already installed
+} else {
+  window.__site_search_installed = true;
+
+  function createSearchDropdown() {
+    const existing = document.getElementById("global-search-dropdown");
+    if (existing) {
+      // toggle close
+      existing.remove();
+      return;
+    }
+
+    const nav = document.querySelector("nav.navbar");
+    const rect = nav ? nav.getBoundingClientRect() : { bottom: 56 };
+    const top = rect.bottom + window.scrollY;
+
+    const dropdown = document.createElement("div");
+    dropdown.id = "global-search-dropdown";
+    dropdown.style.position = "absolute";
+    dropdown.style.left = "0";
+    dropdown.style.right = "0";
+    dropdown.style.top = top + "px";
+    dropdown.style.display = "flex";
+    dropdown.style.justifyContent = "center";
+    dropdown.style.zIndex = "9999";
+    dropdown.style.pointerEvents = "none";
+
+    const box = document.createElement("div");
+    box.style.width = "min(1100px, 96vw)";
+    box.style.background = "#fff";
+    box.style.padding = "12px 14px";
+    box.style.borderRadius = "8px";
+    box.style.boxShadow = "0 10px 30px rgba(0,0,0,0.12)";
+    box.style.transform = "translateY(-8px)";
+    box.style.opacity = "0";
+    box.style.transition = "transform 260ms ease, opacity 220ms ease";
+    box.style.pointerEvents = "auto";
+
+    const form = document.createElement("form");
+    form.method = "get";
+    form.action = "/search/";
+    form.style.display = "flex";
+    form.style.gap = "8px";
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.name = "q";
+    input.id = "global-search-input";
+    input.placeholder = "Search the site...";
+    input.style.flex = "1";
+    input.style.fontSize = "1rem";
+    input.style.padding = "10px 12px";
+    input.style.border = "1px solid #e6e6e6";
+    input.style.borderRadius = "6px";
+
+    const submit = document.createElement("button");
+    submit.type = "submit";
+    submit.textContent = "Search";
+    submit.style.padding = "10px 14px";
+    submit.style.border = "none";
+    submit.style.borderRadius = "6px";
+    submit.style.background = "#e67e22";
+    submit.style.color = "#fff";
+    submit.style.cursor = "pointer";
+
+    form.appendChild(input);
+    form.appendChild(submit);
+    box.appendChild(form);
+    dropdown.appendChild(box);
+    document.body.appendChild(dropdown);
+
+    // force next frame then animate down
+    requestAnimationFrame(() => {
+      box.style.transform = "translateY(0)";
+      box.style.opacity = "1";
+    });
+
+    // focus input
+    setTimeout(() => input.focus(), 50);
+
+    function updatePosition() {
+      const nav = document.querySelector("nav.navbar");
+      const rect = nav ? nav.getBoundingClientRect() : { bottom: 56 };
+      const top = rect.bottom + window.scrollY;
+      dropdown.style.top = top + "px";
+    }
+
+    function closeDropdown() {
+      const el = document.getElementById("global-search-dropdown");
+      if (!el) return;
+      const inner = el.firstChild;
+      inner.style.transform = "translateY(-8px)";
+      inner.style.opacity = "0";
+      setTimeout(() => el.remove(), 240);
+      document.removeEventListener("click", outsideClick);
+      document.removeEventListener("keydown", escHandler);
+      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", updatePosition);
+    }
+
+    function outsideClick(e) {
+      if (
+        !box.contains(e.target) &&
+        !e.target.closest('.icon-link[title="Search"]')
+      ) {
+        closeDropdown();
+      }
+    }
+
+    function escHandler(e) {
+      if (e.key === "Escape") closeDropdown();
+    }
+
+    // close when clicking outside or pressing escape
+    setTimeout(() => document.addEventListener("click", outsideClick), 0);
+    document.addEventListener("keydown", escHandler);
+    // update position on resize/scroll (handles mobile menu changes)
+    window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", updatePosition);
+  }
+
+  function createInFlowSearch() {
+    // if already exists, toggle
+    var existing = document.getElementById("search-bar");
+    if (existing) {
+      // ensure existing matches our standard structure
+      ensureStandardSearch(existing);
+      existing.classList.toggle("active");
+      var inp = existing.querySelector("input");
+      if (inp) inp.focus();
+      return;
+    }
+
+    var nav = document.querySelector("nav.navbar");
+    if (!nav) return;
+
+    var built = buildStandardSearch();
+    var wrapper = built.wrapper;
+    var input = built.input;
+
+    // insert after navbar
+    nav.parentNode.insertBefore(wrapper, nav.nextSibling);
+
+    // animate in
+    requestAnimationFrame(function () {
+      wrapper.classList.add("active");
+    });
+
+    setTimeout(function () {
+      input.focus();
+    }, 120);
+  }
+
+  function buildStandardSearch() {
+    var wrapper = document.createElement("div");
+    wrapper.id = "search-bar";
+    wrapper.className =
+      "results-search-wrapper navbar-results-search search-bar full-bleed in-flow-search";
+    wrapper.style.width = "100%";
+    wrapper.style.boxSizing = "border-box";
+
+    var form = document.createElement("form");
+    form.method = "get";
+    form.action = "/search/";
+    form.className = "results-search-form";
+
+    var bar = document.createElement("div");
+    bar.className = "results-search-bar";
+
+    var submit = document.createElement("button");
+    submit.type = "submit";
+    submit.className = "results-search-submit";
+    submit.setAttribute("aria-label", "Submit search");
+    submit.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+
+    var input = document.createElement("input");
+    input.type = "text";
+    input.name = "q";
+    input.id = "results-search-input";
+    input.placeholder = "search ABOD";
+    input.setAttribute("aria-label", "Search ABOD");
+    input.style.flex = "1";
+
+    var clear = document.createElement("button");
+    clear.type = "button";
+    clear.className = "results-search-clear";
+    clear.id = "results-search-clear";
+    clear.setAttribute("aria-label", "Clear search");
+    clear.textContent = "×";
+    clear.addEventListener("click", function () {
+      if (input.value && input.value.trim().length > 0) {
+        input.value = "";
+        input.focus();
+      } else {
+        wrapper.remove();
+      }
+    });
+
+    bar.appendChild(submit);
+    bar.appendChild(input);
+    bar.appendChild(clear);
+    form.appendChild(bar);
+    wrapper.appendChild(form);
+
+    return { wrapper: wrapper, input: input };
+  }
+
+  function ensureStandardSearch(el) {
+    // If element already looks correct, do nothing
+    if (
+      el.classList.contains("results-search-wrapper") &&
+      el.querySelector &&
+      el.querySelector(".results-search-bar")
+    ) {
+      return;
+    }
+
+    // Otherwise, replace it with our standard structure while keeping any
+    // existing JS references stable by replacing in-place.
+    var built = buildStandardSearch();
+    el.parentNode.replaceChild(built.wrapper, el);
+    return built.wrapper;
+  }
+
+  document.addEventListener("click", function (e) {
+    const target =
+      e.target.closest && e.target.closest('.icon-link[title="Search"]');
+    if (target) {
+      e.preventDefault();
+      // Delegate to createInFlowSearch which handles both toggling an existing
+      // search bar and creating/animating a new one with the standard markup.
+      createInFlowSearch();
+    }
+  });
+
+  // Install a site-wide hamburger/mobile menu toggle so every page that includes
+  // this script gets consistent behavior (no inline JS required in templates).
+  if (!window.__hamburger_installed) {
+    window.__hamburger_installed = true;
+
+    function closeMobileMenu(hamburger, mobileMenu) {
+      if (hamburger) hamburger.classList.remove("active");
+      if (mobileMenu) mobileMenu.classList.remove("open");
+      const overlay = document.getElementById("mobile-overlay");
+      if (overlay) overlay.remove();
+    }
+
+    function openMobileMenu(hamburger, mobileMenu) {
+      if (hamburger) hamburger.classList.add("active");
+      if (mobileMenu) mobileMenu.classList.add("open");
+      // add semi-opaque overlay to indicate modal state and capture clicks
+      let overlay = document.getElementById("mobile-overlay");
+      if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.id = "mobile-overlay";
+        overlay.style.position = "fixed";
+        overlay.style.top = "0";
+        overlay.style.left = "0";
+        overlay.style.width = "100vw";
+        overlay.style.height = "100vh";
+        overlay.style.background = "rgba(0,0,0,0.35)";
+        overlay.style.zIndex = "999";
+        overlay.style.backdropFilter = "blur(2px)";
+        document.body.appendChild(overlay);
+        overlay.addEventListener("click", () =>
+          closeMobileMenu(hamburger, mobileMenu)
+        );
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (!hamburger || !mobileMenu) return;
+
+      // ensure clicking the hamburger toggles the menu
+      hamburger.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (hamburger.classList.contains("active")) {
+          closeMobileMenu(hamburger, mobileMenu);
+        } else {
+          openMobileMenu(hamburger, mobileMenu);
+        }
+      });
+
+      // close when clicking a nav link inside the mobile menu
+      mobileMenu.querySelectorAll &&
+        mobileMenu.querySelectorAll(".mobile-nav-links a").forEach((link) => {
+          link.addEventListener("click", function () {
+            closeMobileMenu(hamburger, mobileMenu);
+          });
+        });
+
+      // close on escape
+      document.addEventListener("keydown", function (ev) {
+        if (ev.key === "Escape") closeMobileMenu(hamburger, mobileMenu);
+      });
+    });
+  }
+}
+// Reveal-on-scroll: animate elements with .reveal when they enter the viewport
+(function () {
+  if (typeof window === "undefined") return;
+  function installReveal() {
+    var items = Array.prototype.slice.call(
+      document.querySelectorAll(".services-list .reveal")
+    );
+    if (!items.length) return;
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            // if element already visible, skip
+            if (el.classList.contains("visible")) {
+              io.unobserve(el);
+              return;
+            }
+            // small stagger based on index of element among reveal siblings
+            var idx = items.indexOf(el);
+            if (idx >= 0)
+              el.style.transitionDelay = Math.min(idx, 6) * 40 + "ms";
+            el.classList.add("visible");
+            io.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    items.forEach(function (it) {
+      io.observe(it);
+    });
+  }
+
+  // install on DOMContentLoaded and after PJAX-like replacements
+  document.addEventListener("DOMContentLoaded", installReveal);
+  // Also in case content is injected later
+  window.addEventListener("load", installReveal);
+})();
+
+/* Work showcase slide watcher: on mobile, highlight the visible card and show its text */
+(function () {
+  if (typeof window === "undefined") return;
+
+  function initWorkSlideWatcher() {
+    var showcase = document.querySelector(".work-showcase");
+    if (!showcase) return;
+
+    var scroller = showcase; // we've made the container horizontally scrollable
+    var items = Array.prototype.slice.call(
+      showcase.querySelectorAll(".work-images a")
+    );
+    var texts = Array.prototype.slice.call(
+      showcase.querySelectorAll(".work-texts .work-text")
+    );
+    if (!items.length || !texts.length) return;
+
+    // ensure initial state: mark first as active and create floating description
+    var floating = showcase.querySelector(".work-floating-text");
+    if (!floating) {
+      floating = document.createElement("div");
+      floating.className = "work-floating-text";
+      showcase.appendChild(floating);
+    }
+
+    function positionFloatingForItem(item, htmlContent) {
+      // Use offsets and scrollLeft so the floating text follows the item while
+      // the scroller is horizontally scrolled (avoids snapping to first card).
+      var scrollerEl = showcase.querySelector(".work-images") || showcase;
+      var itemOffsetLeft = item.offsetLeft; // offset relative to .work-images
+      var scrollLeft = scroller.scrollLeft;
+      var itemWidth = item.offsetWidth;
+
+      // compute width for the floating box (not wider than showcase)
+      var width = Math.min(
+        itemWidth,
+        Math.max(200, showcase.clientWidth * 0.88)
+      );
+
+      // left within showcase: itemOffsetLeft - scrollLeft + center adjustment
+      var left = itemOffsetLeft - scrollLeft + (itemWidth - width) / 2;
+
+      // vertical position: place below the scroller's visible area
+      var imagesRect = scrollerEl.getBoundingClientRect();
+      var scRect = showcase.getBoundingClientRect();
+      var top = imagesRect.bottom - scRect.top + 8; // gap under images
+
+      floating.style.width = Math.round(width) + "px";
+      floating.style.left = Math.round(left) + "px";
+      floating.style.top = Math.round(top) + "px";
+      floating.innerHTML = htmlContent;
+      floating.classList.add("visible");
+    }
+
+    function clearFloating() {
+      floating.classList.remove("visible");
+    }
+
+    var currentActiveIndex = 0;
+    function setActive(index) {
+      currentActiveIndex = index;
+      items.forEach(function (it, i) {
+        if (i === index) it.classList.add("active");
+        else it.classList.remove("active");
+      });
+      texts.forEach(function (t, i) {
+        if (i === index) t.classList.add("active");
+        else t.classList.remove("active");
+      });
+
+      var it = items[index];
+      var txt = texts[index];
+      if (it && txt) {
+        positionFloatingForItem(it, txt.innerHTML);
+      } else {
+        clearFloating();
+      }
+    }
+
+    // IntersectionObserver on the anchors with root the showcase container
+
+    // Debounced scroll fallback: on fast swipes IntersectionObserver can miss updates
+    var scrollTimeout = null;
+    function onScroll() {
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function () {
+        // compute center of scroller viewport
+        var rect = scroller.getBoundingClientRect();
+        var centerX = rect.left + rect.width / 2;
+
+        var closest = { idx: 0, dist: Infinity };
+        items.forEach(function (it, i) {
+          var r = it.getBoundingClientRect();
+          var itemCenter = r.left + r.width / 2;
+          var d = Math.abs(itemCenter - centerX);
+          if (d < closest.dist) {
+            closest = { idx: i, dist: d };
+          }
+        });
+        if (closest && typeof closest.idx === "number") setActive(closest.idx);
+      }, 80);
+    }
+
+    scroller.addEventListener("scroll", onScroll, { passive: true });
+    // also trigger once after load to align state
+    setTimeout(onScroll, 120);
+
+    // While the user is actively scrolling, reposition the floating text so it
+    // stays visually below the moving item. Use requestAnimationFrame for smoothness.
+    var rafId = null;
+    function repositionDuringScroll() {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(function () {
+        var idx =
+          typeof currentActiveIndex === "number" ? currentActiveIndex : 0;
+        var it = items[idx];
+        var txt = texts[idx];
+        if (it && txt && floating.classList.contains("visible")) {
+          positionFloatingForItem(it, txt.innerHTML);
+        }
+      });
+    }
+    scroller.addEventListener("scroll", repositionDuringScroll, {
+      passive: true,
+    });
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            // find index
+            var idx = items.indexOf(entry.target);
+            if (idx >= 0) setActive(idx);
+          }
+        });
+      },
+      { root: scroller, threshold: 0.5 }
+    );
+
+    items.forEach(function (it) {
+      io.observe(it);
+    });
+
+    // If user resizes or the page loads, snap to nearest item and ensure active updates
+    window.addEventListener("resize", function () {
+      // no-op; IntersectionObserver will re-evaluate
+    });
+
+    // initial set
+    setActive(0);
+  }
+
+  if (document.readyState === "loading")
+    document.addEventListener("DOMContentLoaded", initWorkSlideWatcher);
+  else initWorkSlideWatcher();
+})();
+
+/* Contact accordions: init smooth slide toggles for panels defined in contact.html */
+(function () {
+  if (typeof window === "undefined") return;
+
+  function initContactAccordions() {
+    var toggles = Array.prototype.slice.call(
+      document.querySelectorAll(".accordion-toggle")
+    );
+    if (!toggles.length) return;
+
+    toggles.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var expanded = btn.getAttribute("aria-expanded") === "true";
+        var panelId = btn.getAttribute("aria-controls");
+        var panel = panelId ? document.getElementById(panelId) : null;
+        if (!panel) return;
+
+        if (expanded) {
+          btn.setAttribute("aria-expanded", "false");
+          panel.style.maxHeight = null;
+          panel.classList.remove("open");
+        } else {
+          btn.setAttribute("aria-expanded", "true");
+          panel.classList.add("open");
+          // set explicit maxHeight for the transition
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+
+    // Ensure any panels marked open on load expand to their content height
+    Array.prototype.slice
+      .call(document.querySelectorAll(".accordion-content.open"))
+      .forEach(function (panel) {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initContactAccordions);
+  } else {
+    initContactAccordions();
+  }
+})();

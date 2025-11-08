@@ -1,3 +1,8 @@
+/* Enable smooth scrolling globally */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Arup Style Card Layout */
 .main-container {
   display: flex;
@@ -427,6 +432,22 @@ nav.navbar .navbar-right a.active::after,
   margin-top: 6px;
 }
 
+.search-result .result-snippet {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.search-result mark {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
 .result-left {
   flex: 1 1 auto;
   min-width: 0;
@@ -466,11 +487,50 @@ nav.navbar .navbar-right a.active::after,
   color: #333;
 }
 
-@media (max-width: 900px) {
-  .results-list {
-    left: 12px;
-    width: calc(100% - 24px);
-    max-width: 100%;
+@media (max-width: 768px) {
+  .search-result {
+    padding: 16px 20px;
+  }
+
+  .search-result .result-title {
+    font-size: 1.5rem;
+  }
+
+  .search-result .result-source {
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+
+  .search-result .result-snippet {
+    font-size: 0.8rem;
+    margin-top: 6px;
+    line-height: 1.3;
+  }
+
+  .search-result .arrow {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-result {
+    padding: 14px 16px;
+  }
+
+  .search-result .result-title {
+    font-size: 1.3rem;
+  }
+
+  .search-result .result-source {
+    font-size: 0.85rem;
+  }
+
+  .search-result .result-snippet {
+    font-size: 0.75rem;
+  }
+
+  .search-result .arrow {
+    font-size: 16px;
   }
 }
 /* Services page: left-aligned list and hover-enlarge behavior */
@@ -1135,7 +1195,7 @@ select:-webkit-autofill:focus {
 @media (max-width: 768px) {
   /* Responsively reduce tagline/subtext sizes for small screens */
   .tagline-below-navbar {
-    font-size: 2.5em;
+    font-size: 3.5em;
     text-align: left;
   }
   .below-rectangle-subtext-left {
@@ -1335,6 +1395,12 @@ select:-webkit-autofill:focus {
   border: none;
 }
 
+@media (max-width: 768px) {
+  .full-divider-wrapper {
+    margin-top: 14px;
+  }
+}
+
 .who-are-we {
   max-width: 1200px;
   margin: 12px auto 32px auto;
@@ -1371,6 +1437,12 @@ select:-webkit-autofill:focus {
   font-size: 3rem;
   font-weight: 300;
   margin: 18px 0 8px 0;
+}
+.core-list {
+  font-family: "Georgia Pro", Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #222;
 }
 .core-values {
   max-width: 900px;
@@ -1437,7 +1509,7 @@ select:-webkit-autofill:focus {
   padding: 0;
   font-family: "Georgia Pro", Georgia, serif;
   font-size: 1.5rem;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #222;
 }
 .why-list li {
@@ -1486,6 +1558,27 @@ select:-webkit-autofill:focus {
   }
   .about-cards {
     gap: 14px;
+  }
+  .design-heading {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .who-heading,
+  .core-heading {
+    font-size: 1.5rem;
+  }
+  .who-text,
+  .why-list,
+  .core-list {
+    font-size: 1rem;
+  }
+  .design-heading {
+    font-size: 1.2rem;
+  }
+  .why-heading {
+    font-size: 1.4rem;
   }
 }
 
@@ -1667,7 +1760,7 @@ select:-webkit-autofill:focus {
 
 @media (max-width: 768px) {
   .why-heading {
-    font-size: 1.9rem;
+    font-size: 1.2rem;
   }
 }
 /* OUR CLIENTS heading - slightly larger to match visual weight of other H2s */
@@ -1681,7 +1774,7 @@ select:-webkit-autofill:focus {
 
 @media (max-width: 768px) {
   .clients-heading {
-    font-size: 2.1rem;
+    font-size: 1.2rem;
   }
 }
 .design-philosophy {
@@ -1705,6 +1798,36 @@ select:-webkit-autofill:focus {
   gap: 20px;
   /* provide smooth scroll behavior when converted to flex on wide screens */
   scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  .design-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .design-cards::-webkit-scrollbar {
+    height: 0px;
+    background: transparent;
+    display: none;
+  }
+  .design-cards:focus {
+    outline: none;
+  }
+  .design-card {
+    flex: 0 0 280px;
+    min-width: 280px;
+    max-width: 280px;
+  }
+  .design-controls {
+    display: none;
+  }
 }
 .design-card {
   background: #fff;
@@ -1838,6 +1961,24 @@ select:-webkit-autofill:focus {
     padding: 8px 0;
     -webkit-overflow-scrolling: touch;
   }
+
+  @media (max-width: 768px) {
+    .clients-row {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      overflow-x: visible;
+      justify-content: center;
+      align-items: center;
+    }
+    .clients-row::-webkit-scrollbar {
+      height: 6px;
+    }
+    .clients-row::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.08);
+      border-radius: 6px;
+    }
+  }
   .clients-row::-webkit-scrollbar {
     height: 6px;
   }
@@ -1850,9 +1991,9 @@ select:-webkit-autofill:focus {
     width: 200px; /* increased so logos read more clearly */
     height: 96px;
     display: flex;
-    flex-direction: column; /* stack image above caption */
+    flex-direction: row; /* arrange logo and caption side by side */
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background: transparent;
     border-radius: 10px;
     overflow: hidden;
@@ -2883,6 +3024,20 @@ select:-webkit-autofill:focus {
       flex-direction: column;
       gap: 12px;
     }
+
+    /* Reduce footer font sizes for mobile */
+    .footer-left .site-name {
+      font-size: 1.2rem;
+    }
+    .footer-left .site-desc {
+      font-size: 0.85rem;
+    }
+    .footer-col h4 {
+      font-size: 1rem;
+    }
+    .footer-col a {
+      font-size: 0.9rem;
+    }
   }
   .staff-texts {
     display: grid;
@@ -2892,18 +3047,12 @@ select:-webkit-autofill:focus {
   }
 
   .four-image-cards {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden; /* Prevent vertical scrolling */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 15px;
     margin: 40px auto 0 auto;
     padding: 0 2vw;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-    max-width: 100vw; /* Prevent container from exceeding viewport width */
-    box-sizing: border-box; /* Include padding in width calculation */
-    align-items: flex-start; /* Ensure cards align to top and don't shift vertically */
-    touch-action: pan-x; /* Restrict touch gestures to horizontal panning only */
+    max-width: 96vw; /* Prevent container from exceeding viewport width */
   }
 
   .image-card {
@@ -3779,5 +3928,200 @@ a {
   .four-image-cards .card-link-container.fade-out {
     opacity: 0;
     transform: translateY(20px);
+  }
+}
+
+/* Mobile optimizations for contact page */
+@media (max-width: 768px) {
+  /* Tagline */
+  .contact-page .tagline-below-navbar {
+    font-size: 3em;
+  }
+  .contact-page .tagline-subtext {
+    font-size: 1.5rem;
+  }
+
+  /* Accordions */
+  .contact-accordions {
+    margin: 20px 0 40px 2vw;
+    gap: 12px;
+  }
+  .accordion-toggle {
+    padding: 14px 16px;
+    gap: 6px;
+  }
+  .accordion-title h3 {
+    font-size: 1.5rem;
+  }
+  .accordion-subtext {
+    font-size: 0.9rem;
+  }
+  .accordion-arrow {
+    font-size: 18px;
+  }
+  .contact-accordion .accordion-content {
+    padding: 0 16px;
+  }
+  .contact-accordion .accordion-content.open {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  /* Forms */
+  .contact-form .form-row {
+    margin-bottom: 14px;
+  }
+  .contact-form label {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 1rem;
+    padding: 12px 14px;
+  }
+  .contact-form .short-line {
+    width: 100%;
+    max-width: 280px;
+  }
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+  .contact-form .form-row.message-row textarea {
+    padding-top: 10px;
+  }
+
+  /* Two-up rows on mobile */
+  .contact-form .two-up {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Button */
+  .btn-submit {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+/* Careers page styles */
+.careers-section {
+  padding: 60px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.careers-section h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #111;
+}
+.careers-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+.careers-form {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+.careers-form .form-row {
+  margin-bottom: 18px;
+}
+.careers-form .two-up {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.careers-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.4rem;
+  color: #000000;
+}
+.careers-form input,
+.careers-form select,
+.careers-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background: transparent;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 0.9rem;
+}
+.careers-form textarea {
+  resize: vertical;
+}
+.careers-form .form-row.message-row label {
+  margin-bottom: 4px;
+}
+.careers-form .form-row.message-row textarea {
+  padding-top: 8px;
+}
+.careers-form .short-line {
+  width: 280px;
+  max-width: 100%;
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+.careers-form input:focus,
+.careers-form textarea:focus,
+.careers-form select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-bottom-color: #111 !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Mobile optimizations for careers page */
+@media (max-width: 768px) {
+  .careers-section {
+    padding: 40px 2vw;
+    max-width: none;
+  }
+  .careers-section h1 {
+    font-size: 2.5rem;
+  }
+  .careers-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  .careers-form .form-row {
+    margin-bottom: 14px;
+  }
+  .careers-form label {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+  .careers-form input,
+  .careers-form select,
+  .careers-form textarea {
+    font-size: 1rem;
+    padding: 12px 14px;
+  }
+  .careers-form .short-line {
+    width: 100%;
+    max-width: 280px;
+  }
+  .careers-form textarea {
+    font-size: 1rem;
+  }
+  .careers-form .form-row.message-row textarea {
+    padding-top: 10px;
+  }
+  .careers-form .two-up {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .btn-submit {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
   }
 }
