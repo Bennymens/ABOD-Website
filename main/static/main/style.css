@@ -3047,12 +3047,23 @@ select:-webkit-autofill:focus {
   }
 
   .four-image-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
     gap: 15px;
     margin: 40px auto 0 auto;
     padding: 0 2vw;
-    max-width: 96vw; /* Prevent container from exceeding viewport width */
+    max-width: 96vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .four-image-cards::-webkit-scrollbar {
+    height: 0px;
+    background: transparent;
+    display: none;
   }
 
   .image-card {
