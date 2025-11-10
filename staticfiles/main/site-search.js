@@ -241,18 +241,34 @@ if (window.__site_search_installed) {
   if (!window.__hamburger_installed) {
     window.__hamburger_installed = true;
 
+    function preventScroll(e) {
+      e.preventDefault();
+    }
+
     function closeMobileMenu(hamburger, mobileMenu) {
       if (hamburger) hamburger.classList.remove("active");
       if (mobileMenu) mobileMenu.classList.remove("open");
       const overlay = document.getElementById("mobile-overlay");
       if (overlay) overlay.remove();
       document.body.style.overflow = "";
+      document.body.removeEventListener("touchmove", preventScroll, {
+        passive: false,
+      });
+      document.body.removeEventListener("wheel", preventScroll, {
+        passive: false,
+      });
     }
 
     function openMobileMenu(hamburger, mobileMenu) {
       if (hamburger) hamburger.classList.add("active");
       if (mobileMenu) mobileMenu.classList.add("open");
       document.body.style.overflow = "hidden";
+      document.body.addEventListener("touchmove", preventScroll, {
+        passive: false,
+      });
+      document.body.addEventListener("wheel", preventScroll, {
+        passive: false,
+      });
       // add semi-opaque overlay to indicate modal state and capture clicks
       let overlay = document.getElementById("mobile-overlay");
       if (!overlay) {
