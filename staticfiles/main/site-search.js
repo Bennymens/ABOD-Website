@@ -246,11 +246,13 @@ if (window.__site_search_installed) {
       if (mobileMenu) mobileMenu.classList.remove("open");
       const overlay = document.getElementById("mobile-overlay");
       if (overlay) overlay.remove();
+      document.body.style.overflow = "";
     }
 
     function openMobileMenu(hamburger, mobileMenu) {
       if (hamburger) hamburger.classList.add("active");
       if (mobileMenu) mobileMenu.classList.add("open");
+      document.body.style.overflow = "hidden";
       // add semi-opaque overlay to indicate modal state and capture clicks
       let overlay = document.getElementById("mobile-overlay");
       if (!overlay) {
