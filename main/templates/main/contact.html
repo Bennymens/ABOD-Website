@@ -958,5 +958,175 @@
         });
       }
     </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="cookie-consent-banner">
+      <div class="cookie-consent-content">
+        <div class="cookie-consent-text">
+          <p>We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+        </div>
+        <div class="cookie-consent-buttons">
+          <button id="accept-all-cookies" class="cookie-btn accept-all">Accept All</button>
+          <button id="reject-cookies" class="cookie-btn reject">Reject All</button>
+          <button id="customize-cookies" class="cookie-btn customize">Customize</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Customization Modal -->
+    <div id="cookie-modal" class="cookie-modal">
+      <div class="cookie-modal-content">
+        <div class="cookie-modal-header">
+          <h3>Cookie Preferences</h3>
+          <span class="cookie-modal-close">&times;</span>
+        </div>
+        <div class="cookie-modal-body">
+          <div class="cookie-option">
+            <label class="cookie-toggle">
+              <input type="checkbox" id="essential-cookies" checked disabled>
+              <span class="cookie-slider"></span>
+            </label>
+            <div class="cookie-option-text">
+              <h4>Essential Cookies</h4>
+              <p>These cookies are necessary for the website to function and cannot be switched off in our systems.</p>
+            </div>
+          </div>
+          <div class="cookie-option">
+            <label class="cookie-toggle">
+              <input type="checkbox" id="analytics-cookies">
+              <span class="cookie-slider"></span>
+            </label>
+            <div class="cookie-option-text">
+              <h4>Analytics Cookies</h4>
+              <p>These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site.</p>
+            </div>
+          </div>
+          <div class="cookie-option">
+            <label class="cookie-toggle">
+              <input type="checkbox" id="marketing-cookies">
+              <span class="cookie-slider"></span>
+            </label>
+            <div class="cookie-option-text">
+              <h4>Marketing Cookies</h4>
+              <p>These cookies may be set through our site by our advertising partners to build a profile of your interests.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cookie-modal-footer">
+          <button id="save-preferences" class="cookie-btn save">Save Preferences</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Cookie Consent Banner Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const banner = document.getElementById('cookie-consent-banner');
+        const modal = document.getElementById('cookie-modal');
+        const acceptAllBtn = document.getElementById('accept-all-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+        const customizeBtn = document.getElementById('customize-cookies');
+        const saveBtn = document.getElementById('save-preferences');
+        const closeBtn = document.querySelector('.cookie-modal-close');
+
+        // Check if user has already made a choice
+        const cookieChoice = localStorage.getItem('cookieConsent');
+        if (cookieChoice) {
+          banner.style.display = 'none';
+          return;
+        }
+
+        // Show banner
+        banner.style.display = 'block';
+
+        // Accept all cookies
+        acceptAllBtn.addEventListener('click', function() {
+          localStorage.setItem('cookieConsent', 'accepted');
+          localStorage.setItem('analyticsCookies', 'true');
+          localStorage.setItem('marketingCookies', 'true');
+          banner.style.display = 'none';
+          // Enable analytics and marketing cookies
+          enableAnalyticsCookies();
+          enableMarketingCookies();
+        });
+
+        // Reject all cookies
+        rejectBtn.addEventListener('click', function() {
+          localStorage.setItem('cookieConsent', 'rejected');
+          localStorage.setItem('analyticsCookies', 'false');
+          localStorage.setItem('marketingCookies', 'false');
+          banner.style.display = 'none';
+          // Disable analytics and marketing cookies
+          disableAnalyticsCookies();
+          disableMarketingCookies();
+        });
+
+        // Customize cookies
+        customizeBtn.addEventListener('click', function() {
+          modal.style.display = 'block';
+          // Load current preferences
+          document.getElementById('analytics-cookies').checked = localStorage.getItem('analyticsCookies') === 'true';
+          document.getElementById('marketing-cookies').checked = localStorage.getItem('marketingCookies') === 'true';
+        });
+
+        // Close modal
+        closeBtn.addEventListener('click', function() {
+          modal.style.display = 'none';
+        });
+
+        // Save preferences
+        saveBtn.addEventListener('click', function() {
+          const analytics = document.getElementById('analytics-cookies').checked;
+          const marketing = document.getElementById('marketing-cookies').checked;
+
+          localStorage.setItem('cookieConsent', 'customized');
+          localStorage.setItem('analyticsCookies', analytics.toString());
+          localStorage.setItem('marketingCookies', marketing.toString());
+
+          banner.style.display = 'none';
+          modal.style.display = 'none';
+
+          if (analytics) {
+            enableAnalyticsCookies();
+          } else {
+            disableAnalyticsCookies();
+          }
+
+          if (marketing) {
+            enableMarketingCookies();
+          } else {
+            disableMarketingCookies();
+          }
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+          if (event.target === modal) {
+            modal.style.display = 'none';
+          }
+        });
+
+        // Cookie management functions
+        function enableAnalyticsCookies() {
+          // Add Google Analytics or other analytics scripts here
+          console.log('Analytics cookies enabled');
+        }
+
+        function disableAnalyticsCookies() {
+          // Remove or disable analytics scripts here
+          console.log('Analytics cookies disabled');
+        }
+
+        function enableMarketingCookies() {
+          // Add marketing scripts here
+          console.log('Marketing cookies enabled');
+        }
+
+        function disableMarketingCookies() {
+          // Remove or disable marketing scripts here
+          console.log('Marketing cookies disabled');
+        }
+      });
+    </script>
   </body>
 </html>

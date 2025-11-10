@@ -610,5 +610,69 @@
         });
       });
     </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="cookie-consent-banner">
+      <div class="cookie-consent-content">
+        <div class="cookie-consent-text">
+          <p><strong>We use cookies</strong> to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+        </div>
+        <div class="cookie-consent-buttons">
+          <button id="accept-cookies" class="cookie-btn cookie-btn-accept">Accept All</button>
+          <button id="reject-cookies" class="cookie-btn cookie-btn-reject">Reject All</button>
+          <button id="customize-cookies" class="cookie-btn cookie-btn-customize">Customize</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Consent JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const banner = document.getElementById('cookie-consent-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+        const customizeBtn = document.getElementById('customize-cookies');
+
+        // Check if user has already made a choice
+        const cookieConsent = localStorage.getItem('cookie-consent');
+        if (cookieConsent) {
+          banner.style.display = 'none';
+          return;
+        }
+
+        // Show banner
+        banner.style.display = 'block';
+
+        // Accept all cookies
+        acceptBtn.addEventListener('click', function() {
+          localStorage.setItem('cookie-consent', 'accepted');
+          localStorage.setItem('analytics-cookies', 'true');
+          localStorage.setItem('marketing-cookies', 'true');
+          banner.style.display = 'none';
+          // Enable analytics/marketing cookies here if needed
+          console.log('All cookies accepted');
+        });
+
+        // Reject all cookies
+        rejectBtn.addEventListener('click', function() {
+          localStorage.setItem('cookie-consent', 'rejected');
+          localStorage.setItem('analytics-cookies', 'false');
+          localStorage.setItem('marketing-cookies', 'false');
+          banner.style.display = 'none';
+          // Disable analytics/marketing cookies here if needed
+          console.log('All cookies rejected');
+        });
+
+        // Customize cookies (placeholder for future implementation)
+        customizeBtn.addEventListener('click', function() {
+          // For now, just accept essential cookies
+          localStorage.setItem('cookie-consent', 'customized');
+          localStorage.setItem('analytics-cookies', 'false');
+          localStorage.setItem('marketing-cookies', 'false');
+          banner.style.display = 'none';
+          console.log('Essential cookies only');
+        });
+      });
+    </script>
   </body>
 </html>
