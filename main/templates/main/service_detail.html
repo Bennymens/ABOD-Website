@@ -9,6 +9,24 @@
     <style>
       /* Mobile optimizations for service detail page */
       @media (max-width: 768px) {
+        .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .navbar-left-group {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .navbar-center, .navbar-right {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+          position: static !important;
+          margin-left: auto;
+        }
         .three-image-cards {
           flex-direction: row;
           gap: 15px;
