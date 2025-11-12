@@ -29,6 +29,11 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'abod-website.onrender.com,localhost,127.0.0.1').split(',')
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://abod-website.onrender.com',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+]
 
 # Application definition
 
