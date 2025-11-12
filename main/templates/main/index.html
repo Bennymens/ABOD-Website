@@ -251,7 +251,7 @@
                 <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </button>
-            <input type="text" name="q" placeholder="search ABOD" aria-label="Search ABOD" />
+            <input type="text" name="q" placeholder="{% trans 'search ABOD' %}" aria-label="Search ABOD" />
             <button type="button" class="results-search-clear" aria-label="Clear search">×</button>
           </div>
         </form>
@@ -301,10 +301,10 @@
           </div>
           </a>
           <div class="card-link-container">
-            <a href="{% url 'insights' %}" class="card-link">Issues</a>
+            <a href="{% url 'insights' %}" class="card-link">{% trans "Issues" %}</a>
             <div class="card-link-text">
-              <p class="card-link-main">How do you solve tight spaces with smart design and precise engineering</p>
-              <p class="card-link-sub">we believe complex challenges can be catalysts for better design</p>
+              <p class="card-link-main">{% trans "How do you solve tight spaces with smart design and precise engineering" %}</p>
+              <p class="card-link-sub">{% trans "we believe complex challenges can be catalysts for better design" %}</p>
             </div>
           </div>
         </div>
@@ -315,10 +315,10 @@
           </div>
           </a>
           <div class="card-link-container">
-            <a href="{% url 'projects' %}" class="card-link">Projects</a>
+            <a href="{% url 'projects' %}" class="card-link">{% trans "Projects" %}</a>
             <div class="card-link-text">
-              <p class="card-link-main">The exchange apartments</p>
-              <p class="card-link-sub">Modern living spaces designed for contemporary urban lifestyles</p>
+              <p class="card-link-main">{% trans "The exchange apartments" %}</p>
+              <p class="card-link-sub">{% trans "Modern living spaces designed for contemporary urban lifestyles" %}</p>
             </div>
           </div>
         </div>
@@ -329,9 +329,9 @@
           </div>
           </a>
           <div class="card-link-container">
-            <a href="{% url 'news' %}" class="card-link">News</a>
+            <a href="{% url 'news' %}" class="card-link">{% trans "News" %}</a>
             <div class="card-link-text">
-              <p class="card-link-main">ABOD founder along with others win IFC Edge Design Competition</p>
+              <p class="card-link-main">{% trans "ABOD founder along with others win IFC Edge Design Competition" %}</p>
             </div>
           </div>
         </div>
@@ -339,12 +339,11 @@
 
       <!-- OUR WORK section -->
       <div class="our-work-section slide-up">
-        <h2 class="our-work-header">Our Work</h2>
-        <a href="/projects/" class="see-projects-button">See Projects →</a>
+        <h2 class="our-work-header">{% trans "Our Work" %}</h2>
+        <a href="/projects/" class="see-projects-button">{% trans "See Projects" %} →</a>
       </div>
       <p class="section-subtext slide-up">
-        Showcasing our latest projects and achievements in engineering and
-        sustainability.
+        {% trans "Showcasing our latest projects and achievements in engineering and sustainability." %}
       </p>
 
       <!-- Work Showcase Cards -->
@@ -369,31 +368,27 @@
         </div>
         <div class="work-texts">
           <div class="work-text">
-            <h3>Urban Development</h3>
+            <h3>{% trans "Urban Development" %}</h3>
             <p>
-              Creating sustainable urban spaces that blend innovation with
-              community needs.
+              {% trans "Creating sustainable urban spaces that blend innovation with community needs." %}
             </p>
           </div>
           <div class="work-text">
-            <h3>3d Modeling and Visualisation</h3>
+            <h3>{% trans "3d Modeling and Visualisation" %}</h3>
             <p>
-              Advancing engineering solutions for complex challenges in modern
-              construction.
+              {% trans "Advancing engineering solutions for complex challenges in modern construction." %}
             </p>
           </div>
           <div class="work-text">
-            <h3>Sustainable Architecture</h3>
+            <h3>{% trans "Sustainable Architecture" %}</h3>
             <p>
-              Designing buildings that harmonize with the environment and future
-              generations.
+              {% trans "Designing buildings that harmonize with the environment and future generations." %}
             </p>
           </div>
           <div class="work-text">
-            <h3>Modern Construction</h3>
+            <h3>{% trans "Modern Construction" %}</h3>
             <p>
-              Implementing cutting-edge techniques for efficient and resilient
-              structures.
+              {% trans "Implementing cutting-edge techniques for efficient and resilient structures." %}
             </p>
           </div>
         </div>
@@ -405,14 +400,13 @@
         <div class="issues-header">
           <div class="header-content">
             <div>
-              <h1 class="issues-title">Issues</h1>
+              <h1 class="issues-title">{% trans "Issues" %}</h1>
               <p class="issues-description">
-                We explore some of the biggest questions facing the built and
-                natural environments.
+                {% trans "We explore some of the biggest questions facing the built and natural environments." %}
               </p>
             </div>
             <button class="view-more-btn">
-              View more issues
+              {% trans "View more issues" %}
               <span class="arrow-icon">→</span>
             </button>
           </div>
@@ -426,9 +420,9 @@
               class="card-fill"
             />
             <div class="card-content">
-              <span class="card-label">Issue</span>
+              <span class="card-label">{% trans "Issue" %}</span>
               <h2 class="card-title">
-                How do we create climate-resilient, energy-efficient buildings?
+                {% trans "How do we create climate-resilient, energy-efficient buildings?" %}
               </h2>
             </div>
           </a>
@@ -440,9 +434,9 @@
               class="card-fill"
             />
             <div class="card-content">
-              <span class="card-label">Issue</span>
+              <span class="card-label">{% trans "Issue" %}</span>
               <h2 class="card-title">
-                How do we tackle high-end, technically challenging developments?
+                {% trans "How do we tackle high-end, technically challenging developments?" %}
               </h2>
             </div>
           </a>
@@ -454,9 +448,9 @@
               class="card-fill"
             />
             <div class="card-content">
-              <span class="card-label">Issue</span>
+              <span class="card-label">{% trans "Issue" %}</span>
               <h2 class="card-title">
-                How do we Prioritize inclusive, user-focused solutions?
+                {% trans "How do we Prioritize inclusive, user-focused solutions?" %}
               </h2>
             </div>
           </a>
@@ -564,9 +558,9 @@
 
     <script>
       const taglines = [
-        "We are making innovation sustainable",
-        "We are designing structures for life",
-        "We are engineering the change we want to see",
+        "{% trans 'We are making innovation sustainable' %}",
+        "{% trans 'We are designing structures for life' %}",
+        "{% trans 'We are engineering the change we want to see' %}",
       ];
 
       function animateTaglineChange(newText) {

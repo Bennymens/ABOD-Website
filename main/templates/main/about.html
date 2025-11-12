@@ -221,7 +221,7 @@
     </nav>
 
     <!-- Tagline directly below the navbar (left-aligned on desktop) -->
-    <div class="tagline-below-navbar tagline-left slide-up">About Us</div>
+    <div class="tagline-below-navbar tagline-left slide-up">{% trans "About Us" %}</div>
 
     <!-- Full-width divider and Who Are We section -->
     <div class="full-divider-wrapper slide-up" aria-hidden="true">
@@ -229,30 +229,26 @@
     </div>
 
     <!-- WHO ARE WE heading aligned under the About tagline -->
-    <h2 class="who-heading tagline-left slide-up">WHO ARE WE?</h2>
+    <h2 class="who-heading tagline-left slide-up">{% trans "WHO ARE WE?" %}</h2>
 
     <!-- who-text moved out so it aligns under the WHO heading and uses the same left offset -->
     <p class="who-text tagline-left slide-up">
-      Abod Group is a premier built environment consultancy headquartered in Accra,
-      Ghana. <br>We are dedicated to transforming Africa’s urban landscape through innovative,
-      sustainable, <br>and high-tech design solutions. Our team of visionary architects,
-      engineers, and sustainability <br>experts leverages cutting-edge technologies like AI,
-      BIM,and digital twinning to deliver iconic, <br>complex projects that redefine excellence.
+      {% trans "Abod Group is a premier built environment consultancy headquartered in Accra, Ghana. We are dedicated to transforming Africa's urban landscape through innovative, sustainable, and high-tech design solutions. Our team of visionary architects, engineers, and sustainability experts leverages cutting-edge technologies like AI, BIM, and digital twinning to deliver iconic, complex projects that redefine excellence." %}
     </p>
       <!-- divider, CORE VALUES heading and bullet list -->
       <div class="full-divider-wrapper slide-up" aria-hidden="true">
         <hr class="full-divider" />
       </div>
 
-      <h2 class="core-heading tagline-left slide-up">CORE VALUES</h2>
+      <h2 class="core-heading tagline-left slide-up">{% trans "CORE VALUES" %}</h2>
 
       <section class="core-values container slide-up">
         <ul class="core-list">
-          <li>Innovation (pushing design boundaries)</li>
-          <li>Sustainability (prioritizing environmental responsibility)</li>
-          <li>Excellence (delivering superior quality)</li>
-          <li>Integrity (maintaining ethical standards)</li>
-          <li>Collaboration (working closely with clients, communities, and partners)</li>
+          <li>{% trans "Innovation (pushing design boundaries)" %}</li>
+          <li>{% trans "Sustainability (prioritizing environmental responsibility)" %}</li>
+          <li>{% trans "Excellence (delivering superior quality)" %}</li>
+          <li>{% trans "Integrity (maintaining ethical standards)" %}</li>
+          <li>{% trans "Collaboration (working closely with clients, communities, and partners)" %}</li>
         </ul>
       </section>
 
@@ -262,15 +258,15 @@
       <hr class="full-divider" />
     </div>
 
-    <h2 class="why-heading tagline-left slide-up">WHY ABOD?</h2>
+    <h2 class="why-heading tagline-left slide-up">{% trans "WHY ABOD?" %}</h2>
 
     <section class="why-values container slide-up">
       <ul class="why-list">
-        <li>Complex, Iconic Projects: Delivering landmark developments with a “wow factor.”</li>
-        <li>Sustainability and Climate Resilience: Committing to net-zero goals and green certifications.</li>
-        <li>Advanced Technology: Harnessing AI, BIM, parametric design, and digital twinning for precision and innovation.</li>
-        <li>Africa-Centric Solutions: Combining global expertise with local knowledge to address regional challenges.</li>
-        <li>Human-Centered Design: Creating inclusive, narrative-driven spaces that inspire.</li>
+        <li>{% trans "Complex, Iconic Projects: Delivering landmark developments with a wow factor." %}</li>
+        <li>{% trans "Sustainability and Climate Resilience: Committing to net-zero goals and green certifications." %}</li>
+        <li>{% trans "Advanced Technology: Harnessing AI, BIM, parametric design, and digital twinning for precision and innovation." %}</li>
+        <li>{% trans "Africa-Centric Solutions: Combining global expertise with local knowledge to address regional challenges." %}</li>
+        <li>{% trans "Human-Centered Design: Creating inclusive, narrative-driven spaces that inspire." %}</li>
       </ul>
     </section>
 
@@ -281,7 +277,7 @@
 
     <!-- DESIGN PHILOSOPHY: heading and image cards -->
 
-    <h2 class="design-heading tagline-left slide-up">OUR DESIGN PHILOSPHY</h2>
+    <h2 class="design-heading tagline-left slide-up">{% trans "OUR DESIGN PHILOSOPHY" %}</h2>
 
     <section class="design-philosophy container slide-up">
       <div class="design-philosophy-inner" style="position:relative">
@@ -297,42 +293,42 @@
         <figure class="design-card">
           <img src="{% static 'main/img/About/collaborative Engagement.jpg' %}" alt="Collaborative Engagement" />
           <figcaption>
-            Collaborative Engagement: Prioritizing collaboration, client feedback, and constant communication to co-create innovative, meaningful designs that resonate with stakeholders.
+            {% trans "Collaborative Engagement: Prioritizing collaboration, client feedback, and constant communication to co-create innovative, meaningful designs that resonate with stakeholders." %}
           </figcaption>
         </figure>
 
         <figure class="design-card">
           <img src="{% static 'main/img/About/narrative driven design.jpg' %}" alt="Narrative-Driven Design" />
           <figcaption>
-            Narrative-Driven Design: Crafting spaces that tell a story and engage communities, enriched through collaborative input and ongoing client dialogue.
+            {% trans "Narrative-Driven Design: Crafting spaces that tell a story and engage communities, enriched through collaborative input and ongoing client dialogue." %}
           </figcaption>
         </figure>
 
         <figure class="design-card">
           <img src="{% static 'main/img/About/Sustainable high-tech solutions.jpg' %}" alt="Sustainable High-Tech Solutions" />
           <figcaption>
-            Sustainable High-Tech Solutions: Integrating green materials, smart systems, and innovative forms, developed with client collaboration and feedback to ensure sustainable outcomes.
+            {% trans "Sustainable High-Tech Solutions: Integrating green materials, smart systems, and innovative forms, developed with client collaboration and feedback to ensure sustainable outcomes." %}
           </figcaption>
         </figure>
 
         <figure class="design-card">
           <img src="{% static 'main/img/design-4.jpg' %}" alt="Challenging the Status Quo" />
           <figcaption>
-            Challenging the Status Quo: Embracing a “what can’t be done” mindset to push boundaries, shaped by constant communication and client insights to drive bold innovation.
+            {% trans "Challenging the Status Quo: Embracing a what can't be done mindset to push boundaries, shaped by constant communication and client insights to drive bold innovation." %}
           </figcaption>
         </figure>
 
         <figure class="design-card">
           <img src="{% static 'main/img/design-5.jpg' %}" alt="User-Centric and Inclusive" />
           <figcaption>
-            User-Centric and Inclusive: Prioritizing functionality, accessibility, and excellence, co-designed with clients through continuous feedback and collaborative processes.
+            {% trans "User-Centric and Inclusive: Prioritizing functionality, accessibility, and excellence, co-designed with clients through continuous feedback and collaborative processes." %}
           </figcaption>
         </figure>
 
         <figure class="design-card">
           <img src="{% static 'main/img/design-6.jpg' %}" alt="Research-Based and AI-Backed" />
           <figcaption>
-            Research-Based and AI-Backed: Grounded in deep research and cutting-edge technology, enhanced by iterative client collaboration and constant communication for impactful solutions.
+            {% trans "Research-Based and AI-Backed: Grounded in deep research and cutting-edge technology, enhanced by iterative client collaboration and constant communication for impactful solutions." %}
           </figcaption>
         </figure>
         </div>
@@ -345,7 +341,7 @@
     </div>
 
     <!-- OUR CLIENTS header placed below the divider -->
-    <h2 class="clients-heading tagline-left slide-up">OUR CLIENTS</h2>
+    <h2 class="clients-heading tagline-left slide-up">{% trans "OUR CLIENTS" %}</h2>
     <div class="clients-cards container slide-up" aria-label="Our clients cards">
       <div class="clients-row" role="list" aria-label="Clients logos cards">
         <figure class="client-logo" role="listitem">
@@ -371,14 +367,13 @@
         <div class="issues-header">
           <div class="header-content">
             <div>
-              <h1 class="issues-title">Issues</h1>
+              <h1 class="issues-title">{% trans "Issues" %}</h1>
               <p class="issues-description">
-                We explore some of the biggest questions facing the built and
-                natural environments.
+                {% trans "We explore some of the biggest questions facing the built and natural environments." %}
               </p>
             </div>
             <button class="view-more-btn">
-              View more issues
+              {% trans "View more issues" %}
               <span class="arrow-icon">→</span>
             </button>
           </div>
@@ -392,9 +387,9 @@
               class="card-fill"
             />
             <div class="card-content">
-              <span class="card-label">Issue</span>
+              <span class="card-label">{% trans "Issue" %}</span>
               <h2 class="card-title">
-                How do we create climate-resilient, energy-efficient buildings?
+                {% trans "How do we create climate-resilient, energy-efficient buildings?" %}
               </h2>
             </div>
           </a>
@@ -406,9 +401,9 @@
               class="card-fill"
             />
             <div class="card-content">
-              <span class="card-label">Issue</span>
+              <span class="card-label">{% trans "Issue" %}</span>
               <h2 class="card-title">
-                How do we tackle high-end, technically challenging developments?
+                {% trans "How do we tackle high-end, technically challenging developments?" %}
               </h2>
             </div>
           </a>
@@ -420,9 +415,9 @@
               class="card-fill"
             />
             <div class="card-content">
-              <span class="card-label">Issue</span>
+              <span class="card-label">{% trans "Issue" %}</span>
               <h2 class="card-title">
-                How do we Prioritize inclusive, user-focused solutions?
+                {% trans "How do we Prioritize inclusive, user-focused solutions?" %}
               </h2>
             </div>
           </a>

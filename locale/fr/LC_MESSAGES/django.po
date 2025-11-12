@@ -1,8 +1,8 @@
 # French translations for ABOD Website
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
 # Navigation
 msgid "Markets"
@@ -39,20 +39,44 @@ msgstr "← Retour aux services"
 msgid "Architecture and Design"
 msgstr "Architecture et Design"
 
-msgid "Creating iconic, user-centric designs across a wide range of project types, including commercial, institutional, residential, scientific, industrial, and hospitality environments."
-msgstr "Créer des designs emblématiques et centrés sur l'utilisateur pour une large gamme de types de projets, y compris des environnements commerciaux, institutionnels, résidentiels, scientifiques, industriels et hôteliers."
+msgid ""
+"Creating iconic, user-centric designs across a wide range of project types, "
+"including commercial, institutional, residential, scientific, industrial, "
+"and hospitality environments."
+msgstr ""
+"Créer des designs emblématiques et centrés sur l'utilisateur pour une large "
+"gamme de types de projets, y compris des environnements commerciaux, "
+"institutionnels, résidentiels, scientifiques, industriels et hôteliers."
 
-msgid "Our work encompasses both new builds and refurbishments, with particular expertise in designing teaching and research spaces, as well as environments that prioritize inclusivity, accessibility, and long-term adaptability."
-msgstr "Notre travail englobe à la fois les nouvelles constructions et les rénovations, avec une expertise particulière dans la conception d'espaces d'enseignement et de recherche, ainsi que d'environnements qui privilégient l'inclusion, l'accessibilité et l'adaptabilité à long terme."
+msgid ""
+"Our work encompasses both new builds and refurbishments, with particular "
+"expertise in designing teaching and research spaces, as well as environments"
+" that prioritize inclusivity, accessibility, and long-term adaptability."
+msgstr ""
+"Notre travail englobe à la fois les nouvelles constructions et les "
+"rénovations, avec une expertise particulière dans la conception d'espaces "
+"d'enseignement et de recherche, ainsi que d'environnements qui privilégient "
+"l'inclusion, l'accessibilité et l'adaptabilité à long terme."
 
-msgid "We focus on delivering functional, inspiring spaces that elevate user experience while meeting the unique needs of every client and community we serve."
-msgstr "Nous nous concentrons sur la création d'espaces fonctionnels et inspirants qui améliorent l'expérience utilisateur tout en répondant aux besoins uniques de chaque client et communauté que nous servons."
+msgid ""
+"We focus on delivering functional, inspiring spaces that elevate user "
+"experience while meeting the unique needs of every client and community we "
+"serve."
+msgstr ""
+"Nous nous concentrons sur la création d'espaces fonctionnels et inspirants "
+"qui améliorent l'expérience utilisateur tout en répondant aux besoins "
+"uniques de chaque client et communauté que nous servons."
 
 msgid "Our Architecture Specialisms"
 msgstr "Nos Spécialisations en Architecture"
 
-msgid "We bring deep expertise across multiple sectors, delivering tailored solutions that combine innovation, functionality, and timeless design."
-msgstr "Nous apportons une expertise approfondie dans plusieurs secteurs, en proposant des solutions sur mesure qui combinent innovation, fonctionnalité et design intemporel."
+msgid ""
+"We bring deep expertise across multiple sectors, delivering tailored "
+"solutions that combine innovation, functionality, and timeless design."
+msgstr ""
+"Nous apportons une expertise approfondie dans plusieurs secteurs, en "
+"proposant des solutions sur mesure qui combinent innovation, fonctionnalité "
+"et design intemporel."
 
 msgid "Residential / Housing"
 msgstr "Résidentiel / Logement"
@@ -81,15 +105,23 @@ msgstr "Voir Tous les Projets Civiques"
 msgid "Explore More Architecture Projects"
 msgstr "Explorer Plus de Projets d'Architecture"
 
-msgid "Discover a selection of our most impactful projects that showcase innovation, sustainability, and design excellence."
-msgstr "Découvrez une sélection de nos projets les plus impactants qui mettent en valeur l'innovation, la durabilité et l'excellence du design."
+msgid ""
+"Discover a selection of our most impactful projects that showcase "
+"innovation, sustainability, and design excellence."
+msgstr ""
+"Découvrez une sélection de nos projets les plus impactants qui mettent en "
+"valeur l'innovation, la durabilité et l'excellence du design."
 
 msgid "See All"
 msgstr "Voir Tout"
 
 # Footer
-msgid "Designing sustainable places and systems. We work across markets to make long-term, people-centred change."
-msgstr "Concevoir des lieux et des systèmes durables. Nous travaillons dans tous les marchés pour apporter des changements durables centrés sur les personnes."
+msgid ""
+"Designing sustainable places and systems. We work across markets to make "
+"long-term, people-centred change."
+msgstr ""
+"Concevoir des lieux et des systèmes durables. Nous travaillons dans tous les"
+" marchés pour apporter des changements durables centrés sur les personnes."
 
 msgid "Explore"
 msgstr "Explorer"
@@ -148,7 +180,8 @@ msgid "Our experts are leading the way"
 msgstr "Nos experts montrent la voie"
 
 msgid "Expert architecture and design solutions for diverse projects"
-msgstr "Solutions d'architecture et de design expertes pour des projets diversifiés"
+msgstr ""
+"Solutions d'architecture et de design expertes pour des projets diversifiés"
 
 msgid "Insights and Thought Leadership"
 msgstr "Perspectives et Leadership d'Opinion"
@@ -249,8 +282,12 @@ msgstr "Explorez nos services à travers le bâti"
 msgid "environments"
 msgstr "environnements"
 
-msgid "Designing sustainable places and systems — making long-term, people-centred change."
-msgstr "Concevoir des lieux et des systèmes durables — apporter des changements durables centrés sur les personnes."
+msgid ""
+"Designing sustainable places and systems — making long-term, people-centred "
+"change."
+msgstr ""
+"Concevoir des lieux et des systèmes durables — apporter des changements "
+"durables centrés sur les personnes."
 
 msgid "search services"
 msgstr "rechercher des services"
@@ -260,72 +297,151 @@ msgstr "Résultats de recherche pour"
 
 # Issues Section
 msgid "Issue"
-msgstr "Enjeu"
+msgstr "Question"
 
-msgid "We explore some of the biggest questions facing the built and natural environments."
-msgstr "Nous explorons certaines des plus grandes questions auxquelles sont confrontés les environnements bâtis et naturels."
+msgid ""
+"We explore some of the biggest questions facing the built and natural "
+"environments."
+msgstr ""
+"Nous explorons certaines des plus grandes questions auxquelles sont "
+"confrontés les environnements bâtis et naturels."
 
 msgid "View more issues"
-msgstr "Voir plus d'enjeux"
+msgstr "Voir plus de questions"
 
 msgid "How do we create climate-resilient, energy-efficient buildings?"
-msgstr "Comment créer des bâtiments climato-résilients et économes en énergie ?"
+msgstr ""
+"Comment créer des bâtiments résilients au climat et économes en énergie ?"
 
 msgid "How do we tackle high-end, technically challenging developments?"
-msgstr "Comment aborder les développements haut de gamme et techniquement complexes ?"
+msgstr ""
+"Comment relever les défis des développements haut de gamme et techniquement "
+"exigeants ?"
 
 msgid "How do we Prioritize inclusive, user-focused solutions?"
-msgstr "Comment prioriser des solutions inclusives et centrées sur l'utilisateur ?"
+msgstr ""
+"Comment prioriser des solutions inclusives et centrées sur l'utilisateur ?"
 
 # Service Descriptions
-msgid "Expert guidance through feasibility studies,\nbusiness and investor advisory, urban and\nregional planning, policy development, and\nstakeholder engagement to support sustainable\ngrowth and informed decision-making."
-msgstr "Conseils d'experts à travers des études de faisabilité, des conseils aux entreprises et aux investisseurs, de la planification urbaine et régionale, du développement de politiques et de l'engagement des parties prenantes pour soutenir une croissance durable et une prise de décision éclairée."
+msgid ""
+"Expert guidance through feasibility studies,\n"
+"business and investor advisory, urban and\n"
+"regional planning, policy development, and\n"
+"stakeholder engagement to support sustainable\n"
+"growth and informed decision-making."
+msgstr ""
+"Conseils d'experts à travers des études de faisabilité, des conseils aux "
+"entreprises et aux investisseurs, de la planification urbaine et régionale, "
+"du développement de politiques et de l'engagement des parties prenantes pour"
+" soutenir une croissance durable et une prise de décision éclairée."
 
-msgid "Creating iconic, user-centric designs for commercial,\n         institutional, residential, science and industry,\n         and hospitality projects, including refurbishments,\n       teaching and research spaces, and inclusive, accessible\n       environments.."
-msgstr "Créer des designs emblématiques et centrés sur l'utilisateur pour des projets commerciaux, institutionnels, résidentiels, scientifiques et industriels, et hôteliers, y compris des rénovations, des espaces d'enseignement et de recherche, et des environnements inclusifs et accessibles."
+msgid ""
+"Creating iconic, user-centric designs for commercial,\n"
+"         institutional, residential, science and industry,\n"
+"         and hospitality projects, including refurbishments,\n"
+"       teaching and research spaces, and inclusive, accessible\n"
+"       environments.."
+msgstr ""
+"Créer des designs emblématiques et centrés sur l'utilisateur pour des "
+"projets commerciaux, institutionnels, résidentiels, scientifiques et "
+"industriels, et hôteliers, y compris des rénovations, des espaces "
+"d'enseignement et de recherche, et des environnements inclusifs et "
+"accessibles."
 
-msgid "Delivering robust structural, mechanical, civil, and\n        bridge engineering, with a focus on\n        efficiency and resilience."
-msgstr "Fournir une ingénierie structurelle, mécanique, civile et des ponts robuste, en mettant l'accent sur l'efficacité et la résilience."
+msgid ""
+"Delivering robust structural, mechanical, civil, and\n"
+"        bridge engineering, with a focus on\n"
+"        efficiency and resilience."
+msgstr ""
+"Fournir une ingénierie structurelle, mécanique, civile et des ponts robuste,"
+" en mettant l'accent sur l'efficacité et la résilience."
 
-msgid "Designing sustainable, smart cities, urban\n        frameworks, and campus energy masterplans,\n        integrating intelligent mobility."
-msgstr "Concevoir des villes intelligentes durables, des cadres urbains et des plans directeurs énergétiques de campus, intégrant une mobilité intelligente."
+msgid ""
+"Designing sustainable, smart cities, urban\n"
+"        frameworks, and campus energy masterplans,\n"
+"        integrating intelligent mobility."
+msgstr ""
+"Concevoir des villes intelligentes durables, des cadres urbains et des plans"
+" directeurs énergétiques de campus, intégrant une mobilité intelligente."
 
-msgid "Guiding clients towards net-zero goals with ESG strategies, environmental consulting, nature-based solutions and certifications like EDGE."
-msgstr "Guider les clients vers des objectifs net-zéro avec des stratégies ESG, du conseil environnemental, des solutions basées sur la nature et des certifications comme EDGE."
+msgid ""
+"Guiding clients towards net-zero goals with ESG strategies, environmental "
+"consulting, nature-based solutions and certifications like EDGE."
+msgstr ""
+"Guider les clients vers des objectifs net-zéro avec des stratégies ESG, du "
+"conseil environnemental, des solutions basées sur la nature et des "
+"certifications comme EDGE."
 
-msgid "Utilizing BIM, digital twinning, and parametric design for creating lighting design, night-time design, and immersive experience design for cultural, public, and event spaces, including major event overlay design."
-msgstr "Utiliser le BIM, le jumeau numérique et la conception paramétrique pour créer des conceptions d'éclairage, de conception nocturne et d'expérience immersive pour des espaces culturels, publics et événementiels, y compris la conception de superposition d'événements majeurs."
+msgid ""
+"Utilizing BIM, digital twinning, and parametric design for creating lighting"
+" design, night-time design, and immersive experience design for cultural, "
+"public, and event spaces, including major event overlay design."
+msgstr ""
+"Utiliser le BIM, le jumeau numérique et la conception paramétrique pour "
+"créer des conceptions d'éclairage, de conception nocturne et d'expérience "
+"immersive pour des espaces culturels, publics et événementiels, y compris la"
+" conception de superposition d'événements majeurs."
 
-msgid "Designing standout interiors and landscape to support the building taking into consideration sustainability,and saint gobain comfort goals."
-msgstr "Concevoir des intérieurs et des paysages remarquables pour soutenir le bâtiment en tenant compte de la durabilité et des objectifs de confort Saint Gobain."
+msgid ""
+"Designing standout interiors and landscape to support the building taking "
+"into consideration sustainability,and saint gobain comfort goals."
+msgstr ""
+"Concevoir des intérieurs et des paysages remarquables pour soutenir le "
+"bâtiment en tenant compte de la durabilité et des objectifs de confort Saint"
+" Gobain."
 
-msgid "Employing agile methodologies for client-centric project management, alongside innovative product design and sustainable material specification."
-msgstr "Employer des méthodologies agiles pour la gestion de projet centrée sur le client, ainsi que la conception innovante de produits et la spécification de matériaux durables."
+msgid ""
+"Employing agile methodologies for client-centric project management, "
+"alongside innovative product design and sustainable material specification."
+msgstr ""
+"Employer des méthodologies agiles pour la gestion de projet centrée sur le "
+"client, ainsi que la conception innovante de produits et la spécification de"
+" matériaux durables."
 
-msgid "Offering expertise in specialized services such as retrofit, at scale, research, and organizational development to support diverse project needs."
-msgstr "Offrir une expertise dans des services spécialisés tels que la rénovation, à grande échelle, la recherche et le développement organisationnel pour soutenir divers besoins de projets."
+msgid ""
+"Offering expertise in specialized services such as retrofit, at scale, "
+"research, and organizational development to support diverse project needs."
+msgstr ""
+"Offrir une expertise dans des services spécialisés tels que la rénovation, à"
+" grande échelle, la recherche et le développement organisationnel pour "
+"soutenir divers besoins de projets."
 
 # Project Cards on Architecture Service Detail Page
-msgid "Beach House — A stunning coastal residence blending modern design with natural surroundings"
-msgstr "Maison de Plage — Une résidence côtière époustouflante alliant design moderne et environnement naturel"
+msgid ""
+"Beach House — A stunning coastal residence blending modern design with "
+"natural surroundings"
+msgstr ""
+"Maison de Plage — Une résidence côtière époustouflante alliant design "
+"moderne et environnement naturel"
 
 msgid "Kokrobite, Ghana"
 msgstr "Kokrobite, Ghana"
 
-msgid "First Love Center — A contemporary community center providing versatile spaces for worship and social gatherings"
-msgstr "Centre First Love — Un centre communautaire contemporain offrant des espaces polyvalents pour le culte et les rassemblements sociaux"
+msgid ""
+"First Love Center — A contemporary community center providing versatile "
+"spaces for worship and social gatherings"
+msgstr ""
+"Centre First Love — Un centre communautaire contemporain offrant des espaces"
+" polyvalents pour le culte et les rassemblements sociaux"
 
 msgid "East Legon, Ghana"
 msgstr "East Legon, Ghana"
 
-msgid "NetZero House — An innovative eco-friendly home designed for sustainable living"
-msgstr "Maison NetZero — Une maison écologique innovante conçue pour une vie durable"
+msgid ""
+"NetZero House — An innovative eco-friendly home designed for sustainable "
+"living"
+msgstr ""
+"Maison NetZero — Une maison écologique innovante conçue pour une vie durable"
 
 msgid "Akwapim Hills, Ghana"
 msgstr "Akwapim Hills, Ghana"
 
-msgid "The Exchange Apartments — Modern residential apartments offering comfortable living spaces with panoramic views"
-msgstr "Appartements The Exchange — Appartements résidentiels modernes offrant des espaces de vie confortables avec vue panoramique"
+msgid ""
+"The Exchange Apartments — Modern residential apartments offering comfortable"
+" living spaces with panoramic views"
+msgstr ""
+"Appartements The Exchange — Appartements résidentiels modernes offrant des "
+"espaces de vie confortables avec vue panoramique"
 
 msgid "Volta Region, Ghana"
 msgstr "Région de la Volta, Ghana"
@@ -337,8 +453,11 @@ msgstr "Contactez-nous"
 msgid "Business enquiries"
 msgstr "Demandes commerciales"
 
-msgid "Speak to an Arup expert about a project, service, or partnership enquiry."
-msgstr "Parlez à un expert d'Arup pour une demande de projet, de service ou de partenariat."
+msgid ""
+"Speak to an Arup expert about a project, service, or partnership enquiry."
+msgstr ""
+"Parlez à un expert d'Arup pour une demande de projet, de service ou de "
+"partenariat."
 
 msgid "Area of business"
 msgstr "Domaine d'activité"
@@ -577,11 +696,21 @@ msgstr "Soumettre"
 msgid "Media and press"
 msgstr "Médias et presse"
 
-msgid "Speak to our communications team about any media or press correspondence."
-msgstr "Parlez à notre équipe de communication pour toute correspondance médiatique ou de presse."
+msgid ""
+"Speak to our communications team about any media or press correspondence."
+msgstr ""
+"Parlez à notre équipe de communication pour toute correspondance médiatique "
+"ou de presse."
 
-msgid "Speak to Arup's recruitment teams about job opportunities and careers. Before sending a general enquiry, kindly review our application process to see if your question has already been addressed."
-msgstr "Parlez aux équipes de recrutement d'Arup pour les opportunités d'emploi et les carrières. Avant d'envoyer une demande générale, veuillez consulter notre processus de candidature pour voir si votre question a déjà été traitée."
+msgid ""
+"Speak to Arup's recruitment teams about job opportunities and careers. "
+"Before sending a general enquiry, kindly review our application process to "
+"see if your question has already been addressed."
+msgstr ""
+"Parlez aux équipes de recrutement d'Arup pour les opportunités d'emploi et "
+"les carrières. Avant d'envoyer une demande générale, veuillez consulter "
+"notre processus de candidature pour voir si votre question a déjà été "
+"traitée."
 
 msgid "Experience level"
 msgstr "Niveau d'expérience"
@@ -619,8 +748,14 @@ msgstr "Votre bureau le plus proche"
 msgid "Contact office"
 msgstr "Contacter le bureau"
 
-msgid "We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies."
-msgstr "Nous utilisons des cookies pour améliorer votre expérience de navigation, diffuser du contenu personnalisé et analyser notre trafic. En cliquant sur \"Tout accepter\", vous consentez à notre utilisation des cookies."
+msgid ""
+"We use cookies to enhance your browsing experience, serve personalized "
+"content, and analyze our traffic. By clicking \"Accept All\", you consent to"
+" our use of cookies."
+msgstr ""
+"Nous utilisons des cookies pour améliorer votre expérience de navigation, "
+"diffuser du contenu personnalisé et analyser notre trafic. En cliquant sur "
+"\"Tout accepter\", vous consentez à notre utilisation des cookies."
 
 msgid "Accept All"
 msgstr "Tout accepter"
@@ -637,27 +772,45 @@ msgstr "Préférences des cookies"
 msgid "Essential Cookies"
 msgstr "Cookies essentiels"
 
-msgid "These cookies are necessary for the website to function and cannot be switched off in our systems."
-msgstr "Ces cookies sont nécessaires au fonctionnement du site Web et ne peuvent pas être désactivés dans nos systèmes."
+msgid ""
+"These cookies are necessary for the website to function and cannot be "
+"switched off in our systems."
+msgstr ""
+"Ces cookies sont nécessaires au fonctionnement du site Web et ne peuvent pas"
+" être désactivés dans nos systèmes."
 
 msgid "Analytics Cookies"
 msgstr "Cookies d'analyse"
 
-msgid "These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site."
-msgstr "Ces cookies nous permettent de compter les visites et les sources de trafic afin que nous puissions mesurer et améliorer les performances de notre site."
+msgid ""
+"These cookies allow us to count visits and traffic sources so we can measure"
+" and improve the performance of our site."
+msgstr ""
+"Ces cookies nous permettent de compter les visites et les sources de trafic "
+"afin que nous puissions mesurer et améliorer les performances de notre site."
 
 msgid "Marketing Cookies"
 msgstr "Cookies marketing"
 
-msgid "These cookies may be set through our site by our advertising partners to build a profile of your interests."
-msgstr "Ces cookies peuvent être définis via notre site par nos partenaires publicitaires pour créer un profil de vos intérêts."
+msgid ""
+"These cookies may be set through our site by our advertising partners to "
+"build a profile of your interests."
+msgstr ""
+"Ces cookies peuvent être définis via notre site par nos partenaires "
+"publicitaires pour créer un profil de vos intérêts."
 
 msgid "Save Preferences"
 msgstr "Enregistrer les préférences"
 
 # Projects Page
-msgid "From Churches to Theatres, Apartments, our projects in sustainability <br>and infrastructure are shaping a better world. Discover the range of work we do."
-msgstr "Des églises aux théâtres, en passant par les appartements, nos projets en matière de durabilité <br>et d'infrastructure façonnent un monde meilleur. Découvrez l'étendue de notre travail."
+msgid ""
+"From Churches to Theatres, Apartments, our projects in sustainability "
+"<br>and infrastructure are shaping a better world. Discover the range of "
+"work we do."
+msgstr ""
+"Des églises aux théâtres, en passant par les appartements, nos projets en "
+"matière de durabilité <br>et d'infrastructure façonnent un monde meilleur. "
+"Découvrez l'étendue de notre travail."
 
 msgid "search projects"
 msgstr "rechercher des projets"
@@ -668,22 +821,25 @@ msgstr "Rechercher des projets"
 msgid "Location"
 msgstr "Emplacement"
 
-
-
-
-
 # Projects Data
 msgid "amadia"
 msgstr "amadia"
 
-msgid "Development of a retail showcase of a warehouse combined with restaurants."
-msgstr "Développement d'une vitrine commerciale d'un entrepôt combiné avec des restaurants."
+msgid ""
+"Development of a retail showcase of a warehouse combined with restaurants."
+msgstr ""
+"Développement d'une vitrine commerciale d'un entrepôt combiné avec des "
+"restaurants."
 
 msgid "Aseda Garden Estate"
 msgstr "Aseda Garden Estate"
 
-msgid "Luxury home featuring innovative architecture. A bespoke residence with modern amenities and green spaces."
-msgstr "Maison de luxe dotée d'une architecture innovante. Une résidence sur mesure avec des équipements modernes et des espaces verts."
+msgid ""
+"Luxury home featuring innovative architecture. A bespoke residence with "
+"modern amenities and green spaces."
+msgstr ""
+"Maison de luxe dotée d'une architecture innovante. Une résidence sur mesure "
+"avec des équipements modernes et des espaces verts."
 
 msgid "Tema, Ghana"
 msgstr "Tema, Ghana"
@@ -691,41 +847,66 @@ msgstr "Tema, Ghana"
 msgid "Beach House"
 msgstr "Maison de Plage"
 
-msgid "Seaside retreat with panoramic ocean views. A coastal property designed for relaxation and harmony with nature."
-msgstr "Refuge en bord de mer avec vue panoramique sur l'océan. Une propriété côtière conçue pour la détente et l'harmonie avec la nature."
+msgid ""
+"Seaside retreat with panoramic ocean views. A coastal property designed for "
+"relaxation and harmony with nature."
+msgstr ""
+"Refuge en bord de mer avec vue panoramique sur l'océan. Une propriété "
+"côtière conçue pour la détente et l'harmonie avec la nature."
 
 msgid "First love center"
 msgstr "Centre First Love"
 
 msgid "Developing multiple components, from Internal to the new tower block."
-msgstr "Développement de multiples composants, de l'intérieur à la nouvelle tour."
+msgstr ""
+"Développement de multiples composants, de l'intérieur à la nouvelle tour."
 
 msgid "Gardenia"
 msgstr "Gardenia"
 
-msgid "Commercial complex with modern retail spaces. A vibrant hub for shopping and entertainment in the city center."
-msgstr "Complexe commercial avec des espaces commerciaux modernes. Un hub dynamique pour le shopping et le divertissement au centre-ville."
+msgid ""
+"Commercial complex with modern retail spaces. A vibrant hub for shopping and"
+" entertainment in the city center."
+msgstr ""
+"Complexe commercial avec des espaces commerciaux modernes. Un hub dynamique "
+"pour le shopping et le divertissement au centre-ville."
 
-msgid "Rustic retreat nestled in the hills. An eco-lodge offering tranquility and adventure experiences."
-msgstr "Retraite rustique nichée dans les collines. Un éco-lodge offrant tranquillité et expériences d'aventure."
+msgid ""
+"Rustic retreat nestled in the hills. An eco-lodge offering tranquility and "
+"adventure experiences."
+msgstr ""
+"Retraite rustique nichée dans les collines. Un éco-lodge offrant "
+"tranquillité et expériences d'aventure."
 
 msgid "private residence tema"
 msgstr "résidence privée tema"
 
-msgid "High-rise residential towers with city views. Luxury apartments featuring smart home technology and amenities."
-msgstr "Tours résidentielles avec vue sur la ville. Appartements de luxe dotés de technologie domotique et d'équipements."
+msgid ""
+"High-rise residential towers with city views. Luxury apartments featuring "
+"smart home technology and amenities."
+msgstr ""
+"Tours résidentielles avec vue sur la ville. Appartements de luxe dotés de "
+"technologie domotique et d'équipements."
 
 msgid "The Exchange apartments"
 msgstr "Appartements The Exchange"
 
-msgid "Exclusive villas along the riverbank. Private estates with lush gardens and waterfront access."
-msgstr "Villas exclusives le long de la berge. Domaines privés avec jardins luxuriants et accès au bord de l'eau."
+msgid ""
+"Exclusive villas along the riverbank. Private estates with lush gardens and "
+"waterfront access."
+msgstr ""
+"Villas exclusives le long de la berge. Domaines privés avec jardins "
+"luxuriants et accès au bord de l'eau."
 
 msgid "Theatre"
 msgstr "Théâtre"
 
-msgid "Sustainable community living spaces. A green development promoting environmental consciousness."
-msgstr "Espaces de vie communautaire durables. Un développement vert promouvant la conscience environnementale."
+msgid ""
+"Sustainable community living spaces. A green development promoting "
+"environmental consciousness."
+msgstr ""
+"Espaces de vie communautaire durables. Un développement vert promouvant la "
+"conscience environnementale."
 
 msgid "Kumasi, Ghana"
 msgstr "Kumasi, Ghana"
@@ -733,8 +914,12 @@ msgstr "Kumasi, Ghana"
 msgid "TSC Commercial, Tema"
 msgstr "TSC Commercial, Tema"
 
-msgid "Luxury accommodation with cultural significance. A boutique hotel preserving local heritage and traditions."
-msgstr "Hébergement de luxe avec importance culturelle. Un hôtel-boutique préservant le patrimoine et les traditions locales."
+msgid ""
+"Luxury accommodation with cultural significance. A boutique hotel preserving"
+" local heritage and traditions."
+msgstr ""
+"Hébergement de luxe avec importance culturelle. Un hôtel-boutique préservant"
+" le patrimoine et les traditions locales."
 
 msgid "Cape Coast, Ghana"
 msgstr "Cape Coast, Ghana"
@@ -742,14 +927,293 @@ msgstr "Cape Coast, Ghana"
 msgid "roof top"
 msgstr "toit-terrasse"
 
-msgid "Tech and startup incubation center. A modern facility fostering entrepreneurship and innovation."
-msgstr "Centre d'incubation technologique et de startups. Une installation moderne favorisant l'entrepreneuriat et l'innovation."
+msgid ""
+"Tech and startup incubation center. A modern facility fostering "
+"entrepreneurship and innovation."
+msgstr ""
+"Centre d'incubation technologique et de startups. Une installation moderne "
+"favorisant l'entrepreneuriat et l'innovation."
 
 msgid "Private Residence Ashongman"
 msgstr "Résidence Privée Ashongman"
 
-msgid "Spa and wellness retreat destination. A serene oasis for relaxation and rejuvenation."
-msgstr "Destination de retraite spa et bien-être. Une oasis sereine pour la détente et le rajeunissement."
+msgid ""
+"Spa and wellness retreat destination. A serene oasis for relaxation and "
+"rejuvenation."
+msgstr ""
+"Destination de retraite spa et bien-être. Une oasis sereine pour la détente "
+"et le rajeunissement."
 
 msgid "Takoradi, Ghana"
 msgstr "Takoradi, Ghana"
+
+#: main/templates/main/index.html
+msgid "search ABOD"
+msgstr "rechercher ABOD"
+
+#: main/templates/main/index.html
+msgid "Issues"
+msgstr "Questions"
+
+#: main/templates/main/index.html
+msgid ""
+"How do you solve tight spaces with smart design and precise engineering"
+msgstr ""
+"Comment résoudre les espaces restreints avec une conception intelligente et "
+"une ingénierie précise"
+
+#: main/templates/main/index.html
+msgid "we believe complex challenges can be catalysts for better design"
+msgstr ""
+"nous croyons que les défis complexes peuvent être des catalyseurs pour une "
+"meilleure conception"
+
+#: main/templates/main/index.html
+msgid "The exchange apartments"
+msgstr "Les appartements exchange"
+
+#: main/templates/main/index.html
+msgid "Modern living spaces designed for contemporary urban lifestyles"
+msgstr ""
+"Espaces de vie modernes conçus pour les modes de vie urbains contemporains"
+
+#: main/templates/main/index.html
+msgid "ABOD founder along with others win IFC Edge Design Competition"
+msgstr ""
+"Le fondateur d'ABOD et d'autres remportent le concours de design IFC Edge"
+
+#: main/templates/main/index.html
+msgid "Our Work"
+msgstr "Notre Travail"
+
+#: main/templates/main/index.html
+msgid "See Projects"
+msgstr "Voir les Projets"
+
+#: main/templates/main/index.html
+msgid ""
+"Showcasing our latest projects and achievements in engineering and "
+"sustainability."
+msgstr ""
+"Présentation de nos derniers projets et réalisations en ingénierie et "
+"durabilité."
+
+#: main/templates/main/index.html
+msgid "Urban Development"
+msgstr "Développement Urbain"
+
+#: main/templates/main/index.html
+msgid ""
+"Creating sustainable urban spaces that blend innovation with community "
+"needs."
+msgstr ""
+"Créer des espaces urbains durables qui allient innovation et besoins de la "
+"communauté."
+
+#: main/templates/main/index.html
+msgid "3d Modeling and Visualisation"
+msgstr "Modélisation 3D et Visualisation"
+
+#: main/templates/main/index.html
+msgid ""
+"Advancing engineering solutions for complex challenges in modern "
+"construction."
+msgstr ""
+"Faire progresser les solutions d'ingénierie pour les défis complexes de la "
+"construction moderne."
+
+#: main/templates/main/index.html
+msgid "Sustainable Architecture"
+msgstr "Architecture Durable"
+
+#: main/templates/main/index.html
+msgid ""
+"Designing buildings that harmonize with the environment and future "
+"generations."
+msgstr ""
+"Concevoir des bâtiments en harmonie avec l'environnement et les générations "
+"futures."
+
+#: main/templates/main/index.html
+msgid "Modern Construction"
+msgstr "Construction Moderne"
+
+#: main/templates/main/index.html
+msgid ""
+"Implementing cutting-edge techniques for efficient and resilient structures."
+msgstr ""
+"Mise en œuvre de techniques de pointe pour des structures efficaces et "
+"résilientes."
+
+#: main/templates/main/index.html
+msgid "We are designing structures for life"
+msgstr "Nous concevons des structures pour la vie"
+
+#: main/templates/main/index.html
+msgid "We are engineering the change we want to see"
+msgstr "Nous créons le changement que nous voulons voir"
+
+#: main/templates/main/about.html
+msgid "About Us"
+msgstr "À Propos"
+
+#: main/templates/main/about.html
+msgid "WHO ARE WE?"
+msgstr "QUI SOMMES-NOUS ?"
+
+#: main/templates/main/about.html
+msgid ""
+"Abod Group is a premier built environment consultancy headquartered in "
+"Accra, Ghana. We are dedicated to transforming Africa's urban landscape "
+"through innovative, sustainable, and high-tech design solutions. Our team of"
+" visionary architects, engineers, and sustainability experts leverages "
+"cutting-edge technologies like AI, BIM, and digital twinning to deliver "
+"iconic, complex projects that redefine excellence."
+msgstr ""
+"Abod Group est un cabinet de conseil de premier plan dans l'environnement "
+"bâti, basé à Accra, au Ghana. Nous nous consacrons à transformer le paysage "
+"urbain africain grâce à des solutions de conception innovantes, durables et "
+"high-tech. Notre équipe d'architectes visionnaires, d'ingénieurs et "
+"d'experts en durabilité exploite des technologies de pointe comme l'IA, le "
+"BIM et le jumeau numérique pour réaliser des projets emblématiques et "
+"complexes qui redéfinissent l'excellence."
+
+#: main/templates/main/about.html
+msgid "CORE VALUES"
+msgstr "VALEURS FONDAMENTALES"
+
+#: main/templates/main/about.html
+msgid "Innovation (pushing design boundaries)"
+msgstr "Innovation (repousser les limites de la conception)"
+
+#: main/templates/main/about.html
+msgid "Sustainability (prioritizing environmental responsibility)"
+msgstr "Durabilité (prioriser la responsabilité environnementale)"
+
+#: main/templates/main/about.html
+msgid "Excellence (delivering superior quality)"
+msgstr "Excellence (offrir une qualité supérieure)"
+
+#: main/templates/main/about.html
+msgid "Integrity (maintaining ethical standards)"
+msgstr "Intégrité (maintenir des normes éthiques)"
+
+#: main/templates/main/about.html
+msgid ""
+"Collaboration (working closely with clients, communities, and partners)"
+msgstr ""
+"Collaboration (travailler étroitement avec les clients, les communautés et "
+"les partenaires)"
+
+#: main/templates/main/about.html
+msgid "WHY ABOD?"
+msgstr "POURQUOI ABOD ?"
+
+#: main/templates/main/about.html
+msgid ""
+"Complex, Iconic Projects: Delivering landmark developments with a wow "
+"factor."
+msgstr ""
+"Projets complexes et emblématiques : réaliser des développements phares avec"
+" un effet wow."
+
+#: main/templates/main/about.html
+msgid ""
+"Sustainability and Climate Resilience: Committing to net-zero goals and "
+"green certifications."
+msgstr ""
+"Durabilité et résilience climatique : s'engager pour des objectifs zéro "
+"émission nette et des certifications vertes."
+
+#: main/templates/main/about.html
+msgid ""
+"Advanced Technology: Harnessing AI, BIM, parametric design, and digital "
+"twinning for precision and innovation."
+msgstr ""
+"Technologie avancée : exploiter l'IA, le BIM, la conception paramétrique et "
+"le jumeau numérique pour la précision et l'innovation."
+
+#: main/templates/main/about.html
+msgid ""
+"Africa-Centric Solutions: Combining global expertise with local knowledge to"
+" address regional challenges."
+msgstr ""
+"Solutions centrées sur l'Afrique : combiner l'expertise mondiale avec les "
+"connaissances locales pour relever les défis régionaux."
+
+#: main/templates/main/about.html
+msgid ""
+"Human-Centered Design: Creating inclusive, narrative-driven spaces that "
+"inspire."
+msgstr ""
+"Conception centrée sur l'humain : créer des espaces inclusifs et narratifs "
+"qui inspirent."
+
+#: main/templates/main/about.html
+msgid "OUR DESIGN PHILOSOPHY"
+msgstr "NOTRE PHILOSOPHIE DE CONCEPTION"
+
+#: main/templates/main/about.html
+msgid ""
+"Collaborative Engagement: Prioritizing collaboration, client feedback, and "
+"constant communication to co-create innovative, meaningful designs that "
+"resonate with stakeholders."
+msgstr ""
+"Engagement collaboratif : prioriser la collaboration, les retours clients et"
+" la communication constante pour co-créer des conceptions innovantes et "
+"significatives qui résonnent avec les parties prenantes."
+
+#: main/templates/main/about.html
+msgid ""
+"Narrative-Driven Design: Crafting spaces that tell a story and engage "
+"communities, enriched through collaborative input and ongoing client "
+"dialogue."
+msgstr ""
+"Conception narrative : créer des espaces qui racontent une histoire et "
+"engagent les communautés, enrichis par une contribution collaborative et un "
+"dialogue client continu."
+
+#: main/templates/main/about.html
+msgid ""
+"Sustainable High-Tech Solutions: Integrating green materials, smart systems,"
+" and innovative forms, developed with client collaboration and feedback to "
+"ensure sustainable outcomes."
+msgstr ""
+"Solutions high-tech durables : intégrer des matériaux verts, des systèmes "
+"intelligents et des formes innovantes, développés avec la collaboration et "
+"les retours clients pour garantir des résultats durables."
+
+#: main/templates/main/about.html
+msgid ""
+"Challenging the Status Quo: Embracing a what can't be done mindset to push "
+"boundaries, shaped by constant communication and client insights to drive "
+"bold innovation."
+msgstr ""
+"Défier le statu quo : adopter un état d'esprit 'ce qui ne peut pas être "
+"fait' pour repousser les limites, façonné par une communication constante et"
+" les insights clients pour stimuler l'innovation audacieuse."
+
+#: main/templates/main/about.html
+msgid ""
+"User-Centric and Inclusive: Prioritizing functionality, accessibility, and "
+"excellence, co-designed with clients through continuous feedback and "
+"collaborative processes."
+msgstr ""
+"Centré sur l'utilisateur et inclusif : prioriser la fonctionnalité, "
+"l'accessibilité et l'excellence, co-conçu avec les clients par des retours "
+"continus et des processus collaboratifs."
+
+#: main/templates/main/about.html
+msgid ""
+"Research-Based and AI-Backed: Grounded in deep research and cutting-edge "
+"technology, enhanced by iterative client collaboration and constant "
+"communication for impactful solutions."
+msgstr ""
+"Basé sur la recherche et soutenu par l'IA : ancré dans une recherche "
+"approfondie et une technologie de pointe, amélioré par une collaboration "
+"client itérative et une communication constante pour des solutions "
+"impactantes."
+
+#: main/templates/main/about.html
+msgid "OUR CLIENTS"
+msgstr "NOS CLIENTS"
