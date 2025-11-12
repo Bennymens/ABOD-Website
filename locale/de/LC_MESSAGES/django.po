@@ -478,10 +478,10 @@ msgid "Environment"
 msgstr "Umwelt"
 
 msgid "Cities & Urban Design"
-msgstr "Städte und Stadtplanung"
+msgstr "Städte & Stadtgestaltung"
 
 msgid "Digital & Technology"
-msgstr "Digital und Technologie"
+msgstr "Digital & Technologie"
 
 msgid "Advisory"
 msgstr "Beratung"
@@ -499,13 +499,13 @@ msgid "Mining"
 msgstr "Bergbau"
 
 msgid "Maritime"
-msgstr "Seefahrt"
+msgstr "Maritime"
 
 msgid "Property & Real Estate"
-msgstr "Immobilien"
+msgstr "Immobilien & Grundbesitz"
 
 msgid "Select your service of interest (if known)"
-msgstr "Wählen Sie Ihren gewünschten Service (falls bekannt)"
+msgstr "Wählen Sie Ihren interessierenden Service (falls bekannt)"
 
 msgid "How did you hear about us?"
 msgstr "Wie haben Sie von uns erfahren?"
@@ -523,13 +523,13 @@ msgid "Advertisement"
 msgstr "Werbung"
 
 msgid "Job Board"
-msgstr "Jobbörse"
+msgstr "Jobportal"
 
 msgid "University/Career Fair"
-msgstr "Universitäts-/Karrieremesse"
+msgstr "Universität/Karrieremesse"
 
 msgid "Networking Event"
-msgstr "Networking-Veranstaltung"
+msgstr "Networking-Event"
 
 msgid "Other"
 msgstr "Sonstiges"
@@ -682,10 +682,10 @@ msgid "City/Town"
 msgstr "Stadt"
 
 msgid "What would you like to discuss?"
-msgstr "Was möchten Sie besprechen?"
+msgstr "Worüber möchten Sie sprechen?"
 
 msgid "Submit"
-msgstr "Absenden"
+msgstr "Einreichen"
 
 msgid "Media and press"
 msgstr "Medien und Presse"
@@ -1205,3 +1205,15 @@ msgstr ""
 #: main/templates/main/about.html
 msgid "OUR CLIENTS"
 msgstr "UNSERE KUNDEN"
+
+#: main/templates/main/contact.html
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: main/templates/main/contact.html
+msgid "Indeed"
+msgstr "Indeed"
+
+#: main/templates/main/contact.html
+msgid "Glassdoor"
+msgstr "Glassdoor"

@@ -484,10 +484,10 @@ msgid "Environment"
 msgstr "Environnement"
 
 msgid "Cities & Urban Design"
-msgstr "Villes et urbanisme"
+msgstr "Villes et design urbain"
 
 msgid "Digital & Technology"
-msgstr "Technologie numérique"
+msgstr "Digital et technologie"
 
 msgid "Advisory"
 msgstr "Conseil"
@@ -502,7 +502,7 @@ msgid "Defence"
 msgstr "Défense"
 
 msgid "Mining"
-msgstr "Exploitation minière"
+msgstr "Mines"
 
 msgid "Maritime"
 msgstr "Maritime"
@@ -511,19 +511,19 @@ msgid "Property & Real Estate"
 msgstr "Immobilier"
 
 msgid "Select your service of interest (if known)"
-msgstr "Sélectionnez le service qui vous intéresse (si connu)"
+msgstr "Sélectionnez votre service d'intérêt (si connu)"
 
 msgid "How did you hear about us?"
 msgstr "Comment avez-vous entendu parler de nous ?"
 
 msgid "Social Media"
-msgstr "Médias sociaux"
+msgstr "Réseaux sociaux"
 
 msgid "Website"
-msgstr "Site Web"
+msgstr "Site web"
 
 msgid "Referral"
-msgstr "Recommandation"
+msgstr "Référence"
 
 msgid "Advertisement"
 msgstr "Publicité"
@@ -532,7 +532,7 @@ msgid "Job Board"
 msgstr "Site d'emploi"
 
 msgid "University/Career Fair"
-msgstr "Salon universitaire/professionnel"
+msgstr "Université/Salon de l'emploi"
 
 msgid "Networking Event"
 msgstr "Événement de réseautage"
@@ -544,7 +544,7 @@ msgid "First name"
 msgstr "Prénom"
 
 msgid "Last name"
-msgstr "Nom de famille"
+msgstr "Nom"
 
 msgid "Email address"
 msgstr "Adresse e-mail"
@@ -707,10 +707,9 @@ msgid ""
 "Before sending a general enquiry, kindly review our application process to "
 "see if your question has already been addressed."
 msgstr ""
-"Parlez aux équipes de recrutement d'Arup pour les opportunités d'emploi et "
-"les carrières. Avant d'envoyer une demande générale, veuillez consulter "
-"notre processus de candidature pour voir si votre question a déjà été "
-"traitée."
+"Parlez aux équipes de recrutement d'Arup des opportunités d'emploi et de "
+"carrière. Avant d'envoyer une demande générale, veuillez consulter notre "
+"processus de candidature pour voir si votre question a déjà été traitée."
 
 msgid "Experience level"
 msgstr "Niveau d'expérience"
@@ -1217,3 +1216,15 @@ msgstr ""
 #: main/templates/main/about.html
 msgid "OUR CLIENTS"
 msgstr "NOS CLIENTS"
+
+#: main/templates/main/contact.html
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: main/templates/main/contact.html
+msgid "Indeed"
+msgstr "Indeed"
+
+#: main/templates/main/contact.html
+msgid "Glassdoor"
+msgstr "Glassdoor"

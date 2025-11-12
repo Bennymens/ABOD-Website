@@ -296,9 +296,9 @@
               <option value="referral">{% trans "Referral" %}</option>
               <option value="advertisement">{% trans "Advertisement" %}</option>
               <option value="job-board">{% trans "Job Board" %}</option>
-              <option value="linkedin">LinkedIn</option>
-              <option value="indeed">Indeed</option>
-              <option value="glassdoor">Glassdoor</option>
+              <option value="linkedin">{% trans "LinkedIn" %}</option>
+              <option value="indeed">{% trans "Indeed" %}</option>
+              <option value="glassdoor">{% trans "Glassdoor" %}</option>
               <option value="university">{% trans "University/Career Fair" %}</option>
               <option value="networking">{% trans "Networking Event" %}</option>
               <option value="other">{% trans "Other" %}</option>
@@ -473,9 +473,9 @@
               <option value="referral">{% trans "Referral" %}</option>
               <option value="advertisement">{% trans "Advertisement" %}</option>
               <option value="job-board">{% trans "Job Board" %}</option>
-              <option value="linkedin">LinkedIn</option>
-              <option value="indeed">Indeed</option>
-              <option value="glassdoor">Glassdoor</option>
+              <option value="linkedin">{% trans "LinkedIn" %}</option>
+              <option value="indeed">{% trans "Indeed" %}</option>
+              <option value="glassdoor">{% trans "Glassdoor" %}</option>
               <option value="university">{% trans "University/Career Fair" %}</option>
               <option value="networking">{% trans "Networking Event" %}</option>
               <option value="other">{% trans "Other" %}</option>
@@ -602,84 +602,84 @@
           {% csrf_token %}
           <div class="form-row two-up">
             <div>
-              <label>First name</label>
+              <label>{% trans "First name" %}</label>
               <input class="short-line" type="text" name="first_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
             <div>
-              <label>Last name</label>
+              <label>{% trans "Last name" %}</label>
               <input class="short-line" type="text" name="last_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
           </div>
           <div class="form-row two-up">
             <div>
-              <label>Email address</label>
+              <label>{% trans "Email address" %}</label>
               <input class="short-line" type="email" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
             <div>
-              <label>Phone number</label>
+              <label>{% trans "Phone number" %}</label>
               <input class="short-line" type="tel" name="phone" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
           </div>
           <div class="form-row two-up">
             <div>
-              <label>Company name</label>
+              <label>{% trans "Company name" %}</label>
               <input class="short-line" type="text" name="company" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
             <div>
-              <label>Job title</label>
+              <label>{% trans "Job title" %}</label>
               <input class="short-line" type="text" name="job_title" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
           </div>
           <div class="form-row two-up">
             <div>
-              <label>Country/Location</label>
+              <label>{% trans "Country/Location" %}</label>
               <select name="country">
-                <option value="">Select</option>
-                <option value="united-kingdom">United Kingdom</option>
-                <option value="united-states">United States</option>
-                <option value="canada">Canada</option>
-                <option value="australia">Australia</option>
-                <option value="ireland">Ireland</option>
-                <option value="france">France</option>
-                <option value="germany">Germany</option>
-                <option value="netherlands">Netherlands</option>
-                <option value="spain">Spain</option>
-                <option value="italy">Italy</option>
-                <option value="sweden">Sweden</option>
-                <option value="norway">Norway</option>
-                <option value="denmark">Denmark</option>
-                <option value="finland">Finland</option>
-                <option value="belgium">Belgium</option>
-                <option value="switzerland">Switzerland</option>
-                <option value="austria">Austria</option>
-                <option value="poland">Poland</option>
-                <option value="portugal">Portugal</option>
-                <option value="greece">Greece</option>
-                <option value="turkey">Turkey</option>
-                <option value="russia">Russia</option>
-                <option value="china">China</option>
-                <option value="india">India</option>
-                <option value="japan">Japan</option>
-                <option value="south-korea">South Korea</option>
-                <option value="singapore">Singapore</option>
-                <option value="hong-kong">Hong Kong SAR</option>
-                <option value="united-arab-emirates">United Arab Emirates</option>
-                <option value="saudi-arabia">Saudi Arabia</option>
-                <option value="south-africa">South Africa</option>
-                <option value="kenya">Kenya</option>
-                <option value="nigeria">Nigeria</option>
-                <option value="egypt">Egypt</option>
-                <option value="brazil">Brazil</option>
-                <option value="mexico">Mexico</option>
-                <option value="argentina">Argentina</option>
-                <option value="chile">Chile</option>
-                <option value="colombia">Colombia</option>
-                <option value="new-zealand">New Zealand</option>
-                <option value="other">Other</option>
+                <option value="">{% trans "Select" %}</option>
+                <option value="united-kingdom">{% trans "United Kingdom" %}</option>
+                <option value="united-states">{% trans "United States" %}</option>
+                <option value="canada">{% trans "Canada" %}</option>
+                <option value="australia">{% trans "Australia" %}</option>
+                <option value="ireland">{% trans "Ireland" %}</option>
+                <option value="france">{% trans "France" %}</option>
+                <option value="germany">{% trans "Germany" %}</option>
+                <option value="netherlands">{% trans "Netherlands" %}</option>
+                <option value="spain">{% trans "Spain" %}</option>
+                <option value="italy">{% trans "Italy" %}</option>
+                <option value="sweden">{% trans "Sweden" %}</option>
+                <option value="norway">{% trans "Norway" %}</option>
+                <option value="denmark">{% trans "Denmark" %}</option>
+                <option value="finland">{% trans "Finland" %}</option>
+                <option value="belgium">{% trans "Belgium" %}</option>
+                <option value="switzerland">{% trans "Switzerland" %}</option>
+                <option value="austria">{% trans "Austria" %}</option>
+                <option value="poland">{% trans "Poland" %}</option>
+                <option value="portugal">{% trans "Portugal" %}</option>
+                <option value="greece">{% trans "Greece" %}</option>
+                <option value="turkey">{% trans "Turkey" %}</option>
+                <option value="russia">{% trans "Russia" %}</option>
+                <option value="china">{% trans "China" %}</option>
+                <option value="india">{% trans "India" %}</option>
+                <option value="japan">{% trans "Japan" %}</option>
+                <option value="south-korea">{% trans "South Korea" %}</option>
+                <option value="singapore">{% trans "Singapore" %}</option>
+                <option value="hong-kong">{% trans "Hong Kong SAR" %}</option>
+                <option value="united-arab-emirates">{% trans "United Arab Emirates" %}</option>
+                <option value="saudi-arabia">{% trans "Saudi Arabia" %}</option>
+                <option value="south-africa">{% trans "South Africa" %}</option>
+                <option value="kenya">{% trans "Kenya" %}</option>
+                <option value="nigeria">{% trans "Nigeria" %}</option>
+                <option value="egypt">{% trans "Egypt" %}</option>
+                <option value="brazil">{% trans "Brazil" %}</option>
+                <option value="mexico">{% trans "Mexico" %}</option>
+                <option value="argentina">{% trans "Argentina" %}</option>
+                <option value="chile">{% trans "Chile" %}</option>
+                <option value="colombia">{% trans "Colombia" %}</option>
+                <option value="new-zealand">{% trans "New Zealand" %}</option>
+                <option value="other">{% trans "Other" %}</option>
               </select>
             </div>
             <div>
-              <label>City/Town</label>
+              <label>{% trans "City/Town" %}</label>
               <input type="text" name="city" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
           </div>
@@ -687,7 +687,7 @@
             <div>
               <label>{% trans "Experience level" %}</label>
               <select name="experience">
-                <option value="">Select...</option>
+                <option value="">{% trans "Select..." %}</option>
                 <option value="internship">{% trans "Internship" %}</option>
                 <option value="entry">{% trans "Entry Level" %}</option>
                 <option value="mid">{% trans "Mid Level" %}</option>
@@ -697,32 +697,32 @@
               </select>
             </div>
             <div>
-              <label>How did you hear about us?</label>
+              <label>{% trans "How did you hear about us?" %}</label>
               <select name="how_hear">
-                <option value="">Select...</option>
-                <option value="social-media">Social Media</option>
-                <option value="website">Website</option>
-                <option value="referral">Referral</option>
-                <option value="advertisement">Advertisement</option>
-                <option value="job-board">Job Board</option>
-                <option value="linkedin">LinkedIn</option>
-                <option value="indeed">Indeed</option>
-                <option value="glassdoor">Glassdoor</option>
-                <option value="university">University/Career Fair</option>
-                <option value="networking">Networking Event</option>
-                <option value="other">Other</option>
+                <option value="">{% trans "Select..." %}</option>
+                <option value="social-media">{% trans "Social Media" %}</option>
+                <option value="website">{% trans "Website" %}</option>
+                <option value="referral">{% trans "Referral" %}</option>
+                <option value="advertisement">{% trans "Advertisement" %}</option>
+                <option value="job-board">{% trans "Job Board" %}</option>
+                <option value="linkedin">{% trans "LinkedIn" %}</option>
+                <option value="indeed">{% trans "Indeed" %}</option>
+                <option value="glassdoor">{% trans "Glassdoor" %}</option>
+                <option value="university">{% trans "University/Career Fair" %}</option>
+                <option value="networking">{% trans "Networking Event" %}</option>
+                <option value="other">{% trans "Other" %}</option>
               </select>
             </div>
           </div>
           <div class="form-row message-row">
-            <label>What would you like to discuss?</label>
+            <label>{% trans "What would you like to discuss?" %}</label>
             <textarea name="message" rows="4" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
           </div>
           <div class="form-row">
             <p class="privacy-note">{% trans "Arup will only process your data in accordance with its" %} <a href="#">{% trans "privacy policy" %}</a>.</p>
           </div>
           <div class="form-row">
-            <button type="submit" class="btn-submit">Submit</button>
+            <button type="submit" class="btn-submit">{% trans "Submit" %}</button>
           </div>
         </form>
       </div>
@@ -744,32 +744,32 @@
           {% csrf_token %}
           <!-- Area of business (full width) -->
           <div class="form-row">
-            <label>Area of business</label>
+            <label>{% trans "Area of business" %}</label>
             <select name="area_of_business">
-              <option value="">Select...</option>
-              <option value="buildings">Buildings</option>
-              <option value="infrastructure">Infrastructure</option>
-              <option value="transport">Transport</option>
-              <option value="energy">Energy</option>
-              <option value="water">Water</option>
-              <option value="environment">Environment</option>
-              <option value="cities">Cities &amp; Urban Design</option>
-              <option value="digital">Digital &amp; Technology</option>
-              <option value="advisory">Advisory</option>
-              <option value="health">Health</option>
-              <option value="education">Education</option>
-              <option value="defence">Defence</option>
-              <option value="mining">Mining</option>
-              <option value="maritime">Maritime</option>
-              <option value="property">Property &amp; Real Estate</option>
+              <option value="">{% trans "Select..." %}</option>
+              <option value="buildings">{% trans "Buildings" %}</option>
+              <option value="infrastructure">{% trans "Infrastructure" %}</option>
+              <option value="transport">{% trans "Transport" %}</option>
+              <option value="energy">{% trans "Energy" %}</option>
+              <option value="water">{% trans "Water" %}</option>
+              <option value="environment">{% trans "Environment" %}</option>
+              <option value="cities">{% trans "Cities & Urban Design" %}</option>
+              <option value="digital">{% trans "Digital & Technology" %}</option>
+              <option value="advisory">{% trans "Advisory" %}</option>
+              <option value="health">{% trans "Health" %}</option>
+              <option value="education">{% trans "Education" %}</option>
+              <option value="defence">{% trans "Defence" %}</option>
+              <option value="mining">{% trans "Mining" %}</option>
+              <option value="maritime">{% trans "Maritime" %}</option>
+              <option value="property">{% trans "Property & Real Estate" %}</option>
             </select>
           </div>
 
           <!-- Service of interest (full width) -->
           <div class="form-row">
-            <label>Select your service of interest (if known)</label>
+            <label>{% trans "Select your service of interest (if known)" %}</label>
             <select name="service_interest">
-              <option value="">Select...</option>
+              <option value="">{% trans "Select..." %}</option>
               <option value="advisory-and-planning">Advisory and Planning</option>
               <option value="architecture-and-design">Architecture and Design</option>
               <option value="3d-modeling-visualization">3D Modeling and Visualization</option>
@@ -784,31 +784,31 @@
 
           <!-- How did you hear about us (dropdown) -->
           <div class="form-row">
-            <label>How did you hear about us?</label>
+            <label>{% trans "How did you hear about us?" %}</label>
             <select name="hear_about_us">
-              <option value="">Select...</option>
-              <option value="social-media">Social Media</option>
-              <option value="website">Website</option>
-              <option value="referral">Referral</option>
-              <option value="advertisement">Advertisement</option>
-              <option value="job-board">Job Board</option>
-              <option value="linkedin">LinkedIn</option>
-              <option value="indeed">Indeed</option>
-              <option value="glassdoor">Glassdoor</option>
-              <option value="university">University/Career Fair</option>
-              <option value="networking">Networking Event</option>
-              <option value="other">Other</option>
+              <option value="">{% trans "Select..." %}</option>
+              <option value="social-media">{% trans "Social Media" %}</option>
+              <option value="website">{% trans "Website" %}</option>
+              <option value="referral">{% trans "Referral" %}</option>
+              <option value="advertisement">{% trans "Advertisement" %}</option>
+              <option value="job-board">{% trans "Job Board" %}</option>
+              <option value="linkedin">{% trans "LinkedIn" %}</option>
+              <option value="indeed">{% trans "Indeed" %}</option>
+              <option value="glassdoor">{% trans "Glassdoor" %}</option>
+              <option value="university">{% trans "University/Career Fair" %}</option>
+              <option value="networking">{% trans "Networking Event" %}</option>
+              <option value="other">{% trans "Other" %}</option>
             </select>
           </div>
 
           <!-- First / Last name: two columns -->
           <div class="form-row two-up">
             <div>
-              <label>First name</label>
+              <label>{% trans "First name" %}</label>
               <input class="short-line" type="text" name="first_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
             <div>
-              <label>Last name</label>
+              <label>{% trans "Last name" %}</label>
               <input class="short-line" type="text" name="last_name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
           </div>
@@ -816,11 +816,11 @@
           <!-- Email / Phone: two columns, label above input -->
           <div class="form-row two-up">
             <div>
-              <label>Email address</label>
+              <label>{% trans "Email address" %}</label>
               <input class="short-line" type="email" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
             <div>
-              <label>Phone number</label>
+              <label>{% trans "Phone number" %}</label>
               <input class="short-line" type="tel" name="phone" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
           </div>
@@ -828,78 +828,78 @@
           <!-- Company / Job title: two columns -->
           <div class="form-row two-up">
             <div>
-              <label>Company name</label>
+              <label>{% trans "Company name" %}</label>
               <input class="short-line" type="text" name="company" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
             <div>
-              <label>Job title</label>
+              <label>{% trans "Job title" %}</label>
               <input class="short-line" type="text" name="job_title" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
             </div>
           </div>
 
           <!-- Country/Location (full width long select) -->
           <div class="form-row">
-            <label>Country/Location</label>
+            <label>{% trans "Country/Location" %}</label>
             <select name="country">
-              <option value="">Select</option>
-              <option value="united-kingdom">United Kingdom</option>
-              <option value="united-states">United States</option>
-              <option value="canada">Canada</option>
-              <option value="australia">Australia</option>
-              <option value="ireland">Ireland</option>
-              <option value="france">France</option>
-              <option value="germany">Germany</option>
-              <option value="netherlands">Netherlands</option>
-              <option value="spain">Spain</option>
-              <option value="italy">Italy</option>
-              <option value="sweden">Sweden</option>
-              <option value="norway">Norway</option>
-              <option value="denmark">Denmark</option>
-              <option value="finland">Finland</option>
-              <option value="belgium">Belgium</option>
-              <option value="switzerland">Switzerland</option>
-              <option value="austria">Austria</option>
-              <option value="poland">Poland</option>
-              <option value="portugal">Portugal</option>
-              <option value="greece">Greece</option>
-              <option value="turkey">Turkey</option>
-              <option value="russia">Russia</option>
-              <option value="china">China</option>
-              <option value="india">India</option>
-              <option value="japan">Japan</option>
-              <option value="south-korea">South Korea</option>
-              <option value="singapore">Singapore</option>
-              <option value="hong-kong">Hong Kong SAR</option>
-              <option value="united-arab-emirates">United Arab Emirates</option>
-              <option value="saudi-arabia">Saudi Arabia</option>
-              <option value="south-africa">South Africa</option>
-              <option value="kenya">Kenya</option>
-              <option value="nigeria">Nigeria</option>
-              <option value="egypt">Egypt</option>
-              <option value="brazil">Brazil</option>
-              <option value="mexico">Mexico</option>
-              <option value="argentina">Argentina</option>
-              <option value="chile">Chile</option>
-              <option value="colombia">Colombia</option>
-              <option value="new-zealand">New Zealand</option>
-              <option value="other">Other</option>
+              <option value="">{% trans "Select" %}</option>
+              <option value="united-kingdom">{% trans "United Kingdom" %}</option>
+              <option value="united-states">{% trans "United States" %}</option>
+              <option value="canada">{% trans "Canada" %}</option>
+              <option value="australia">{% trans "Australia" %}</option>
+              <option value="ireland">{% trans "Ireland" %}</option>
+              <option value="france">{% trans "France" %}</option>
+              <option value="germany">{% trans "Germany" %}</option>
+              <option value="netherlands">{% trans "Netherlands" %}</option>
+              <option value="spain">{% trans "Spain" %}</option>
+              <option value="italy">{% trans "Italy" %}</option>
+              <option value="sweden">{% trans "Sweden" %}</option>
+              <option value="norway">{% trans "Norway" %}</option>
+              <option value="denmark">{% trans "Denmark" %}</option>
+              <option value="finland">{% trans "Finland" %}</option>
+              <option value="belgium">{% trans "Belgium" %}</option>
+              <option value="switzerland">{% trans "Switzerland" %}</option>
+              <option value="austria">{% trans "Austria" %}</option>
+              <option value="poland">{% trans "Poland" %}</option>
+              <option value="portugal">{% trans "Portugal" %}</option>
+              <option value="greece">{% trans "Greece" %}</option>
+              <option value="turkey">{% trans "Turkey" %}</option>
+              <option value="russia">{% trans "Russia" %}</option>
+              <option value="china">{% trans "China" %}</option>
+              <option value="india">{% trans "India" %}</option>
+              <option value="japan">{% trans "Japan" %}</option>
+              <option value="south-korea">{% trans "South Korea" %}</option>
+              <option value="singapore">{% trans "Singapore" %}</option>
+              <option value="hong-kong">{% trans "Hong Kong SAR" %}</option>
+              <option value="united-arab-emirates">{% trans "United Arab Emirates" %}</option>
+              <option value="saudi-arabia">{% trans "Saudi Arabia" %}</option>
+              <option value="south-africa">{% trans "South Africa" %}</option>
+              <option value="kenya">{% trans "Kenya" %}</option>
+              <option value="nigeria">{% trans "Nigeria" %}</option>
+              <option value="egypt">{% trans "Egypt" %}</option>
+              <option value="brazil">{% trans "Brazil" %}</option>
+              <option value="mexico">{% trans "Mexico" %}</option>
+              <option value="argentina">{% trans "Argentina" %}</option>
+              <option value="chile">{% trans "Chile" %}</option>
+              <option value="colombia">{% trans "Colombia" %}</option>
+              <option value="new-zealand">{% trans "New Zealand" %}</option>
+              <option value="other">{% trans "Other" %}</option>
             </select>
           </div>
 
           <!-- City/Town (full width input) -->
           <div class="form-row">
-            <label>City/Town</label>
+            <label>{% trans "City/Town" %}</label>
             <input type="text" name="city" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
           </div>
 
           <!-- Message (full width) -->
           <div class="form-row message-row">
-            <label>What would you like to discuss?</label>
+            <label>{% trans "What would you like to discuss?" %}</label>
             <textarea name="message" rows="4" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
           </div>
 
           <div class="form-row">
-            <button type="submit" class="btn-submit">Submit</button>
+            <button type="submit" class="btn-submit">{% trans "Submit" %}</button>
           </div>
         </form>
       </div>
