@@ -309,14 +309,17 @@ def search(request):
 
 		# Search projects
 		for proj in PROJECTS:
-			title_lower = proj['title'].lower()
-			desc_lower = proj['description'].lower()
+			# Convert translation proxy objects to strings
+			title_str = str(proj['title'])
+			desc_str = str(proj['description'])
+			title_lower = title_str.lower()
+			desc_lower = desc_str.lower()
 			if q in title_lower or q in desc_lower:
-				snippet = proj['description']
+				snippet = desc_str
 				# highlight
 				snippet = re.sub(re.escape(q), lambda m: f'<mark>{m.group()}</mark>', snippet, flags=re.IGNORECASE)
 				results.append({
-					'title': proj['title'],
+					'title': title_str,
 					'url': f'/projects/{proj["slug"]}/',
 					'snippet': snippet,
 					'source': 'Projects',
@@ -497,14 +500,18 @@ def search(request):
 
 		# Also search in PROJECTS data
 		for p in PROJECTS:
-			p_lower = (p['title'] + ' ' + p['description'] + ' ' + p['location']).lower()
+			# Convert translation proxy objects to strings
+			title_str = str(p['title'])
+			desc_str = str(p['description'])
+			loc_str = str(p['location'])
+			p_lower = (title_str + ' ' + desc_str + ' ' + loc_str).lower()
 			if q in p_lower:
 				idx = p_lower.find(q)
-				snippet = p['description']
+				snippet = desc_str
 				# highlight
 				snippet = re.sub(re.escape(q), lambda m: f'<mark>{m.group()}</mark>', snippet, flags=re.IGNORECASE)
 				results.append({
-					'title': p['title'],
+					'title': title_str,
 					'url': '/projects/',
 					'snippet': snippet,
 					'source': 'Projects',
@@ -512,14 +519,17 @@ def search(request):
 
 		# Also search in SERVICES data
 		for s in SERVICES:
-			s_lower = (s['title'] + ' ' + s['description']).lower()
+			# Convert translation proxy objects to strings
+			title_str = str(s['title'])
+			desc_str = str(s['description'])
+			s_lower = (title_str + ' ' + desc_str).lower()
 			if q in s_lower:
 				idx = s_lower.find(q)
-				snippet = s['description']
+				snippet = desc_str
 				# highlight
 				snippet = re.sub(re.escape(q), lambda m: f'<mark>{m.group()}</mark>', snippet, flags=re.IGNORECASE)
 				results.append({
-					'title': s['title'],
+					'title': title_str,
 					'url': '/services/',
 					'snippet': snippet,
 					'source': 'Services',
