@@ -1,0 +1,232 @@
+# German translations for ABOD Website
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: de\n"
+
+# Navigation
+msgid "Markets"
+msgstr "Märkte"
+
+msgid "Services"
+msgstr "Dienstleistungen"
+
+msgid "Projects"
+msgstr "Projekte"
+
+msgid "Insights"
+msgstr "Einblicke"
+
+msgid "About"
+msgstr "Über uns"
+
+msgid "Careers"
+msgstr "Karriere"
+
+msgid "News"
+msgstr "Nachrichten"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Search"
+msgstr "Suchen"
+
+# Service Detail Page
+msgid "← Back to services"
+msgstr "← Zurück zu Dienstleistungen"
+
+msgid "Architecture and Design"
+msgstr "Architektur und Design"
+
+msgid "Creating iconic, user-centric designs across a wide range of project types, including commercial, institutional, residential, scientific, industrial, and hospitality environments."
+msgstr "Wir schaffen ikonische, benutzerzentrierte Designs für eine breite Palette von Projekttypen, einschließlich kommerzieller, institutioneller, privater, wissenschaftlicher, industrieller und gastgewerblicher Umgebungen."
+
+msgid "Our work encompasses both new builds and refurbishments, with particular expertise in designing teaching and research spaces, as well as environments that prioritize inclusivity, accessibility, and long-term adaptability."
+msgstr "Unsere Arbeit umfasst sowohl Neubauten als auch Sanierungen, mit besonderer Expertise im Design von Lehr- und Forschungsräumen sowie Umgebungen, die Inklusivität, Zugänglichkeit und langfristige Anpassungsfähigkeit priorisieren."
+
+msgid "We focus on delivering functional, inspiring spaces that elevate user experience while meeting the unique needs of every client and community we serve."
+msgstr "Wir konzentrieren uns darauf, funktionale, inspirierende Räume zu schaffen, die das Benutzererlebnis verbessern und gleichzeitig die einzigartigen Bedürfnisse jedes Kunden und jeder Gemeinschaft erfüllen, die wir betreuen."
+
+msgid "Our Architecture Specialisms"
+msgstr "Unsere Architektur-Spezialisierungen"
+
+msgid "We bring deep expertise across multiple sectors, delivering tailored solutions that combine innovation, functionality, and timeless design."
+msgstr "Wir bringen tiefgreifende Expertise in mehreren Sektoren ein und liefern maßgeschneiderte Lösungen, die Innovation, Funktionalität und zeitloses Design kombinieren."
+
+msgid "Residential / Housing"
+msgstr "Wohnen / Wohnungsbau"
+
+msgid "Commercial"
+msgstr "Gewerbe"
+
+msgid "Hospitality / Leisure"
+msgstr "Gastgewerbe / Freizeit"
+
+msgid "Civic"
+msgstr "Öffentlich"
+
+msgid "View All Residential Projects"
+msgstr "Alle Wohnprojekte ansehen"
+
+msgid "View All Commercial Projects"
+msgstr "Alle Gewerbeprojekte ansehen"
+
+msgid "View All Hospitality Projects"
+msgstr "Alle Gastgewerbeprojekte ansehen"
+
+msgid "View All Civic Projects"
+msgstr "Alle öffentlichen Projekte ansehen"
+
+msgid "Explore More Architecture Projects"
+msgstr "Weitere Architekturprojekte erkunden"
+
+msgid "Discover a selection of our most impactful projects that showcase innovation, sustainability, and design excellence."
+msgstr "Entdecken Sie eine Auswahl unserer wirkungsvollsten Projekte, die Innovation, Nachhaltigkeit und Design-Exzellenz präsentieren."
+
+msgid "See All"
+msgstr "Alle anzeigen"
+
+# Footer
+msgid "Designing sustainable places and systems. We work across markets to make long-term, people-centred change."
+msgstr "Wir gestalten nachhaltige Orte und Systeme. Wir arbeiten marktübergreifend, um langfristige, menschenzentrierte Veränderungen zu bewirken."
+
+msgid "Explore"
+msgstr "Erkunden"
+
+msgid "Company"
+msgstr "Unternehmen"
+
+msgid "Follow us"
+msgstr "Folgen Sie uns"
+
+# Services
+msgid "Advisory and Planning"
+msgstr "Beratung und Planung"
+
+msgid "3D Modeling and Visualization"
+msgstr "3D-Modellierung und Visualisierung"
+
+msgid "Urban Design and Masterplanning"
+msgstr "Städtebau und Masterplanung"
+
+msgid "Sustainability and Environmental Solutions"
+msgstr "Nachhaltigkeit und Umweltlösungen"
+
+msgid "Digital Innovation and Experimental Design"
+msgstr "Digitale Innovation und Experimentelles Design"
+
+msgid "Interior and Landscape Design"
+msgstr "Innenarchitektur und Landschaftsgestaltung"
+
+msgid "Project Management"
+msgstr "Projektmanagement"
+
+msgid "Specialized Services"
+msgstr "Spezialisierte Dienstleistungen"
+
+# Homepage Content
+msgid "We are making innovation sustainable"
+msgstr "Wir machen Innovation nachhaltig"
+
+msgid "Engineering for people and the planet"
+msgstr "Ingenieurtechnik für Menschen und den Planeten"
+
+msgid "Our experts are leading the way"
+msgstr "Unsere Experten weisen den Weg"
+
+msgid "Expert architecture and design solutions for diverse projects"
+msgstr "Experten-Architektur- und Designlösungen für vielfältige Projekte"
+
+msgid "Insights and Thought Leadership"
+msgstr "Einblicke und Vordenkerrolle"
+
+msgid "Latest thinking on industry trends"
+msgstr "Neueste Erkenntnisse zu Branchentrends"
+
+msgid "Explore Our Projects"
+msgstr "Unsere Projekte erkunden"
+
+msgid "Discover innovative solutions"
+msgstr "Innovative Lösungen entdecken"
+
+msgid "Markets We Serve"
+msgstr "Märkte, Die Wir Bedienen"
+
+msgid "Specialized expertise across sectors"
+msgstr "Spezialisierte Expertise über Sektoren hinweg"
+
+# Common Actions
+msgid "Learn More"
+msgstr "Mehr erfahren"
+
+msgid "Read More"
+msgstr "Mehr lesen"
+
+msgid "View All"
+msgstr "Alle anzeigen"
+
+msgid "Back"
+msgstr "Zurück"
+
+msgid "Home"
+msgstr "Startseite"
+
+msgid "Send"
+msgstr "Senden"
+
+msgid "Submit"
+msgstr "Absenden"
+
+# Services Page
+msgid "What We Do"
+msgstr "Was Wir Tun"
+
+msgid "Our Services"
+msgstr "Unsere Dienstleistungen"
+
+# About Page
+msgid "Who We Are"
+msgstr "Wer Wir Sind"
+
+msgid "Our Story"
+msgstr "Unsere Geschichte"
+
+msgid "Our Mission"
+msgstr "Unsere Mission"
+
+msgid "Our Values"
+msgstr "Unsere Werte"
+
+msgid "Our Team"
+msgstr "Unser Team"
+
+# Contact Page
+msgid "Get in Touch"
+msgstr "Kontaktieren Sie Uns"
+
+msgid "Contact Us"
+msgstr "Kontakt"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Email"
+msgstr "E-Mail"
+
+msgid "Message"
+msgstr "Nachricht"
+
+# Projects Page
+msgid "Our Projects"
+msgstr "Unsere Projekte"
+
+msgid "Featured Projects"
+msgstr "Vorgestellte Projekte"
+
+msgid "View Project"
+msgstr "Projekt ansehen"
+
+msgid "All Projects"
+msgstr "Alle Projekte"
+

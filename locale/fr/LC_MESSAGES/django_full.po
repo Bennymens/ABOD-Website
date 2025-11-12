@@ -1,0 +1,407 @@
+# French translations for ABOD Website
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: fr\n"
+
+# ============================================
+# NAVIGATION
+# ============================================
+msgid "Markets"
+msgstr "Marchés"
+
+msgid "Services"
+msgstr "Services"
+
+msgid "Projects"
+msgstr "Projets"
+
+msgid "Insights"
+msgstr "Perspectives"
+
+msgid "About"
+msgstr "À propos"
+
+msgid "Careers"
+msgstr "Carrières"
+
+msgid "News"
+msgstr "Actualités"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Search"
+msgstr "Rechercher"
+
+msgid "search ABOD"
+msgstr "rechercher ABOD"
+
+# ============================================
+# HOMEPAGE CONTENT
+# ============================================
+msgid "We are making innovation sustainable"
+msgstr "Nous rendons l'innovation durable"
+
+msgid "Engineering for people and the planet"
+msgstr "Ingénierie pour les personnes et la planète"
+
+msgid "Our experts are leading the way"
+msgstr "Nos experts montrent la voie"
+
+msgid "Creating iconic, user-centric designs"
+msgstr "Créer des designs emblématiques et centrés sur l'utilisateur"
+
+msgid "Expert architecture and design solutions for diverse projects"
+msgstr "Solutions d'architecture et de design expertes pour des projets diversifiés"
+
+msgid "How do you solve tight spaces with smart design and precise engineering"
+msgstr "Comment résoudre les espaces restreints avec un design intelligent et une ingénierie précise"
+
+msgid "we believe complex challenges can be catalysts for better design"
+msgstr "nous croyons que les défis complexes peuvent être des catalyseurs pour un meilleur design"
+
+msgid "Insights and Thought Leadership"
+msgstr "Perspectives et Leadership d'Opinion"
+
+msgid "Latest thinking on industry trends"
+msgstr "Dernières réflexions sur les tendances de l'industrie"
+
+msgid "Explore Our Projects"
+msgstr "Explorer Nos Projets"
+
+msgid "Discover innovative solutions"
+msgstr "Découvrir des solutions innovantes"
+
+msgid "Markets We Serve"
+msgstr "Marchés Que Nous Servons"
+
+msgid "Specialized expertise across sectors"
+msgstr "Expertise spécialisée dans tous les secteurs"
+
+msgid "Issues"
+msgstr "Enjeux"
+
+# ============================================
+# SERVICE DETAIL PAGE
+# ============================================
+msgid "← Back to services"
+msgstr "← Retour aux services"
+
+msgid "Architecture and Design"
+msgstr "Architecture et Design"
+
+msgid "Creating iconic, user-centric designs across a wide range of project types, including commercial, institutional, residential, scientific, industrial, and hospitality environments."
+msgstr "Créer des designs emblématiques et centrés sur l'utilisateur pour une large gamme de types de projets, y compris des environnements commerciaux, institutionnels, résidentiels, scientifiques, industriels et hôteliers."
+
+msgid "Our work encompasses both new builds and refurbishments, with particular expertise in designing teaching and research spaces, as well as environments that prioritize inclusivity, accessibility, and long-term adaptability."
+msgstr "Notre travail englobe à la fois les nouvelles constructions et les rénovations, avec une expertise particulière dans la conception d'espaces d'enseignement et de recherche, ainsi que d'environnements qui privilégient l'inclusion, l'accessibilité et l'adaptabilité à long terme."
+
+msgid "We focus on delivering functional, inspiring spaces that elevate user experience while meeting the unique needs of every client and community we serve."
+msgstr "Nous nous concentrons sur la création d'espaces fonctionnels et inspirants qui améliorent l'expérience utilisateur tout en répondant aux besoins uniques de chaque client et communauté que nous servons."
+
+msgid "Our Architecture Specialisms"
+msgstr "Nos Spécialisations en Architecture"
+
+msgid "We bring deep expertise across multiple sectors, delivering tailored solutions that combine innovation, functionality, and timeless design."
+msgstr "Nous apportons une expertise approfondie dans plusieurs secteurs, en proposant des solutions sur mesure qui combinent innovation, fonctionnalité et design intemporel."
+
+msgid "Residential / Housing"
+msgstr "Résidentiel / Logement"
+
+msgid "Commercial"
+msgstr "Commercial"
+
+msgid "Hospitality / Leisure"
+msgstr "Hôtellerie / Loisirs"
+
+msgid "Civic"
+msgstr "Civique"
+
+msgid "View All Residential Projects"
+msgstr "Voir Tous les Projets Résidentiels"
+
+msgid "View All Commercial Projects"
+msgstr "Voir Tous les Projets Commerciaux"
+
+msgid "View All Hospitality Projects"
+msgstr "Voir Tous les Projets Hôteliers"
+
+msgid "View All Civic Projects"
+msgstr "Voir Tous les Projets Civiques"
+
+msgid "Explore More Architecture Projects"
+msgstr "Explorer Plus de Projets d'Architecture"
+
+msgid "Discover a selection of our most impactful projects that showcase innovation, sustainability, and design excellence."
+msgstr "Découvrez une sélection de nos projets les plus impactants qui mettent en valeur l'innovation, la durabilité et l'excellence du design."
+
+msgid "See All"
+msgstr "Voir Tout"
+
+# ============================================
+# SERVICES
+# ============================================
+msgid "Advisory and Planning"
+msgstr "Conseil et Planification"
+
+msgid "3D Modeling and Visualization"
+msgstr "Modélisation et Visualisation 3D"
+
+msgid "Urban Design and Masterplanning"
+msgstr "Design Urbain et Planification Maîtresse"
+
+msgid "Sustainability and Environmental Solutions"
+msgstr "Durabilité et Solutions Environnementales"
+
+msgid "Digital Innovation and Experimental Design"
+msgstr "Innovation Numérique et Design Expérimental"
+
+msgid "Interior and Landscape Design"
+msgstr "Design d'Intérieur et de Paysage"
+
+msgid "Project Management"
+msgstr "Gestion de Projet"
+
+msgid "Specialized Services"
+msgstr "Services Spécialisés"
+
+msgid "What We Do"
+msgstr "Ce Que Nous Faisons"
+
+msgid "Our Services"
+msgstr "Nos Services"
+
+# ============================================
+# ABOUT PAGE
+# ============================================
+msgid "Who We Are"
+msgstr "Qui Nous Sommes"
+
+msgid "Our Story"
+msgstr "Notre Histoire"
+
+msgid "Our Mission"
+msgstr "Notre Mission"
+
+msgid "Our Values"
+msgstr "Nos Valeurs"
+
+msgid "Our Team"
+msgstr "Notre Équipe"
+
+# ============================================
+# CONTACT PAGE
+# ============================================
+msgid "Get in Touch"
+msgstr "Contactez-Nous"
+
+msgid "Contact Us"
+msgstr "Nous Contacter"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Phone"
+msgstr "Téléphone"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Send"
+msgstr "Envoyer"
+
+msgid "Submit"
+msgstr "Soumettre"
+
+msgid "Your Name"
+msgstr "Votre Nom"
+
+msgid "Your Email"
+msgstr "Votre E-mail"
+
+msgid "Your Message"
+msgstr "Votre Message"
+
+msgid "Subject"
+msgstr "Sujet"
+
+# ============================================
+# PROJECTS PAGE
+# ============================================
+msgid "Our Projects"
+msgstr "Nos Projets"
+
+msgid "Featured Projects"
+msgstr "Projets en Vedette"
+
+msgid "View Project"
+msgstr "Voir le Projet"
+
+msgid "All Projects"
+msgstr "Tous les Projets"
+
+msgid "Project Details"
+msgstr "Détails du Projet"
+
+msgid "Location"
+msgstr "Emplacement"
+
+msgid "Year"
+msgstr "Année"
+
+msgid "Client"
+msgstr "Client"
+
+msgid "Category"
+msgstr "Catégorie"
+
+# ============================================
+# COMMON ACTIONS
+# ============================================
+msgid "Learn More"
+msgstr "En Savoir Plus"
+
+msgid "Read More"
+msgstr "Lire Plus"
+
+msgid "View All"
+msgstr "Voir Tout"
+
+msgid "Back"
+msgstr "Retour"
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Next"
+msgstr "Suivant"
+
+msgid "Previous"
+msgstr "Précédent"
+
+msgid "Close"
+msgstr "Fermer"
+
+msgid "Open"
+msgstr "Ouvrir"
+
+msgid "Download"
+msgstr "Télécharger"
+
+msgid "Share"
+msgstr "Partager"
+
+# ============================================
+# FOOTER
+# ============================================
+msgid "Designing sustainable places and systems. We work across markets to make long-term, people-centred change."
+msgstr "Concevoir des lieux et des systèmes durables. Nous travaillons dans tous les marchés pour apporter des changements durables centrés sur les personnes."
+
+msgid "Explore"
+msgstr "Explorer"
+
+msgid "Company"
+msgstr "Entreprise"
+
+msgid "Follow us"
+msgstr "Suivez-nous"
+
+msgid "© 2025 ABOD — All rights reserved"
+msgstr "© 2025 ABOD — Tous droits réservés"
+
+# ============================================
+# INSIGHTS/NEWS
+# ============================================
+msgid "Latest News"
+msgstr "Dernières Actualités"
+
+msgid "Recent Insights"
+msgstr "Perspectives Récentes"
+
+msgid "Published"
+msgstr "Publié"
+
+msgid "By"
+msgstr "Par"
+
+msgid "Category"
+msgstr "Catégorie"
+
+msgid "Tags"
+msgstr "Étiquettes"
+
+# ============================================
+# CAREERS
+# ============================================
+msgid "Join Our Team"
+msgstr "Rejoignez Notre Équipe"
+
+msgid "Current Openings"
+msgstr "Postes Disponibles"
+
+msgid "Apply Now"
+msgstr "Postuler Maintenant"
+
+msgid "Career Opportunities"
+msgstr "Opportunités de Carrière"
+
+msgid "Life at ABOD"
+msgstr "La Vie chez ABOD"
+
+# ============================================
+# MARKETS
+# ============================================
+msgid "Our Markets"
+msgstr "Nos Marchés"
+
+msgid "Industry Sectors"
+msgstr "Secteurs d'Industrie"
+
+msgid "Healthcare"
+msgstr "Santé"
+
+msgid "Education"
+msgstr "Éducation"
+
+msgid "Transportation"
+msgstr "Transport"
+
+msgid "Energy"
+msgstr "Énergie"
+
+msgid "Government"
+msgstr "Gouvernement"
+
+msgid "Residential"
+msgstr "Résidentiel"
+
+msgid "Hospitality"
+msgstr "Hôtellerie"
+
+# ============================================
+# SEARCH/FILTER
+# ============================================
+msgid "Filter by"
+msgstr "Filtrer par"
+
+msgid "Sort by"
+msgstr "Trier par"
+
+msgid "Show all"
+msgstr "Tout afficher"
+
+msgid "Results"
+msgstr "Résultats"
+
+msgid "No results found"
+msgstr "Aucun résultat trouvé"
+
+msgid "Search results for"
+msgstr "Résultats de recherche pour"
+
+msgid "Clear filters"
+msgstr "Effacer les filtres"
