@@ -527,3 +527,22 @@ def search(request):
 
 	return render(request, 'main/search_results.html', {'query': query, 'results': results})
 
+
+def architecture_residential(request):
+	"""View for Residential/Housing architecture projects."""
+	return render(request, 'main/architecture_residential.html')
+
+
+def architecture_commercial(request):
+	"""View for Commercial architecture projects."""
+	return render(request, 'main/architecture_commercial.html')
+
+
+def architecture_hospitality(request):
+	"""View for Hospitality/Leisure architecture projects."""
+	return render(request, 'main/architecture_hospitality.html')
+
+
+def architecture_civic(request):
+	"""View for Civic architecture projects."""
+	return render(request, 'main/architecture_civic.html')

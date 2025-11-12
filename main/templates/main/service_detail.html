@@ -86,6 +86,61 @@
           height: 18px;
           stroke: #333;
         }
+
+        /* Architecture Specialisms - Mobile */
+        .specialisms-title {
+          font-size: 1.8rem !important;
+          margin: 40px 20px 30px 20px !important;
+        }
+        .specialisms-grid {
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
+          margin: 0 20px 40px 20px !important;
+        }
+
+        /* Explore More Projects - Mobile */
+        .projects-header {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 20px !important;
+          margin: 50px 20px 25px 20px !important;
+        }
+        .projects-title {
+          font-size: 1.6rem !important;
+          margin: 0 !important;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+          margin: 0 20px 40px 20px !important;
+        }
+        .projects-grid a {
+          display: flex !important;
+          align-items: center !important;
+          gap: 12px !important;
+        }
+        .projects-grid a > div:first-child {
+          flex-shrink: 0;
+          width: 80px !important;
+          height: 80px !important;
+          border-radius: 8px !important;
+        }
+        .projects-grid a > div:first-child img {
+          height: 80px !important;
+        }
+        .projects-grid a > div:last-child {
+          flex: 1;
+          min-width: 0;
+        }
+        .projects-grid a h4 {
+          font-size: 0.95rem !important;
+          margin: 0 0 4px 0 !important;
+          line-height: 1.3 !important;
+        }
+        .projects-grid a p {
+          font-size: 0.8rem !important;
+          margin: 0 !important;
+        }
       }
       @media (max-width: 480px) {
         .three-image-cards {
@@ -366,6 +421,555 @@
       experience while meeting the unique needs of every client and community we
       serve.
     </p>
+
+    <div
+      style="
+        font-family: Georgia, serif;
+        font-size: 3rem;
+        color: #000000;
+        margin: 60px 0 40px 40px;
+        font-weight: normal;
+      "
+      class="specialisms-title"
+    >
+      Our Architecture Specialisms
+    </div>
+
+    <!-- Architecture Specialisms Cards -->
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin: 0 40px 60px 40px;
+        max-width: none;
+      "
+      class="specialisms-grid"
+    >
+      <!-- Card 1: Residential/Housing -->
+      <div
+        style="
+          background: #f8f8f8;
+          border-radius: 16px;
+          padding: 24px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        "
+      >
+        <div
+          style="
+            width: 100%;
+            height: 180px;
+            background: #e0e0e0;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="{% static 'main/img/projects/Private Residence Ashongman.jpg' %}"
+            alt="Residential/Housing"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.5s ease;
+            "
+            onmouseover="this.style.transform='scale(1.1)'"
+            onmouseout="this.style.transform='scale(1)'"
+          />
+        </div>
+        <h3
+          style="
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            color: #333;
+            margin: 0;
+            font-weight: normal;
+          "
+        >
+          <a
+            href="{% url 'architecture_residential' %}"
+            style="
+              color: #333;
+              text-decoration: none;
+              transition: color 0.3s ease;
+            "
+            onmouseover="this.style.color='#e74c3c'"
+            onmouseout="this.style.color='#333'"
+          >
+            Residential/Housing
+          </a>
+        </h3>
+      </div>
+
+      <!-- Card 2: Commercial -->
+      <div
+        style="
+          background: #f8f8f8;
+          border-radius: 16px;
+          padding: 24px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        "
+      >
+        <div
+          style="
+            width: 100%;
+            height: 180px;
+            background: #e0e0e0;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="{% static 'main/img/projects/TSC Commercial, Tema.jpg' %}"
+            alt="Commercial"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.5s ease;
+            "
+            onmouseover="this.style.transform='scale(1.1)'"
+            onmouseout="this.style.transform='scale(1)'"
+          />
+        </div>
+        <h3
+          style="
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            color: #333;
+            margin: 0;
+            font-weight: normal;
+          "
+        >
+          <a
+            href="{% url 'architecture_commercial' %}"
+            style="
+              color: #333;
+              text-decoration: none;
+              transition: color 0.3s ease;
+            "
+            onmouseover="this.style.color='#e74c3c'"
+            onmouseout="this.style.color='#333'"
+          >
+            Commercial
+          </a>
+        </h3>
+      </div>
+
+      <!-- Card 3: Hospitality/Leisure -->
+      <div
+        style="
+          background: #f8f8f8;
+          border-radius: 16px;
+          padding: 24px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        "
+      >
+        <div
+          style="
+            width: 100%;
+            height: 180px;
+            background: #e0e0e0;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="{% static 'main/img/projects/roof top.jpg' %}"
+            alt="Hospitality/Leisure"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.5s ease;
+            "
+            onmouseover="this.style.transform='scale(1.1)'"
+            onmouseout="this.style.transform='scale(1)'"
+          />
+        </div>
+        <h3
+          style="
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            color: #333;
+            margin: 0;
+            font-weight: normal;
+          "
+        >
+          <a
+            href="{% url 'architecture_hospitality' %}"
+            style="
+              color: #333;
+              text-decoration: none;
+              transition: color 0.3s ease;
+            "
+            onmouseover="this.style.color='#e74c3c'"
+            onmouseout="this.style.color='#333'"
+          >
+            Hospitality/Leisure
+          </a>
+        </h3>
+      </div>
+
+      <!-- Card 4: Civic -->
+      <div
+        style="
+          background: #f8f8f8;
+          border-radius: 16px;
+          padding: 24px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        "
+      >
+        <div
+          style="
+            width: 100%;
+            height: 180px;
+            background: #e0e0e0;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+          "
+        >
+          <img
+            src="{% static 'main/img/projects/Theatre, tema.jpg' %}"
+            alt="Civic"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.5s ease;
+            "
+            onmouseover="this.style.transform='scale(1.1)'"
+            onmouseout="this.style.transform='scale(1)'"
+          />
+        </div>
+        <h3
+          style="
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            color: #333;
+            margin: 0;
+            font-weight: normal;
+          "
+        >
+          <a
+            href="{% url 'architecture_civic' %}"
+            style="
+              color: #333;
+              text-decoration: none;
+              transition: color 0.3s ease;
+            "
+            onmouseover="this.style.color='#e74c3c'"
+            onmouseout="this.style.color='#333'"
+          >
+            Civic
+          </a>
+        </h3>
+      </div>
+    </div>
+
+    <!-- Explore More Architecture Projects Section -->
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 80px 40px 40px 40px;
+      "
+      class="projects-header"
+    >
+      <div
+        style="
+          font-family: Georgia, serif;
+          font-size: 2.5rem;
+          color: #000000;
+          font-weight: normal;
+          margin: 0;
+        "
+        class="projects-title"
+      >
+        Explore More Architecture Projects
+      </div>
+      <a
+        href="{% url 'projects' %}"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 12px 20px;
+          background: #ffffff;
+          border: 1px solid #333;
+          border-radius: 25px;
+          text-decoration: none;
+          color: #333;
+          font-family: Arial, sans-serif;
+          font-size: 0.95rem;
+          transition: background-color 0.3s ease, color 0.3s ease;
+        "
+        onmouseover="this.style.backgroundColor='#333'; this.style.color='#fff'"
+        onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#333'"
+      >
+        See All
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style="transition: stroke 0.3s ease;"
+        >
+          <path
+            d="M6 12L10 8L6 4"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Architecture Projects Cards -->
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin: 0 40px 60px 40px;
+      "
+      class="projects-grid"
+    >
+      <!-- Project Card 1: Beach House -->
+      <a
+        href="{% url 'project_detail' slug='beach-house' %}"
+        style="
+          text-decoration: none;
+          color: inherit;
+          display: block;
+        "
+      >
+        <div
+          style="
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          "
+          onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 4px 16px rgba(0, 0, 0, 0.15)'"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.1)'"
+        >
+          <img
+            src="{% static 'main/img/projects/Beach House.jpg' %}"
+            alt="Beach House"
+            style="
+              width: 100%;
+              height: 300px;
+              object-fit: cover;
+              display: block;
+            "
+          />
+        </div>
+        <div>
+          <h4
+            style="
+              font-family: Georgia, serif;
+              font-size: 1.2rem;
+              color: #333;
+              margin: 12px 0 4px 0;
+              font-weight: normal;
+            "
+          >
+            Beach House — A stunning coastal residence blending modern design with natural surroundings
+          </h4>
+          <p
+            style="
+              font-family: Arial, sans-serif;
+              font-size: 0.9rem;
+              color: #666;
+              margin: 0;
+              line-height: 1.5;
+            "
+          >
+            Kokrobite, Ghana
+          </p>
+        </div>
+      </a>
+
+      <!-- Project Card 2: First Love Center -->
+      <a
+        href="{% url 'project_detail' slug='first-love-center' %}"
+        style="
+          text-decoration: none;
+          color: inherit;
+          display: block;
+        "
+      >
+        <div
+          style="
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          "
+          onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 4px 16px rgba(0, 0, 0, 0.15)'"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.1)'"
+        >
+          <img
+            src="{% static 'main/img/projects/First love center.jpg' %}"
+            alt="First Love Center"
+            style="
+              width: 100%;
+              height: 300px;
+              object-fit: cover;
+              display: block;
+            "
+          />
+        </div>
+        <div>
+          <h4
+            style="
+              font-family: Georgia, serif;
+              font-size: 1.2rem;
+              color: #333;
+              margin: 12px 0 4px 0;
+              font-weight: normal;
+            "
+          >
+            First Love Center — A contemporary community center providing versatile spaces for worship and social gatherings
+          </h4>
+          <p
+            style="
+              font-family: Arial, sans-serif;
+              font-size: 0.9rem;
+              color: #666;
+              margin: 0;
+              line-height: 1.5;
+            "
+          >
+            East Legon, Ghana
+          </p>
+        </div>
+      </a>
+
+      <!-- Project Card 3: NetZero House -->
+      <a
+        href="{% url 'project_detail' slug='netzero-house' %}"
+        style="
+          text-decoration: none;
+          color: inherit;
+          display: block;
+        "
+      >
+        <div
+          style="
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          "
+          onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 4px 16px rgba(0, 0, 0, 0.15)'"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.1)'"
+        >
+          <img
+            src="{% static 'main/img/projects/NetZero HOuse.jpg' %}"
+            alt="NetZero House"
+            style="
+              width: 100%;
+              height: 300px;
+              object-fit: cover;
+              display: block;
+            "
+          />
+        </div>
+        <div>
+          <h4
+            style="
+              font-family: Georgia, serif;
+              font-size: 1.2rem;
+              color: #333;
+              margin: 12px 0 4px 0;
+              font-weight: normal;
+            "
+          >
+            NetZero House — An innovative eco-friendly home designed for sustainable living
+          </h4>
+          <p
+            style="
+              font-family: Arial, sans-serif;
+              font-size: 0.9rem;
+              color: #666;
+              margin: 0;
+              line-height: 1.5;
+            "
+          >
+            Akwapim Hills, Ghana
+          </p>
+        </div>
+      </a>
+
+      <!-- Project Card 4: The Exchange Apartments -->
+      <a
+        href="{% url 'project_detail' slug='the-exchange-apartments' %}"
+        style="
+          text-decoration: none;
+          color: inherit;
+          display: block;
+        "
+      >
+        <div
+          style="
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          "
+          onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 4px 16px rgba(0, 0, 0, 0.15)'"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.1)'"
+        >
+          <img
+            src="{% static 'main/img/projects/The Exchange apartments.jpg' %}"
+            alt="The Exchange Apartments"
+            style="
+              width: 100%;
+              height: 300px;
+              object-fit: cover;
+              display: block;
+            "
+          />
+        </div>
+        <div>
+          <h4
+            style="
+              font-family: Georgia, serif;
+              font-size: 1.2rem;
+              color: #333;
+              margin: 12px 0 4px 0;
+              font-weight: normal;
+            "
+          >
+            The Exchange Apartments — Modern residential apartments offering comfortable living spaces with panoramic views
+          </h4>
+          <p
+            style="
+              font-family: Arial, sans-serif;
+              font-size: 0.9rem;
+              color: #666;
+              margin: 0;
+              line-height: 1.5;
+            "
+          >
+            Volta Region, Ghana
+          </p>
+        </div>
+      </a>
+    </div>
 
     <main
       class="site-main"
