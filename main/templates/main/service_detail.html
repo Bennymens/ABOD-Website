@@ -333,6 +333,7 @@
       >← Back to services</a
     >
 
+    {% if service.slug == 'Architecture-and-Design' %}
     <!-- 3 Image Cards for Architecture and Design -->
     <div
       class="three-image-cards"
@@ -421,7 +422,6 @@
       experience while meeting the unique needs of every client and community we
       serve.
     </p>
-
     <div
       style="
         font-family: Georgia, serif;
@@ -970,6 +970,32 @@
         </div>
       </a>
     </div>
+    {% else %}
+    <!-- Generic Service Content for All Other Services -->
+    <h1
+      style="
+        margin: 40px 20px 0 20px;
+        font-family: Georgia, serif;
+        font-size: 3rem;
+        color: #333;
+        font-weight: normal;
+      "
+    >
+      {{ service.title }}
+    </h1>
+
+    <p
+      style="
+        font-family: poppins, 'Times New Roman', serif;
+        font-size: 1.5rem;
+        color: #000000;
+        margin: 20px 0 40px 40px;
+        max-width: 900px;
+      "
+    >
+      {{ service.description }}
+    </p>
+    {% endif %}
 
     <main
       class="site-main"
