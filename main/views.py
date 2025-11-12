@@ -3,74 +3,74 @@ from django.http import Http404
 from pathlib import Path
 import re
 import html
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 # Structured services data (easy to search and render)
 SERVICES = [
 
 	{
-		'title': 'Advisory and Planning',
+		'title': _('Advisory and Planning'),
 		'slug': 'advisory-and-planning',
-		'description': """Expert guidance through feasibility studies,
+		'description': _("""Expert guidance through feasibility studies,
 business and investor advisory, urban and
 regional planning, policy development, and
 stakeholder engagement to support sustainable
-growth and informed decision-making."""
+growth and informed decision-making.""")
 	},
 	{
-		'title': 'Architecture and Design',
+		'title': _('Architecture and Design'),
 		'slug': 'Architecture-and-Design',
-		'description': """Creating iconic, user-centric designs for commercial,
+		'description': _("""Creating iconic, user-centric designs for commercial,
          institutional, residential, science and industry,
          and hospitality projects, including refurbishments,
        teaching and research spaces, and inclusive, accessible
-       environments.."""
+       environments..""")
 	},
 	{
-		'title': '3D modeling and Visualization',
+		'title': _('3D modeling and Visualization'),
 		'slug': '3d-modeling-visualization',
-		'description': """Delivering robust structural, mechanical, civil, and
+		'description': _("""Delivering robust structural, mechanical, civil, and
         bridge engineering, with a focus on
-        efficiency and resilience."""
+        efficiency and resilience.""")
 	},
 	{
-		'title': 'Urban Design & Masterplanning',
+		'title': _('Urban Design & Masterplanning'),
 		'slug': 'urban-design-masterplanning',
-		'description': """Designing sustainable, smart cities, urban
+		'description': _("""Designing sustainable, smart cities, urban
         frameworks, and campus energy masterplans,
-        integrating intelligent mobility."""
+        integrating intelligent mobility.""")
 	},
 	{
-	    'title': 'Sustainability & Environmental Solutions',
+	    'title': _('Sustainability & Environmental Solutions'),
 		'slug': 'sustainability-environmental-solutions',
-		'description': 'Guiding clients towards net-zero goals with ESG '
+		'description': _('Guiding clients towards net-zero goals with ESG '
 		'strategies, environmental consulting, nature-based solutions '
-		'and certifications like EDGE.'
+		'and certifications like EDGE.')
 	},
   {
-	    'title': 'Digital innovation and Experimental Design',
+	    'title': _('Digital innovation and Experimental Design'),
 	    'slug': 'digital-innovation-experimental-design',
-	    'description': 'Utilizing BIM, digital twinning, and parametric design for'
+	    'description': _('Utilizing BIM, digital twinning, and parametric design for'
 	    ' creating lighting design, night-time design, and immersive experience design for '
-	    'cultural, public, and event spaces, including major event overlay design.'
+	    'cultural, public, and event spaces, including major event overlay design.')
 	},
 	{
-		'title': 'Interior and Landscape Design',
+		'title': _('Interior and Landscape Design'),
 		'slug': 'Interior-and-Landscape-Design',
-		'description': 'Designing standout interiors and landscape to support'
+		'description': _('Designing standout interiors and landscape to support'
 		' the building taking into consideration sustainability,and saint'
-		' gobain comfort goals.'
+		' gobain comfort goals.')
 	},
 	{
-		'title': 'Project Management',
+		'title': _('Project Management'),
 		'slug': 'project-management',
-		'description': 'Employing agile methodologies for client-centric project management, '
-		'alongside innovative product design and sustainable material specification.'
+		'description': _('Employing agile methodologies for client-centric project management, '
+		'alongside innovative product design and sustainable material specification.')
 	},
 	{
-		'title': 'Specialized Services',
+		'title': _('Specialized Services'),
 		'slug': 'specialized-services',
-		'description': 'Offering expertise in specialized services such as retrofit, at scale, research, and organizational development to support diverse project needs.'
+		'description': _('Offering expertise in specialized services such as retrofit, at scale, research, and organizational development to support diverse project needs.')
 	}
 
 
@@ -80,87 +80,87 @@ growth and informed decision-making."""
 # Structured projects data
 PROJECTS = [
     {
-        'title': _('amadia'),
-        'slug': 'amadia',
+        'title': _('Amadia'),
+        'slug': 'Amadia',
         'description': _('Development of a retail showcase of a warehouse combined with restaurants.'),
         'location': _('Accra, Ghana'),
         'image': 'amadia.jpg'
     },
     {
-        'title': 'Aseda Garden Estate',
+        'title': _('Aseda Garden Estate'),
         'slug': 'aseda-garden-estate',
-        'description': 'Luxury home featuring innovative architecture. A bespoke residence with modern amenities and green spaces.',
-        'location': 'Tema, Ghana',
+        'description': _('Luxury home featuring innovative architecture. A bespoke residence with modern amenities and green spaces.'),
+        'location': _('Tema, Ghana'),
         'image': 'Aseda Garden Estate.jpg'
     },
     {
-        'title': 'Beach House',
+        'title': _('Beach House'),
         'slug': 'beach-house',
-        'description': 'Seaside retreat with panoramic ocean views. A coastal property designed for relaxation and harmony with nature.',
-        'location': 'Kokrobite, Ghana',
+        'description': _('Seaside retreat with panoramic ocean views. A coastal property designed for relaxation and harmony with nature.'),
+        'location': _('Kokrobite, Ghana'),
         'image': 'Beach House.jpg'
     },
     {
-        'title': 'First love center',
+        'title': _('First love center'),
         'slug': 'first-love-center',
-        'description': 'Developing multiple components, from Internal to the new tower block.',
-        'location': 'East Legon, Ghana',
+        'description': _('Developing multiple components, from Internal to the new tower block.'),
+        'location': _('East Legon, Ghana'),
         'image': 'First love center.jpg'
     },
     {
-        'title': 'Gardenia',
+        'title': _('Gardenia'),
         'slug': 'gardenia',
-        'description': 'Commercial complex with modern retail spaces. A vibrant hub for shopping and entertainment in the city center.',
-        'location': 'Accra, Ghana',
+        'description': _('Commercial complex with modern retail spaces. A vibrant hub for shopping and entertainment in the city center.'),
+        'location': _('Accra, Ghana'),
         'image': 'Gardenia.jpg'
     },
     {
-        'title': 'NetZero House',
+        'title': _('NetZero House'),
         'slug': 'netzero-house',
-        'description': 'Rustic retreat nestled in the hills. An eco-lodge offering tranquility and adventure experiences.',
-        'location': 'Akwapim Hills, Ghana',
+        'description': _('Rustic retreat nestled in the hills. An eco-lodge offering tranquility and adventure experiences.'),
+        'location': _('Akwapim Hills, Ghana'),
         'image': 'NetZero HOuse.jpg'
     },
     {
-        'title': 'private residence tema',
+        'title': _('private residence tema'),
         'slug': 'private-residence-tema',
-        'description': 'High-rise residential towers with city views. Luxury apartments featuring smart home technology and amenities.',
-        'location': 'Accra, Ghana',
+        'description': _('High-rise residential towers with city views. Luxury apartments featuring smart home technology and amenities.'),
+        'location': _('Accra, Ghana'),
         'image': 'private residence tema.jpg'
     },
     {
-        'title': 'The Exchange apartments',
+        'title': _('The Exchange apartments'),
         'slug': 'the-exchange-apartments',
-        'description': 'Exclusive villas along the riverbank. Private estates with lush gardens and waterfront access.',
-        'location': 'Volta Region, Ghana',
+        'description': _('Exclusive villas along the riverbank. Private estates with lush gardens and waterfront access.'),
+        'location': _('Volta Region, Ghana'),
         'image': 'The Exchange apartments.jpg'
     },
     {
-        'title': 'Theatre',
+        'title': _('Theatre'),
         'slug': 'theatre-tema',
-        'description': 'Sustainable community living spaces. A green development promoting environmental consciousness.',
-        'location': 'Kumasi, Ghana',
+        'description': _('Sustainable community living spaces. A green development promoting environmental consciousness.'),
+        'location': _('Kumasi, Ghana'),
         'image': 'Theatre, tema.jpg'
     },
     {
-        'title': 'TSC Commercial, Tema',
+        'title': _('TSC Commercial, Tema'),
         'slug': 'tsc-commercial-tema',
-        'description': 'Luxury accommodation with cultural significance. A boutique hotel preserving local heritage and traditions.',
-        'location': 'Cape Coast, Ghana',
+        'description': _('Luxury accommodation with cultural significance. A boutique hotel preserving local heritage and traditions.'),
+        'location': _('Cape Coast, Ghana'),
         'image': 'TSC Commercial, Tema.jpg'
     },
     {
-        'title': 'roof top',
+        'title': _('roof top'),
         'slug': 'roof-top',
-        'description': 'Tech and startup incubation center. A modern facility fostering entrepreneurship and innovation.',
-        'location': 'Accra, Ghana',
+        'description': _('Tech and startup incubation center. A modern facility fostering entrepreneurship and innovation.'),
+        'location': _('Accra, Ghana'),
         'image': 'roof top.jpg'
     },
     {
-        'title': 'Private Residence Ashongman',
+        'title': _('Private Residence Ashongman'),
         'slug': 'private-residence-ashongman',
-        'description': 'Spa and wellness retreat destination. A serene oasis for relaxation and rejuvenation.',
-        'location': 'Takoradi, Ghana',
+        'description': _('Spa and wellness retreat destination. A serene oasis for relaxation and rejuvenation.'),
+        'location': _('Takoradi, Ghana'),
         'image': 'Private Residence Ashongman.jpg'
     }
 ]

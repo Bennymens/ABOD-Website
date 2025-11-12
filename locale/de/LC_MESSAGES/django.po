@@ -107,6 +107,18 @@ msgstr "Beratung und Planung"
 msgid "3D Modeling and Visualization"
 msgstr "3D-Modellierung und Visualisierung"
 
+msgid "3D modeling and Visualization"
+msgstr "3D-Modellierung und Visualisierung"
+
+msgid "Urban Design & Masterplanning"
+msgstr "Städtebau und Masterplanung"
+
+msgid "Sustainability & Environmental Solutions"
+msgstr "Nachhaltigkeit und Umweltlösungen"
+
+msgid "Digital innovation and Experimental Design"
+msgstr "Digitale Innovation und Experimentelles Design"
+
 msgid "Urban Design and Masterplanning"
 msgstr "Städtebau und Masterplanung"
 
@@ -230,3 +242,514 @@ msgstr "Projekt ansehen"
 msgid "All Projects"
 msgstr "Alle Projekte"
 
+# Services Page Content
+msgid "Explore our services across the built"
+msgstr "Erkunden Sie unsere Dienstleistungen in der bebauten"
+
+msgid "environments"
+msgstr "Umgebung"
+
+msgid "Designing sustainable places and systems — making long-term, people-centred change."
+msgstr "Nachhaltige Orte und Systeme gestalten — langfristige, menschenzentrierte Veränderungen bewirken."
+
+msgid "search services"
+msgstr "Dienstleistungen suchen"
+
+msgid "Search results for"
+msgstr "Suchergebnisse für"
+
+# Issues Section
+msgid "Issue"
+msgstr "Thema"
+
+msgid "We explore some of the biggest questions facing the built and natural environments."
+msgstr "Wir erforschen einige der größten Fragen, die die gebaute und natürliche Umwelt betreffen."
+
+msgid "View more issues"
+msgstr "Mehr Themen anzeigen"
+
+msgid "How do we create climate-resilient, energy-efficient buildings?"
+msgstr "Wie schaffen wir klimaresistente, energieeffiziente Gebäude?"
+
+msgid "How do we tackle high-end, technically challenging developments?"
+msgstr "Wie gehen wir hochwertige, technisch anspruchsvolle Entwicklungen an?"
+
+msgid "How do we Prioritize inclusive, user-focused solutions?"
+msgstr "Wie priorisieren wir inklusive, nutzerorientierte Lösungen?"
+
+# Service Descriptions
+msgid "Expert guidance through feasibility studies,\nbusiness and investor advisory, urban and\nregional planning, policy development, and\nstakeholder engagement to support sustainable\ngrowth and informed decision-making."
+msgstr "Expertenberatung durch Machbarkeitsstudien, Unternehmens- und Investorenberatung, Stadt- und Regionalplanung, Politikentwicklung und Stakeholder-Engagement zur Unterstützung nachhaltigen Wachstums und fundierter Entscheidungsfindung."
+
+msgid "Creating iconic, user-centric designs for commercial,\n         institutional, residential, science and industry,\n         and hospitality projects, including refurbishments,\n       teaching and research spaces, and inclusive, accessible\n       environments.."
+msgstr "Ikonische, benutzerzentrierte Designs für kommerzielle, institutionelle, private, wissenschaftliche und industrielle sowie gastgewerbliche Projekte schaffen, einschließlich Renovierungen, Lehr- und Forschungsräumen sowie inklusiven, zugänglichen Umgebungen."
+
+msgid "Delivering robust structural, mechanical, civil, and\n        bridge engineering, with a focus on\n        efficiency and resilience."
+msgstr "Robuste Struktur-, Maschinen-, Bau- und Brückentechnik mit Fokus auf Effizienz und Widerstandsfähigkeit liefern."
+
+msgid "Designing sustainable, smart cities, urban\n        frameworks, and campus energy masterplans,\n        integrating intelligent mobility."
+msgstr "Nachhaltige Smart Cities, städtische Rahmenpläne und Campus-Energie-Masterpläne entwerfen, die intelligente Mobilität integrieren."
+
+msgid "Guiding clients towards net-zero goals with ESG strategies, environmental consulting, nature-based solutions and certifications like EDGE."
+msgstr "Kunden zu Netto-Null-Zielen führen mit ESG-Strategien, Umweltberatung, naturbasierten Lösungen und Zertifizierungen wie EDGE."
+
+msgid "Utilizing BIM, digital twinning, and parametric design for creating lighting design, night-time design, and immersive experience design for cultural, public, and event spaces, including major event overlay design."
+msgstr "BIM, digitale Zwillinge und parametrisches Design nutzen, um Lichtdesign, Nachtdesign und immersives Erlebnisdesign für kulturelle, öffentliche und Veranstaltungsräume zu schaffen, einschließlich großer Event-Overlay-Designs."
+
+msgid "Designing standout interiors and landscape to support the building taking into consideration sustainability,and saint gobain comfort goals."
+msgstr "Herausragende Innenräume und Landschaften gestalten, um das Gebäude unter Berücksichtigung von Nachhaltigkeit und Saint Gobain Komfortzielen zu unterstützen."
+
+msgid "Employing agile methodologies for client-centric project management, alongside innovative product design and sustainable material specification."
+msgstr "Agile Methoden für kundenorientiertes Projektmanagement einsetzen, zusammen mit innovativem Produktdesign und nachhaltiger Materialspezifikation."
+
+msgid "Offering expertise in specialized services such as retrofit, at scale, research, and organizational development to support diverse project needs."
+msgstr "Expertise in spezialisierten Dienstleistungen wie Nachrüstung, in großem Maßstab, Forschung und Organisationsentwicklung anbieten, um vielfältige Projektanforderungen zu unterstützen."
+
+# Project Cards on Architecture Service Detail Page
+msgid "Beach House — A stunning coastal residence blending modern design with natural surroundings"
+msgstr "Strandhaus — Eine atemberaubende Küstenresidenz, die modernes Design mit natürlicher Umgebung verbindet"
+
+msgid "Kokrobite, Ghana"
+msgstr "Kokrobite, Ghana"
+
+msgid "First Love Center — A contemporary community center providing versatile spaces for worship and social gatherings"
+msgstr "First Love Zentrum — Ein zeitgenössisches Gemeindezentrum mit vielseitigen Räumen für Gottesdienst und soziale Zusammenkünfte"
+
+msgid "East Legon, Ghana"
+msgstr "East Legon, Ghana"
+
+msgid "NetZero House — An innovative eco-friendly home designed for sustainable living"
+msgstr "NetZero Haus — Ein innovatives umweltfreundliches Haus für nachhaltiges Wohnen"
+
+msgid "Akwapim Hills, Ghana"
+msgstr "Akwapim Hills, Ghana"
+
+msgid "The Exchange Apartments — Modern residential apartments offering comfortable living spaces with panoramic views"
+msgstr "Die Exchange Apartments — Moderne Wohnanlagen mit komfortablen Wohnräumen und Panoramablick"
+
+msgid "Volta Region, Ghana"
+msgstr "Volta-Region, Ghana"
+
+# Contact Page
+msgid "Contact us"
+msgstr "Kontaktieren Sie uns"
+
+msgid "Business enquiries"
+msgstr "Geschäftliche Anfragen"
+
+msgid "Speak to an Arup expert about a project, service, or partnership enquiry."
+msgstr "Sprechen Sie mit einem Arup-Experten über ein Projekt, eine Dienstleistung oder eine Partnerschaftsanfrage."
+
+msgid "Area of business"
+msgstr "Geschäftsbereich"
+
+msgid "Select..."
+msgstr "Auswählen..."
+
+msgid "Buildings"
+msgstr "Gebäude"
+
+msgid "Infrastructure"
+msgstr "Infrastruktur"
+
+msgid "Transport"
+msgstr "Transport"
+
+msgid "Energy"
+msgstr "Energie"
+
+msgid "Water"
+msgstr "Wasser"
+
+msgid "Environment"
+msgstr "Umwelt"
+
+msgid "Cities & Urban Design"
+msgstr "Städte und Stadtplanung"
+
+msgid "Digital & Technology"
+msgstr "Digital und Technologie"
+
+msgid "Advisory"
+msgstr "Beratung"
+
+msgid "Health"
+msgstr "Gesundheit"
+
+msgid "Education"
+msgstr "Bildung"
+
+msgid "Defence"
+msgstr "Verteidigung"
+
+msgid "Mining"
+msgstr "Bergbau"
+
+msgid "Maritime"
+msgstr "Seefahrt"
+
+msgid "Property & Real Estate"
+msgstr "Immobilien"
+
+msgid "Select your service of interest (if known)"
+msgstr "Wählen Sie Ihren gewünschten Service (falls bekannt)"
+
+msgid "How did you hear about us?"
+msgstr "Wie haben Sie von uns erfahren?"
+
+msgid "Social Media"
+msgstr "Soziale Medien"
+
+msgid "Website"
+msgstr "Webseite"
+
+msgid "Referral"
+msgstr "Empfehlung"
+
+msgid "Advertisement"
+msgstr "Werbung"
+
+msgid "Job Board"
+msgstr "Jobbörse"
+
+msgid "University/Career Fair"
+msgstr "Universitäts-/Karrieremesse"
+
+msgid "Networking Event"
+msgstr "Networking-Veranstaltung"
+
+msgid "Other"
+msgstr "Sonstiges"
+
+msgid "First name"
+msgstr "Vorname"
+
+msgid "Last name"
+msgstr "Nachname"
+
+msgid "Email address"
+msgstr "E-Mail-Adresse"
+
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+msgid "Company name"
+msgstr "Firmenname"
+
+msgid "Job title"
+msgstr "Berufsbezeichnung"
+
+msgid "Country/Location"
+msgstr "Land/Standort"
+
+msgid "Select"
+msgstr "Auswählen"
+
+msgid "United Kingdom"
+msgstr "Vereinigtes Königreich"
+
+msgid "United States"
+msgstr "Vereinigte Staaten"
+
+msgid "Canada"
+msgstr "Kanada"
+
+msgid "Australia"
+msgstr "Australien"
+
+msgid "Ireland"
+msgstr "Irland"
+
+msgid "France"
+msgstr "Frankreich"
+
+msgid "Germany"
+msgstr "Deutschland"
+
+msgid "Netherlands"
+msgstr "Niederlande"
+
+msgid "Spain"
+msgstr "Spanien"
+
+msgid "Italy"
+msgstr "Italien"
+
+msgid "Sweden"
+msgstr "Schweden"
+
+msgid "Norway"
+msgstr "Norwegen"
+
+msgid "Denmark"
+msgstr "Dänemark"
+
+msgid "Finland"
+msgstr "Finnland"
+
+msgid "Belgium"
+msgstr "Belgien"
+
+msgid "Switzerland"
+msgstr "Schweiz"
+
+msgid "Austria"
+msgstr "Österreich"
+
+msgid "Poland"
+msgstr "Polen"
+
+msgid "Portugal"
+msgstr "Portugal"
+
+msgid "Greece"
+msgstr "Griechenland"
+
+msgid "Turkey"
+msgstr "Türkei"
+
+msgid "Russia"
+msgstr "Russland"
+
+msgid "China"
+msgstr "China"
+
+msgid "India"
+msgstr "Indien"
+
+msgid "Japan"
+msgstr "Japan"
+
+msgid "South Korea"
+msgstr "Südkorea"
+
+msgid "Singapore"
+msgstr "Singapur"
+
+msgid "Hong Kong SAR"
+msgstr "Hongkong SAR"
+
+msgid "United Arab Emirates"
+msgstr "Vereinigte Arabische Emirate"
+
+msgid "Saudi Arabia"
+msgstr "Saudi-Arabien"
+
+msgid "South Africa"
+msgstr "Südafrika"
+
+msgid "Kenya"
+msgstr "Kenia"
+
+msgid "Nigeria"
+msgstr "Nigeria"
+
+msgid "Egypt"
+msgstr "Ägypten"
+
+msgid "Brazil"
+msgstr "Brasilien"
+
+msgid "Mexico"
+msgstr "Mexiko"
+
+msgid "Argentina"
+msgstr "Argentinien"
+
+msgid "Chile"
+msgstr "Chile"
+
+msgid "Colombia"
+msgstr "Kolumbien"
+
+msgid "New Zealand"
+msgstr "Neuseeland"
+
+msgid "City/Town"
+msgstr "Stadt"
+
+msgid "What would you like to discuss?"
+msgstr "Was möchten Sie besprechen?"
+
+msgid "Submit"
+msgstr "Absenden"
+
+msgid "Media and press"
+msgstr "Medien und Presse"
+
+msgid "Speak to our communications team about any media or press correspondence."
+msgstr "Sprechen Sie mit unserem Kommunikationsteam über Medien- oder Pressekorrespondenz."
+
+msgid "Speak to Arup's recruitment teams about job opportunities and careers. Before sending a general enquiry, kindly review our application process to see if your question has already been addressed."
+msgstr "Sprechen Sie mit den Rekrutierungsteams von Arup über Jobmöglichkeiten und Karrieren. Bevor Sie eine allgemeine Anfrage senden, überprüfen Sie bitte unseren Bewerbungsprozess, um zu sehen, ob Ihre Frage bereits beantwortet wurde."
+
+msgid "Experience level"
+msgstr "Erfahrungsniveau"
+
+msgid "Internship"
+msgstr "Praktikum"
+
+msgid "Entry Level"
+msgstr "Einstiegsniveau"
+
+msgid "Mid Level"
+msgstr "Mittleres Niveau"
+
+msgid "Senior Level"
+msgstr "Senior-Niveau"
+
+msgid "Executive"
+msgstr "Führungskraft"
+
+msgid "Graduate"
+msgstr "Absolvent"
+
+msgid "Arup will only process your data in accordance with its"
+msgstr "Arup wird Ihre Daten nur in Übereinstimmung mit seiner"
+
+msgid "privacy policy"
+msgstr "Datenschutzerklärung"
+
+msgid "Speak to us about anything else."
+msgstr "Sprechen Sie mit uns über alles andere."
+
+msgid "Your nearest office"
+msgstr "Ihr nächstes Büro"
+
+msgid "Contact office"
+msgstr "Büro kontaktieren"
+
+msgid "We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies."
+msgstr "Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern, personalisierte Inhalte bereitzustellen und unseren Traffic zu analysieren. Durch Klicken auf \"Alle akzeptieren\" stimmen Sie unserer Verwendung von Cookies zu."
+
+msgid "Accept All"
+msgstr "Alle akzeptieren"
+
+msgid "Reject All"
+msgstr "Alle ablehnen"
+
+msgid "Customize"
+msgstr "Anpassen"
+
+msgid "Cookie Preferences"
+msgstr "Cookie-Einstellungen"
+
+msgid "Essential Cookies"
+msgstr "Notwendige Cookies"
+
+msgid "These cookies are necessary for the website to function and cannot be switched off in our systems."
+msgstr "Diese Cookies sind für die Funktion der Website erforderlich und können in unseren Systemen nicht ausgeschaltet werden."
+
+msgid "Analytics Cookies"
+msgstr "Analyse-Cookies"
+
+msgid "These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site."
+msgstr "Diese Cookies ermöglichen es uns, Besuche und Verkehrsquellen zu zählen, damit wir die Leistung unserer Website messen und verbessern können."
+
+msgid "Marketing Cookies"
+msgstr "Marketing-Cookies"
+
+msgid "These cookies may be set through our site by our advertising partners to build a profile of your interests."
+msgstr "Diese Cookies können über unsere Website von unseren Werbepartnern gesetzt werden, um ein Profil Ihrer Interessen zu erstellen."
+
+msgid "Save Preferences"
+msgstr "Einstellungen speichern"
+
+# Projects Page
+msgid "From Churches to Theatres, Apartments, our projects in sustainability <br>and infrastructure are shaping a better world. Discover the range of work we do."
+msgstr "Von Kirchen über Theater bis zu Wohnungen gestalten unsere Projekte in Nachhaltigkeit <br>und Infrastruktur eine bessere Welt. Entdecken Sie die Bandbreite unserer Arbeit."
+
+msgid "search projects"
+msgstr "Projekte suchen"
+
+msgid "Search projects"
+msgstr "Projekte suchen"
+
+msgid "Location"
+msgstr "Standort"
+
+
+
+
+
+# Projects Data
+msgid "amadia"
+msgstr "amadia"
+
+msgid "Development of a retail showcase of a warehouse combined with restaurants."
+msgstr "Entwicklung eines Einzelhandels-Showcases eines Lagers kombiniert mit Restaurants."
+
+msgid "Aseda Garden Estate"
+msgstr "Aseda Garden Estate"
+
+msgid "Luxury home featuring innovative architecture. A bespoke residence with modern amenities and green spaces."
+msgstr "Luxushaus mit innovativer Architektur. Eine maßgeschneiderte Residenz mit modernen Annehmlichkeiten und Grünflächen."
+
+msgid "Tema, Ghana"
+msgstr "Tema, Ghana"
+
+msgid "Beach House"
+msgstr "Strandhaus"
+
+msgid "Seaside retreat with panoramic ocean views. A coastal property designed for relaxation and harmony with nature."
+msgstr "Küstenrückzugsort mit Panoramablick auf den Ozean. Eine Küstenimmobilie für Entspannung und Harmonie mit der Natur."
+
+msgid "First love center"
+msgstr "First Love Zentrum"
+
+msgid "Developing multiple components, from Internal to the new tower block."
+msgstr "Entwicklung mehrerer Komponenten, vom Innenbereich bis zum neuen Turmgebäude."
+
+msgid "Gardenia"
+msgstr "Gardenia"
+
+msgid "Commercial complex with modern retail spaces. A vibrant hub for shopping and entertainment in the city center."
+msgstr "Gewerblicher Komplex mit modernen Einzelhandelsflächen. Ein lebendiger Knotenpunkt für Shopping und Unterhaltung im Stadtzentrum."
+
+msgid "Rustic retreat nestled in the hills. An eco-lodge offering tranquility and adventure experiences."
+msgstr "Rustikaler Rückzugsort in den Hügeln. Eine Öko-Lodge, die Ruhe und Abenteuererlebnisse bietet."
+
+msgid "private residence tema"
+msgstr "Privatresidenz Tema"
+
+msgid "High-rise residential towers with city views. Luxury apartments featuring smart home technology and amenities."
+msgstr "Hochhaus-Wohntürme mit Stadtblick. Luxusapartments mit Smart-Home-Technologie und Annehmlichkeiten."
+
+msgid "The Exchange apartments"
+msgstr "Die Exchange Apartments"
+
+msgid "Exclusive villas along the riverbank. Private estates with lush gardens and waterfront access."
+msgstr "Exklusive Villen am Flussufer. Private Anwesen mit üppigen Gärten und Zugang zum Wasser."
+
+msgid "Theatre"
+msgstr "Theater"
+
+msgid "Sustainable community living spaces. A green development promoting environmental consciousness."
+msgstr "Nachhaltige gemeinschaftliche Wohnräume. Eine grüne Entwicklung zur Förderung des Umweltbewusstseins."
+
+msgid "Kumasi, Ghana"
+msgstr "Kumasi, Ghana"
+
+msgid "TSC Commercial, Tema"
+msgstr "TSC Commercial, Tema"
+
+msgid "Luxury accommodation with cultural significance. A boutique hotel preserving local heritage and traditions."
+msgstr "Luxusunterkunft mit kultureller Bedeutung. Ein Boutique-Hotel, das lokales Erbe und Traditionen bewahrt."
+
+msgid "Cape Coast, Ghana"
+msgstr "Cape Coast, Ghana"
+
+msgid "roof top"
+msgstr "Dachterrasse"
+
+msgid "Tech and startup incubation center. A modern facility fostering entrepreneurship and innovation."
+msgstr "Technologie- und Startup-Inkubationszentrum. Eine moderne Einrichtung zur Förderung von Unternehmertum und Innovation."
+
+msgid "Private Residence Ashongman"
+msgstr "Privatresidenz Ashongman"
+
+msgid "Spa and wellness retreat destination. A serene oasis for relaxation and rejuvenation."
+msgstr "Spa- und Wellness-Rückzugsziel. Eine ruhige Oase für Entspannung und Erholung."
+
+msgid "Takoradi, Ghana"
+msgstr "Takoradi, Ghana"

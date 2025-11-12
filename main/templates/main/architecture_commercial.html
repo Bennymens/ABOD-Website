@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -82,17 +83,17 @@
           </a>
         </div>
         <ul class="navbar-section navbar-center">
-          <li><a href="{% url 'markets' %}">Markets</a></li>
-          <li><a href="{% url 'services' %}" class="active">Services</a></li>
-          <li><a href="{% url 'projects' %}">Projects</a></li>
-          <li><a href="{% url 'insights' %}">Insights</a></li>
+          <li><a href="{% url 'markets' %}">{% trans "Markets" %}</a></li>
+          <li><a href="{% url 'services' %}" class="active">{% trans "Services" %}</a></li>
+          <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
+          <li><a href="{% url 'insights' %}">{% trans "Insights" %}</a></li>
         </ul>
       </div>
       <ul class="navbar-section navbar-right">
-        <li><a href="{% url 'about' %}">About</a></li>
-        <li><a href="{% url 'careers' %}">Careers</a></li>
-        <li><a href="{% url 'news' %}">News</a></li>
-        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
+        <li><a href="{% url 'careers' %}">{% trans "Careers" %}</a></li>
+        <li><a href="{% url 'news' %}">{% trans "News" %}</a></li>
+        <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
         <li class="language-dropdown">
           <a href="#" title="Language" class="icon-link" id="lang-toggle">
             <svg
@@ -270,29 +271,28 @@
           <h3 class="site-name">ABOD</h3>
           <p class="site-desc">© 2025 ABOD — All rights reserved</p>
           <p class="footer-blurb">
-            Designing sustainable places and systems. We work across markets to
-            make long-term, people-centred change.
+            {% trans "Designing sustainable places and systems. We work across markets to make long-term, people-centred change." %}
           </p>
         </div>
 
         <div class="footer-right-columns">
           <nav class="footer-col">
-            <h4>Explore</h4>
+            <h4>{% trans "Explore" %}</h4>
             <ul>
-              <li><a href="{% url 'markets' %}">Markets</a></li>
-              <li><a href="{% url 'services' %}">Services</a></li>
-              <li><a href="{% url 'projects' %}">Projects</a></li>
-              <li><a href="{% url 'insights' %}">Insights</a></li>
+              <li><a href="{% url 'markets' %}">{% trans "Markets" %}</a></li>
+              <li><a href="{% url 'services' %}">{% trans "Services" %}</a></li>
+              <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
+              <li><a href="{% url 'insights' %}">{% trans "Insights" %}</a></li>
             </ul>
           </nav>
 
           <nav class="footer-col">
-            <h4>Company</h4>
+            <h4>{% trans "Company" %}</h4>
             <ul>
-              <li><a href="{% url 'about' %}">About</a></li>
-              <li><a href="{% url 'careers' %}">Careers</a></li>
-              <li><a href="{% url 'news' %}">News</a></li>
-              <li><a href="{% url 'contact' %}">Contact</a></li>
+              <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
+              <li><a href="{% url 'careers' %}">{% trans "Careers" %}</a></li>
+              <li><a href="{% url 'news' %}">{% trans "News" %}</a></li>
+              <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
             </ul>
           </nav>
         </div>
