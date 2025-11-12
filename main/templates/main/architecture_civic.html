@@ -1,5 +1,4 @@
-{% load static %}
-{% load i18n %}
+{% load static %} {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,11 +16,13 @@
       .mobile-controls {
         display: none;
       }
+
       @media (max-width: 768px) {
         .navbar {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          padding: 10px 15px !important;
         }
         .navbar-left-group {
           display: flex;
@@ -43,28 +44,110 @@
           position: static !important;
           margin-left: 0;
         }
-        .mobile-language {
-          position: relative;
+
+        /* Page title */
+        .civic-architecture .page-title {
+          font-size: 2rem !important;
+          margin: 20px 15px 15px 15px !important;
+          line-height: 1.3 !important;
         }
-        .mobile-language .icon-link {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          background-color: #f0f0f0;
-          transition: background-color 0.2s;
+
+        /* Back link */
+        .civic-architecture .back-link {
+          font-size: 1rem !important;
+          margin: 15px 15px 10px 15px !important;
         }
-        .mobile-language .icon-link:hover {
-          background-color: #e0e0e0;
+
+        /* Image cards - larger horizontal scroll */
+        .civic-architecture .image-cards-container {
+          display: flex !important;
+          flex-wrap: nowrap !important;
+          overflow-x: auto !important;
+          -webkit-overflow-scrolling: touch !important;
+          margin: 15px 0 !important;
+          padding: 0 15px !important;
+          gap: 15px !important;
+          scrollbar-width: none !important;
+          justify-content: flex-start !important;
         }
-        .mobile-language .icon-link svg {
-          width: 18px;
-          height: 18px;
-          stroke: #333;
+
+        .civic-architecture .image-cards-container::-webkit-scrollbar {
+          display: none !important;
+        }
+
+        .civic-architecture .image-cards-container > div {
+          min-width: 280px !important;
+          max-width: 280px !important;
+          flex-shrink: 0 !important;
+        }
+
+        .civic-architecture .image-cards-container img {
+          height: 200px !important;
+          border-radius: 8px !important;
+        }
+
+        .civic-architecture .image-cards-container h3 {
+          font-size: 1rem !important;
+          margin-top: 8px !important;
+        }
+
+        /* Content wrapper - stack vertically */
+        .civic-architecture .content-wrapper {
+          flex-direction: column !important;
+          gap: 25px !important;
+          margin: 20px 15px !important;
+        }
+
+        /* Text content */
+        .civic-architecture .text-content {
+          width: 100% !important;
+        }
+
+        .civic-architecture .text-content p {
+          margin: 0 0 15px 0 !important;
+          font-size: 1.05rem !important;
+          line-height: 1.5 !important;
+          text-align: justify !important;
+        }
+
+        /* Sidebar boxes - smaller and compact */
+        .civic-architecture .sidebar-boxes {
+          width: 100% !important;
+          gap: 15px !important;
+          align-items: center !important;
+        }
+
+        .civic-architecture .discover-box,
+        .civic-architecture .contact-box {
+          min-width: auto !important;
+          max-width: 90% !important;
+          width: 90% !important;
+          padding: 16px 20px !important;
+          border-radius: 12px !important;
+          box-sizing: border-box !important;
+        }
+
+        .civic-architecture .discover-box h3,
+        .civic-architecture .contact-box h3 {
+          font-size: 1.15rem !important;
+          margin-bottom: 10px !important;
+        }
+
+        .civic-architecture .discover-box p {
+          font-size: 0.9rem !important;
+          margin-bottom: 12px !important;
+          line-height: 1.5 !important;
+        }
+
+        .civic-architecture .discover-box a,
+        .civic-architecture .contact-box a {
+          font-size: 0.85rem !important;
+          padding: 9px 18px !important;
+          display: inline-block !important;
         }
       }
+
+      /* filepath: c:\Users\PC\OneDrive\Desktop\ABOD\main\static\main\style.css */
     </style>
   </head>
   <body>
@@ -84,7 +167,11 @@
         </div>
         <ul class="navbar-section navbar-center">
           <li><a href="{% url 'markets' %}">{% trans "Markets" %}</a></li>
-          <li><a href="{% url 'services' %}" class="active">{% trans "Services" %}</a></li>
+          <li>
+            <a href="{% url 'services' %}" class="active"
+              >{% trans "Services" %}</a
+            >
+          </li>
           <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
           <li><a href="{% url 'insights' %}">{% trans "Insights" %}</a></li>
         </ul>
@@ -122,24 +209,97 @@
               />
             </svg>
           </a>
+          <!-- Desktop language dropdown -->
           <ul class="lang-menu" id="lang-menu">
             <li>
-              <a
-                href="{% url 'set_language' %}?language=en&next={{ request.get_full_path }}"
-                >English</a
+              <form
+                action="{% url 'set_language' %}"
+                method="post"
+                style="margin: 0"
               >
+                {% csrf_token %}
+                <input
+                  name="next"
+                  type="hidden"
+                  value="{{ request.get_full_path }}"
+                />
+                <input name="language" type="hidden" value="en" />
+                <button
+                  type="submit"
+                  style="
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 8px 16px;
+                    width: 100%;
+                    text-align: left;
+                    font-family: Arial, sans-serif;
+                    color: #333;
+                  "
+                >
+                  English
+                </button>
+              </form>
             </li>
             <li>
-              <a
-                href="{% url 'set_language' %}?language=fr&next={{ request.get_full_path }}"
-                >French</a
+              <form
+                action="{% url 'set_language' %}"
+                method="post"
+                style="margin: 0"
               >
+                {% csrf_token %}
+                <input
+                  name="next"
+                  type="hidden"
+                  value="{{ request.get_full_path }}"
+                />
+                <input name="language" type="hidden" value="fr" />
+                <button
+                  type="submit"
+                  style="
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 8px 16px;
+                    width: 100%;
+                    text-align: left;
+                    font-family: Arial, sans-serif;
+                    color: #333;
+                  "
+                >
+                  Français
+                </button>
+              </form>
             </li>
             <li>
-              <a
-                href="{% url 'set_language' %}?language=de&next={{ request.get_full_path }}"
-                >German</a
+              <form
+                action="{% url 'set_language' %}"
+                method="post"
+                style="margin: 0"
               >
+                {% csrf_token %}
+                <input
+                  name="next"
+                  type="hidden"
+                  value="{{ request.get_full_path }}"
+                />
+                <input name="language" type="hidden" value="de" />
+                <button
+                  type="submit"
+                  style="
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 8px 16px;
+                    width: 100%;
+                    text-align: left;
+                    font-family: Arial, sans-serif;
+                    color: #333;
+                  "
+                >
+                  Deutsch
+                </button>
+              </form>
             </li>
           </ul>
         </li>
@@ -201,24 +361,97 @@
               />
             </svg>
           </a>
+          <!-- Mobile language dropdown -->
           <ul class="lang-menu" id="mobile-menu-lang-menu">
             <li>
-              <a
-                href="{% url 'set_language' %}?language=en&next={{ request.get_full_path }}"
-                >English</a
+              <form
+                action="{% url 'set_language' %}"
+                method="post"
+                style="margin: 0"
               >
+                {% csrf_token %}
+                <input
+                  name="next"
+                  type="hidden"
+                  value="{{ request.get_full_path }}"
+                />
+                <input name="language" type="hidden" value="en" />
+                <button
+                  type="submit"
+                  style="
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 8px 16px;
+                    width: 100%;
+                    text-align: left;
+                    font-family: Arial, sans-serif;
+                    color: #333;
+                  "
+                >
+                  English
+                </button>
+              </form>
             </li>
             <li>
-              <a
-                href="{% url 'set_language' %}?language=fr&next={{ request.get_full_path }}"
-                >French</a
+              <form
+                action="{% url 'set_language' %}"
+                method="post"
+                style="margin: 0"
               >
+                {% csrf_token %}
+                <input
+                  name="next"
+                  type="hidden"
+                  value="{{ request.get_full_path }}"
+                />
+                <input name="language" type="hidden" value="fr" />
+                <button
+                  type="submit"
+                  style="
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 8px 16px;
+                    width: 100%;
+                    text-align: left;
+                    font-family: Arial, sans-serif;
+                    color: #333;
+                  "
+                >
+                  Français
+                </button>
+              </form>
             </li>
             <li>
-              <a
-                href="{% url 'set_language' %}?language=de&next={{ request.get_full_path }}"
-                >German</a
+              <form
+                action="{% url 'set_language' %}"
+                method="post"
+                style="margin: 0"
               >
+                {% csrf_token %}
+                <input
+                  name="next"
+                  type="hidden"
+                  value="{{ request.get_full_path }}"
+                />
+                <input name="language" type="hidden" value="de" />
+                <button
+                  type="submit"
+                  style="
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 8px 16px;
+                    width: 100%;
+                    text-align: left;
+                    font-family: Arial, sans-serif;
+                    color: #333;
+                  "
+                >
+                  Deutsch
+                </button>
+              </form>
             </li>
           </ul>
         </div>
@@ -228,41 +461,215 @@
       </div>
     </nav>
 
-    <main class="site-main">
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul class="mobile-nav-links">
+        <li><a href="{% url 'markets' %}">{% trans "Markets" %}</a></li>
+        <li><a href="{% url 'services' %}">{% trans "Services" %}</a></li>
+        <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
+        <li><a href="{% url 'insights' %}">{% trans "Insights" %}</a></li>
+        <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
+        <li><a href="{% url 'careers' %}">{% trans "Careers" %}</a></li>
+        <li><a href="{% url 'news' %}">{% trans "News" %}</a></li>
+        <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+      </ul>
+      <div class="mobile-search">
+        <form action="{% url 'search' %}" method="get">
+          <input type="text" name="q" placeholder="{% trans 'Search' %}..." />
+          <button type="submit">{% trans "Search" %}</button>
+        </form>
+      </div>
+    </div>
+
+    <main class="site-main civic-architecture">
+      <a
+        href="{% url 'service_detail' slug='Architecture-and-Design' %}"
+        class="back-link"
+        style="
+          display: block;
+          margin: 30px 40px 20px 40px;
+          color: #000000;
+          text-decoration: none;
+          font-size: 1.2rem;
+          font-weight: 200;
+        "
+      >
+        {% trans "← Back to Architecture and Design" %}
+      </a>
+
+      <div
+        class="image-cards-container"
+        style="
+          display: flex;
+          gap: 30px;
+          margin: 40px 20px;
+          flex-wrap: wrap;
+          justify-content: center;
+        "
+      >
+        <div style="flex: 1; min-width: 400px; max-width: 600px">
+          <img
+            src="{% static 'main/img/projects/First love center.jpg' %}"
+            alt="First Love Center"
+            style="
+              width: 100%;
+              height: 450px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3 style="margin-top: 15px; font-size: 1.3rem; color: #333"></h3>
+        </div>
+
+        <div style="flex: 1; min-width: 400px; max-width: 600px">
+          <img
+            src="{% static 'main/img/projects/First love.1.jpg' %}"
+            alt="First Love"
+            style="
+              width: 100%;
+              height: 450px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3 style="margin-top: 15px; font-size: 1.3rem; color: #333"></h3>
+        </div>
+
+        <div style="flex: 1; min-width: 400px; max-width: 600px">
+          <img
+            src="{% static 'main/img/projects/Theatre, tema.jpg' %}"
+            alt="Theatre, Tema"
+            style="
+              width: 100%;
+              height: 450px;
+              object-fit: cover;
+              border-radius: 8px;
+            "
+          />
+          <h3 style="margin-top: 15px; font-size: 1.3rem; color: #333"></h3>
+        </div>
+      </div>
+
       <h1
+        class="page-title"
         style="
           margin: 40px;
           font-family: Georgia, serif;
           font-size: 3rem;
           color: #333;
+          font-weight: 200;
         "
       >
-        Civic Architecture Projects
+        {% trans "Civic Architecture Projects" %}
       </h1>
 
-      <p
+      <div
+        class="content-wrapper"
         style="
+          display: flex;
+          gap: 40px;
           margin: 20px 40px;
-          font-family: Arial, sans-serif;
-          font-size: 1.2rem;
-          color: #666;
+          align-items: flex-start;
         "
       >
-        Explore our civic architecture projects. Content coming soon.
-      </p>
+        <div class="text-content" style="flex: 1">
+          <!-- prettier-ignore -->
+          <p style="margin: 0 0 20px 40px; font-family: Arial, sans-serif; font-size: 1.3rem; color: #000000; line-height: 1.8;">{% trans "At ABOD, we design civic architecture that serves communities and strengthens public life. Our approach balances functionality with identity, creating spaces that bring people together and stand as landmarks of shared purpose." %}</p>
+          <!-- prettier-ignore -->
+          <p style="margin: 0 0 20px 40px; font-family: Arial, sans-serif; font-size: 1.3rem; color: #000000; line-height: 1.8;">{% trans "From community centers and cultural facilities to government buildings and public institutions, we design with accessibility, sustainability, and longevity in mind. Every project is shaped by the needs of the community it serves." %}</p>
+          <!-- prettier-ignore -->
+          <p style="margin: 0 0 20px 40px; font-family: Arial, sans-serif; font-size: 1.3rem; color: #000000; line-height: 1.8;">{% trans "Our civic projects reflect collaboration between stakeholders, designers, and the public, ensuring that every building serves its purpose with dignity, beauty, and resilience." %}</p>
+        </div>
 
-      <a
-        href="{% url 'service_detail' slug='Architecture-and-Design' %}"
-        style="
-          display: block;
-          margin: 20px 40px;
-          color: #e74c3c;
-          text-decoration: none;
-          font-size: 1.1rem;
-        "
-      >
-        ← Back to Architecture and Design
-      </a>
+        <div
+          class="sidebar-boxes"
+          style="display: flex; flex-direction: column; gap: 30px"
+        >
+          <div
+            class="discover-box"
+            style="
+              border: none;
+              border-radius: 15px;
+              padding: 30px;
+              min-width: 320px;
+              max-width: 320px;
+              background: #f5f5f5;
+            "
+          >
+            <h3
+              style="
+                font-family: Georgia, serif;
+                font-size: 1.5rem;
+                color: #333;
+                margin-bottom: 20px;
+                font-weight: 400;
+              "
+            >
+              {% trans "Discover more" %}
+            </h3>
+            <!-- prettier-ignore -->
+            <p style="font-family: Arial, sans-serif; font-size: 1.1rem; color: #666; line-height: 1.6; margin-bottom: 25px;">{% trans "Our architecture practice has been at the heart of Abods work across the built environment." %}</p>
+            <a
+              href="{% url 'service_detail' slug='Architecture-and-Design' %}"
+              style="
+                display: inline-block;
+                color: #333;
+                text-decoration: none;
+                font-family: Arial, sans-serif;
+                font-size: 1.1rem;
+                font-weight: 500;
+                border: 2px solid #333;
+                border-radius: 25px;
+                padding: 12px 24px;
+                transition: all 0.3s ease;
+              "
+            >
+              {% trans "Discover more" %} →
+            </a>
+          </div>
+
+          <div
+            class="contact-box"
+            style="
+              border: 2px solid #333;
+              border-radius: 15px;
+              padding: 30px;
+              min-width: 320px;
+              max-width: 320px;
+              background: #ffffff;
+            "
+          >
+            <h3
+              style="
+                font-family: Georgia, serif;
+                font-size: 1.5rem;
+                color: #333;
+                margin-bottom: 20px;
+                font-weight: 400;
+              "
+            >
+              {% trans "Get in touch with our team" %}
+            </h3>
+            <a
+              href="{% url 'contact' %}"
+              style="
+                display: inline-block;
+                color: #333;
+                text-decoration: none;
+                font-family: Arial, sans-serif;
+                font-size: 1.1rem;
+                font-weight: 500;
+                border: 2px solid #333;
+                border-radius: 25px;
+                padding: 12px 24px;
+                transition: all 0.3s ease;
+              "
+            >
+              {% trans "Contact our experts" %} →
+            </a>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="footer-right">
@@ -271,7 +678,8 @@
           <h3 class="site-name">ABOD</h3>
           <p class="site-desc">© 2025 ABOD — All rights reserved</p>
           <p class="footer-blurb">
-            {% trans "Designing sustainable places and systems. We work across markets to make long-term, people-centred change." %}
+            {% trans "Designing sustainable places and systems. We work across
+            markets to make long-term, people-centred change." %}
           </p>
         </div>
 
@@ -359,6 +767,7 @@
 
     <script src="{% static 'main/site-search.js' %}"></script>
     <script>
+      // Desktop language toggle
       const langToggle = document.getElementById("lang-toggle");
       const langMenu = document.getElementById("lang-menu");
       if (langToggle && langMenu) {
@@ -373,6 +782,7 @@
         });
       }
 
+      // Mobile language toggle
       const mobileLangToggle = document.getElementById(
         "mobile-menu-lang-toggle"
       );
