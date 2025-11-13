@@ -971,6 +971,27 @@
       </a>
     </div>
     {% else %}
+    <!-- Wide Image Card for Other Services -->
+    <div
+      style="
+        margin: 30px 20px 30px 20px;
+        width: calc(100% - 40px);
+        max-width: none;
+      "
+    >
+      <img
+        src="{% if service.slug == 'advisory-and-planning' %}{% static 'main/img/Services/Advisory and Planning.jpg' %}{% elif service.slug == 'Interior-and-Landscape-Design' %}{% static 'main/img/Services/interior and landscape desgin.jpg' %}{% elif service.slug == 'project-management' %}{% static 'main/img/Services/Project Management.jpg' %}{% elif service.slug == '3d-modeling-visualization' %}{% static 'main/img/Services/3D Modeling and Visualisation.jpg' %}{% elif service.slug == 'urban-design-masterplanning' %}{% static 'main/img/Services/Urban design and Masterplaning.jpg' %}{% elif service.slug == 'sustainability-environmental-solutions' %}{% static 'main/img/Services/sustainable-development-goals-still-life.jpg' %}{% elif service.slug == 'specialized-services' %}{% static 'main/img/Services/man-working-animation-studio.jpg' %}{% else %}{% static 'main/img/projects/Gardenia.jpg' %}{% endif %}"
+        alt="{{ service.title }}"
+        style="
+          width: 100%;
+          height: 500px;
+          object-fit: cover;
+          border-radius: 15px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        "
+      />
+    </div>
+
     <!-- Generic Service Content for All Other Services -->
     <h1
       style="
