@@ -1442,3 +1442,54 @@ msgstr ""
 "leur vision et leurs objectifs, en livrant une architecture commerciale "
 "innovante, pratique et conçue pour s'adapter à l'avenir du travail et du "
 "commerce."
+
+msgid "How do you solve tight spaces with smart design and precise engineering"
+msgstr "Comment résoudre les espaces restreints avec un design intelligent et une ingénierie précise"
+
+msgid "In our Issues section, we discuss the big questions facing the built and natural environments."
+msgstr "Dans notre section Problématiques, nous discutons des grandes questions concernant l'environnement bâti et naturel."
+
+msgid "Share"
+msgstr "Partager"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Copy Link"
+msgstr "Copier le lien"
+
+msgid "For a private residence, our industrial designers were presented with the challenge of creating a staircase within a tightly confined space. The spatial limitations required precise planning and a deep understanding of form, proportion, and functionality to ensure the staircase complemented the home's interior layout. Every inch of the available area had to be optimized without compromising comfort or safety."
+msgstr "Pour une résidence privée, nos designers industriels ont été confrontés au défi de créer un escalier dans un espace très restreint. Les limitations spatiales ont nécessité une planification précise et une compréhension approfondie de la forme, de la proportion et de la fonctionnalité pour garantir que l'escalier complète l'aménagement intérieur de la maison. Chaque centimètre de la surface disponible devait être optimisé sans compromettre le confort ou la sécurité."
+
+msgid "Midway through the project, the client introduced a new requirement the inclusion of a landing before the stairwell. This addition had not been anticipated in the original architectural design, meaning our team had to revisit and rethink the entire staircase configuration. The challenge demanded a balance between meeting the client's functional needs and preserving the intended flow of the interior space."
+msgstr "À mi-chemin du projet, le client a introduit une nouvelle exigence : l'inclusion d'un palier avant la cage d'escalier. Cet ajout n'avait pas été anticipé dans la conception architecturale originale, ce qui signifie que notre équipe a dû revoir et repenser toute la configuration de l'escalier. Le défi exigeait un équilibre entre la satisfaction des besoins fonctionnels du client et la préservation du flux prévu de l'espace intérieur."
+
+msgid "Through innovative problem-solving and collaboration between designers, architects, and builders, we developed a creative solution that seamlessly integrated the landing without disrupting the home's design language. The final result was a refined staircase that combined practicality with aesthetic sophistication, turning a spatial constraint into a defining architectural feature."
+msgstr "Grâce à une résolution de problèmes innovante et à la collaboration entre designers, architectes et constructeurs, nous avons développé une solution créative qui a intégré de manière transparente le palier sans perturber le langage de conception de la maison. Le résultat final était un escalier raffiné qui combinait praticité et sophistication esthétique, transformant une contrainte spatiale en une caractéristique architecturale déterminante."
+
+msgid "How we tackle this issue:"
+msgstr "Comment nous abordons ce problème :"
+
+msgid "Collaborating closely, we engineered a winder staircase with a dog-leg configuration, breaking it into three parts: a starting section, a folded winder segment to maximize space, and a long landing for safe passage of two users, followed by a final dog-leg. Designed for steel fabricators, we detailed the structure in three modular parts for seamless assembly and installation."
+msgstr "En collaborant étroitement, nous avons conçu un escalier à quart tournant avec une configuration en équerre, le divisant en trois parties : une section de départ, un segment à quart tournant plié pour maximiser l'espace, et un long palier pour le passage sûr de deux utilisateurs, suivi d'un dernier quart tournant. Conçu pour les fabricants d'acier, nous avons détaillé la structure en trois parties modulaires pour un assemblage et une installation sans couture."
+
+msgid "Our solution prioritized functionality, safety, and fabrication efficiency, delivering a bespoke staircase that transformed a constrained space into a practical and elegant feature."
+msgstr "Notre solution a donné la priorité à la fonctionnalité, à la sécurité et à l'efficacité de fabrication, offrant un escalier sur mesure qui a transformé un espace restreint en une caractéristique pratique et élégante."
+
+msgid "Explore more services"
+msgstr "Explorer plus de services"
+
+msgid "Discover our comprehensive range of architectural solutions and design services."
+msgstr "Découvrez notre gamme complète de solutions architecturales et de services de conception."
+
+msgid "Explore more"
+msgstr "Explorer plus"

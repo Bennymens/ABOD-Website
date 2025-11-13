@@ -556,3 +556,10 @@ def architecture_hospitality(request):
 def architecture_civic(request):
 	"""View for Civic architecture projects."""
 	return render(request, 'main/architecture_civic.html')
+
+
+def issue_tight_spaces(request):
+	"""View for the tight spaces issue detail page."""
+	return render(request, 'main/issue_detail.html', {
+		'issue_title': 'How do you solve tight spaces with smart design and precise engineering'
+	})

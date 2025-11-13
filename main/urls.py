@@ -19,6 +19,7 @@ urlpatterns = [
     path('architecture/hospitality/', views.architecture_hospitality, name='architecture_hospitality'),
     path('architecture/civic/', views.architecture_civic, name='architecture_civic'),
     path('projects/<slug:slug>/', views.project_detail, name='project_detail'),
+    path('issues/tight-spaces/', views.issue_tight_spaces, name='issue_tight_spaces'),
     path('home/', views.home, name='home'),
     path('search/', views.search, name='search'),
 ]
