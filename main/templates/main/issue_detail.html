@@ -1,0 +1,1525 @@
+{% load static %} {% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ issue_title }} — ABOD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'main/style.css' %}" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .issue-detail-hero {
+        background-color: #000000;
+        color: #ffffff;
+        min-height: 80vh;
+        padding-top: 0;
+        margin-top: 0;
+        position: relative;
+      }
+
+      /* Override navbar to be on black background */
+      .navbar {
+        background-color: #000000 !important;
+        position: relative;
+        z-index: 10;
+      }
+
+      .navbar a {
+        color: #ffffff !important;
+      }
+
+      .navbar .navbar-logo img {
+        filter: none !important;
+      }
+
+      .navbar .icon-link svg {
+        stroke: #ffffff !important;
+      }
+
+      .navbar .lang-menu {
+        background-color: #ffffff;
+        color: #000000;
+      }
+
+      .navbar .lang-menu button {
+        color: #000000 !important;
+      }
+
+      .mobile-controls {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .navbar-left-group {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .navbar-center,
+        .navbar-right {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+          position: static !important;
+          margin-left: auto;
+        }
+        .hamburger span {
+          background-color: #ffffff !important;
+        }
+        .mobile-controls {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          margin-left: auto;
+        }
+        .mobile-language {
+          position: relative;
+        }
+        .mobile-language .icon-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: #333;
+          transition: background-color 0.2s;
+        }
+        .mobile-language .icon-link:hover {
+          background-color: #555;
+        }
+        .mobile-language .icon-link svg {
+          width: 18px;
+          height: 18px;
+          stroke: #fff;
+        }
+
+        /* Mobile optimizations for hero section */
+        .issue-detail-hero {
+          min-height: 100vh;
+          padding-bottom: 20px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .hero-content-mobile {
+          display: flex;
+          flex-direction: column;
+          padding: 40px 20px;
+          flex: 1;
+        }
+
+        .issues-badge {
+          width: fit-content !important;
+          padding: 6px 12px !important;
+          gap: 6px !important;
+          font-size: 0.75rem !important;
+        }
+
+        .hero-tagline {
+          font-size: 2.5rem !important;
+          padding: 0 !important;
+          margin: 0 0 20px 0 !important;
+          text-align: left !important;
+          max-width: 100% !important;
+        }
+
+        .hero-description {
+          position: static !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          white-space: normal !important;
+          font-size: 0.9rem !important;
+          text-align: left !important;
+        }
+
+        .hero-description p {
+          margin: 0 !important;
+          white-space: normal !important;
+        }
+
+        .hero-bottom-section {
+          margin-top: auto;
+          padding: 0 20px 40px 20px;
+        }
+
+        .hero-line {
+          position: static !important;
+          bottom: auto !important;
+          margin: 0 0 15px 0 !important;
+          padding: 0 !important;
+        }
+
+        .hero-share-button {
+          position: static !important;
+          margin: 0 !important;
+          display: flex !important;
+          justify-content: flex-end !important;
+        }
+
+        .hero-share-button button {
+          padding: 10px 20px !important;
+          font-size: 0.9rem !important;
+        }
+
+        .hero-share-button svg {
+          width: 16px !important;
+          height: 16px !important;
+        }
+
+        .content-wrapper {
+          flex-direction: column !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          max-width: 100% !important;
+        }
+
+        .site-main {
+          padding: 40px 20px !important;
+        }
+
+        .issue-content-text {
+          font-size: 0.95rem !important;
+          line-height: 1.5 !important;
+          margin-bottom: 20px !important;
+          text-align: left !important;
+          width: 100% !important;
+        }
+
+        .tackle-header {
+          font-size: 1.5rem !important;
+          margin-left: 0 !important;
+          margin-top: 40px !important;
+          margin-bottom: 20px !important;
+        }
+
+        .discover-box {
+          min-width: auto !important;
+          max-width: 90% !important;
+          width: 90% !important;
+          margin-top: 30px !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding: 20px !important;
+        }
+
+        .discover-box h3 {
+          font-size: 1.2rem !important;
+        }
+
+        .discover-box p {
+          font-size: 0.9rem !important;
+          line-height: 1.5 !important;
+        }
+
+        .discover-box a {
+          font-size: 0.85rem !important;
+          padding: 10px 20px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="issue-detail-hero">
+      <nav class="navbar">
+        <div class="navbar-left-group">
+          <div
+            class="navbar-section navbar-logo"
+            style="display: flex; align-items: center; gap: 18px"
+          >
+            <a href="{% url 'home' %}">
+              <img
+                src="{% static 'main/img/logo-removebg-preview.png' %}"
+                alt="Company Logo"
+                style="height: 40px"
+              />
+            </a>
+          </div>
+          <ul class="navbar-section navbar-center">
+            <li><a href="{% url 'markets' %}">{% trans "Markets" %}</a></li>
+            <li><a href="{% url 'services' %}">{% trans "Services" %}</a></li>
+            <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
+            <li>
+              <a href="{% url 'insights' %}" class="active"
+                >{% trans "Insights" %}</a
+              >
+            </li>
+          </ul>
+        </div>
+        <ul class="navbar-section navbar-right">
+          <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
+          <li><a href="{% url 'careers' %}">{% trans "Careers" %}</a></li>
+          <li><a href="{% url 'news' %}">{% trans "News" %}</a></li>
+          <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+          <li class="language-dropdown">
+            <a href="#" class="icon-link" id="lang-toggle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+            </a>
+            <ul class="lang-menu" id="lang-menu">
+              <li>
+                <form
+                  action="{% url 'set_language' %}"
+                  method="post"
+                  style="margin: 0"
+                >
+                  {% csrf_token %}
+                  <input
+                    name="next"
+                    type="hidden"
+                    value="{{ request.get_full_path }}"
+                  />
+                  <input name="language" type="hidden" value="en" />
+                  <button
+                    type="submit"
+                    style="
+                      background: none;
+                      border: none;
+                      cursor: pointer;
+                      padding: 8px 16px;
+                      width: 100%;
+                      text-align: left;
+                      font-family: inherit;
+                      font-size: inherit;
+                      color: inherit;
+                    "
+                  >
+                    English
+                  </button>
+                </form>
+              </li>
+              <li>
+                <form
+                  action="{% url 'set_language' %}"
+                  method="post"
+                  style="margin: 0"
+                >
+                  {% csrf_token %}
+                  <input
+                    name="next"
+                    type="hidden"
+                    value="{{ request.get_full_path }}"
+                  />
+                  <input name="language" type="hidden" value="fr" />
+                  <button
+                    type="submit"
+                    style="
+                      background: none;
+                      border: none;
+                      cursor: pointer;
+                      padding: 8px 16px;
+                      width: 100%;
+                      text-align: left;
+                      font-family: inherit;
+                      font-size: inherit;
+                      color: inherit;
+                    "
+                  >
+                    Français
+                  </button>
+                </form>
+              </li>
+              <li>
+                <form
+                  action="{% url 'set_language' %}"
+                  method="post"
+                  style="margin: 0"
+                >
+                  {% csrf_token %}
+                  <input
+                    name="next"
+                    type="hidden"
+                    value="{{ request.get_full_path }}"
+                  />
+                  <input name="language" type="hidden" value="de" />
+                  <button
+                    type="submit"
+                    style="
+                      background: none;
+                      border: none;
+                      cursor: pointer;
+                      padding: 8px 16px;
+                      width: 100%;
+                      text-align: left;
+                      font-family: inherit;
+                      font-size: inherit;
+                      color: inherit;
+                    "
+                  >
+                    Deutsch
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" title="Search" class="icon-link">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="7"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                />
+                <line
+                  x1="16.5"
+                  y1="16.5"
+                  x2="21"
+                  y2="21"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <div class="mobile-controls">
+          <div class="mobile-language">
+            <a href="#" class="icon-link" id="mobile-menu-lang-toggle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+            </a>
+            <ul class="lang-menu" id="mobile-menu-lang-menu">
+              <li>
+                <form
+                  action="{% url 'set_language' %}"
+                  method="post"
+                  style="margin: 0"
+                >
+                  {% csrf_token %}
+                  <input
+                    name="next"
+                    type="hidden"
+                    value="{{ request.get_full_path }}"
+                  />
+                  <input name="language" type="hidden" value="en" />
+                  <button
+                    type="submit"
+                    style="
+                      background: none;
+                      border: none;
+                      cursor: pointer;
+                      padding: 8px 16px;
+                      width: 100%;
+                      text-align: left;
+                      font-family: inherit;
+                      font-size: inherit;
+                      color: inherit;
+                    "
+                  >
+                    English
+                  </button>
+                </form>
+              </li>
+              <li>
+                <form
+                  action="{% url 'set_language' %}"
+                  method="post"
+                  style="margin: 0"
+                >
+                  {% csrf_token %}
+                  <input
+                    name="next"
+                    type="hidden"
+                    value="{{ request.get_full_path }}"
+                  />
+                  <input name="language" type="hidden" value="fr" />
+                  <button
+                    type="submit"
+                    style="
+                      background: none;
+                      border: none;
+                      cursor: pointer;
+                      padding: 8px 16px;
+                      width: 100%;
+                      text-align: left;
+                      font-family: inherit;
+                      font-size: inherit;
+                      color: inherit;
+                    "
+                  >
+                    Français
+                  </button>
+                </form>
+              </li>
+              <li>
+                <form
+                  action="{% url 'set_language' %}"
+                  method="post"
+                  style="margin: 0"
+                >
+                  {% csrf_token %}
+                  <input
+                    name="next"
+                    type="hidden"
+                    value="{{ request.get_full_path }}"
+                  />
+                  <input name="language" type="hidden" value="de" />
+                  <button
+                    type="submit"
+                    style="
+                      background: none;
+                      border: none;
+                      cursor: pointer;
+                      padding: 8px 16px;
+                      width: 100%;
+                      text-align: left;
+                      font-family: inherit;
+                      font-size: inherit;
+                      color: inherit;
+                    "
+                  >
+                    Deutsch
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-nav-links">
+          <li><a href="{% url 'markets' %}">{% trans "Markets" %}</a></li>
+          <li><a href="{% url 'services' %}">{% trans "Services" %}</a></li>
+          <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
+          <li><a href="{% url 'insights' %}">{% trans "Insights" %}</a></li>
+          <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
+          <li><a href="{% url 'careers' %}">{% trans "Careers" %}</a></li>
+          <li><a href="{% url 'news' %}">{% trans "News" %}</a></li>
+          <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+        </ul>
+        <div class="mobile-search">
+          <form action="{% url 'search' %}" method="get">
+            <input type="text" name="q" placeholder="{% trans 'Search...' %}" />
+          </form>
+        </div>
+      </div>
+
+      <!-- Issue Content on Black Background -->
+      <div class="hero-content-mobile" style="padding: 60px 20px 60px 40px">
+        <!-- Issues Badge -->
+        <div
+          class="issues-badge"
+          style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin-bottom: 30px;
+          "
+        >
+          <div
+            style="
+              width: 12px;
+              height: 12px;
+              background-color: #ff0000;
+              border-radius: 3px;
+            "
+          ></div>
+          <span
+            style="
+              font-family: Poppins, sans-serif;
+              font-size: 0.9rem;
+              color: #ffffff;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+            >{% trans "Issues" %}</span
+          >
+        </div>
+
+        <!-- Tagline Header -->
+        <h1
+          class="hero-tagline"
+          style="
+            font-family: Georgia, serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            color: #ffffff;
+            text-align: left;
+            line-height: 1.2;
+            margin-left: 0;
+            max-width: 1200px;
+          "
+        >
+          <!-- prettier-ignore -->
+          {% trans "How do you solve tight spaces with smart design and precise engineering" %}
+        </h1>
+
+        <!-- Description Text -->
+        <div
+          class="hero-description"
+          style="position: absolute; bottom: 60px; left: 40px"
+        >
+          <p
+            style="
+              font-family: Poppins, sans-serif;
+              font-size: 1.4rem;
+              color: #ffffff;
+              line-height: 1.6;
+              margin: 0;
+              text-align: left;
+              white-space: nowrap;
+            "
+          >
+            <!-- prettier-ignore -->
+            {% trans "In our Issues section, we discuss the big questions facing the built and natural environments." %}
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom section with line and share button -->
+      <div class="hero-bottom-section">
+        <!-- Horizontal line near bottom of hero section -->
+        <div
+          class="hero-line"
+          style="
+            position: absolute;
+            bottom: 120px;
+            left: 0;
+            right: 0;
+            padding: 0 20px;
+          "
+        >
+          <hr
+            style="
+              border: none;
+              border-top: 1px solid #ffffff;
+              opacity: 0.3;
+              margin: 0;
+            "
+          />
+        </div>
+
+        <!-- Share Button -->
+        <div
+          class="hero-share-button"
+          style="position: absolute; bottom: 30px; right: 40px"
+        >
+          <div style="position: relative">
+            <button
+              id="shareButton"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 14px 28px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 30px;
+                color: #ffffff;
+                font-family: Poppins, sans-serif;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background-color 0.3s;
+              "
+              onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.2)'"
+              onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.1)'"
+              onclick="toggleShareDropdown()"
+            >
+              <span>{% trans "Share" %}</span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+            </button>
+
+            <!-- Share Dropdown -->
+            <div
+              id="shareDropdown"
+              style="
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                margin-top: 10px;
+                background-color: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                padding: 10px;
+                min-width: 200px;
+                z-index: 1000;
+              "
+            >
+              <a
+                href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.build_absolute_uri }}"
+                target="_blank"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 10px;
+                  color: #333;
+                  text-decoration: none;
+                  border-radius: 5px;
+                  font-family: Poppins, sans-serif;
+                  font-size: 0.9rem;
+                  transition: background-color 0.2s;
+                "
+                onmouseover="this.style.backgroundColor='#f5f5f5'"
+                onmouseout="this.style.backgroundColor='transparent'"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#0077b5">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+                {% trans "LinkedIn" %}
+              </a>
+
+              <a
+                href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"
+                target="_blank"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 10px;
+                  color: #333;
+                  text-decoration: none;
+                  border-radius: 5px;
+                  font-family: Poppins, sans-serif;
+                  font-size: 0.9rem;
+                  transition: background-color 0.2s;
+                "
+                onmouseover="this.style.backgroundColor='#f5f5f5'"
+                onmouseout="this.style.backgroundColor='transparent'"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877f2">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+                {% trans "Facebook" %}
+              </a>
+
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 10px;
+                  color: #333;
+                  text-decoration: none;
+                  border-radius: 5px;
+                  font-family: Poppins, sans-serif;
+                  font-size: 0.9rem;
+                  transition: background-color 0.2s;
+                "
+                onmouseover="this.style.backgroundColor='#f5f5f5'"
+                onmouseout="this.style.backgroundColor='transparent'"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="url(#instagram-gradient)"
+                >
+                  <defs>
+                    <linearGradient
+                      id="instagram-gradient"
+                      x1="0%"
+                      y1="100%"
+                      x2="100%"
+                      y2="0%"
+                    >
+                      <stop
+                        offset="0%"
+                        style="stop-color: #f09433; stop-opacity: 1"
+                      />
+                      <stop
+                        offset="25%"
+                        style="stop-color: #e6683c; stop-opacity: 1"
+                      />
+                      <stop
+                        offset="50%"
+                        style="stop-color: #dc2743; stop-opacity: 1"
+                      />
+                      <stop
+                        offset="75%"
+                        style="stop-color: #cc2366; stop-opacity: 1"
+                      />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #bc1888; stop-opacity: 1"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+                {% trans "Instagram" %}
+              </a>
+
+              <a
+                href="https://wa.me/?text=Check%20out%20this%20issue:%20{{ request.build_absolute_uri|urlencode }}"
+                target="_blank"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 10px;
+                  color: #333;
+                  text-decoration: none;
+                  border-radius: 5px;
+                  font-family: Poppins, sans-serif;
+                  font-size: 0.9rem;
+                  transition: background-color 0.2s;
+                "
+                onmouseover="this.style.backgroundColor='#f5f5f5'"
+                onmouseout="this.style.backgroundColor='transparent'"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#25d366">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+                {% trans "WhatsApp" %}
+              </a>
+
+              <a
+                href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri|urlencode }}&text=Check%20out%20this%20issue%20from%20ABOD"
+                target="_blank"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 10px;
+                  color: #333;
+                  text-decoration: none;
+                  border-radius: 5px;
+                  font-family: Poppins, sans-serif;
+                  font-size: 0.9rem;
+                  transition: background-color 0.2s;
+                "
+                onmouseover="this.style.backgroundColor='#f5f5f5'"
+                onmouseout="this.style.backgroundColor='transparent'"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#1da1f2">
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+                {% trans "Twitter" %}
+              </a>
+
+              <button
+                onclick="copyLinkToClipboard()"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 10px;
+                  width: 100%;
+                  background: none;
+                  border: none;
+                  color: #333;
+                  text-decoration: none;
+                  border-radius: 5px;
+                  font-family: Poppins, sans-serif;
+                  font-size: 0.9rem;
+                  cursor: pointer;
+                  transition: background-color 0.2s;
+                  text-align: left;
+                "
+                onmouseover="this.style.backgroundColor='#f5f5f5'"
+                onmouseout="this.style.backgroundColor='transparent'"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#333"
+                  stroke-width="2"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path
+                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                  ></path>
+                </svg>
+                {% trans "Copy Link" %}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End hero-bottom-section -->
+    </div>
+    <!-- End issue-detail-hero -->
+
+    <script>
+      function toggleShareDropdown() {
+        const dropdown = document.getElementById("shareDropdown");
+        if (
+          dropdown.style.display === "none" ||
+          dropdown.style.display === ""
+        ) {
+          dropdown.style.display = "block";
+        } else {
+          dropdown.style.display = "none";
+        }
+      }
+
+      function copyLinkToClipboard() {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url).then(
+          function () {
+            alert("Link copied to clipboard!");
+          },
+          function (err) {
+            console.error("Could not copy text: ", err);
+          }
+        );
+      }
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", function (event) {
+        const shareButton = document.getElementById("shareButton");
+        const shareDropdown = document.getElementById("shareDropdown");
+        if (
+          shareButton &&
+          shareDropdown &&
+          !shareButton.contains(event.target) &&
+          !shareDropdown.contains(event.target)
+        ) {
+          shareDropdown.style.display = "none";
+        }
+      });
+    </script>
+
+    <!-- White Content Area -->
+    <main
+      class="site-main"
+      style="background-color: #ffffff; padding: 60px 40px"
+    >
+      <div
+        class="content-wrapper"
+        style="
+          max-width: 1600px;
+          margin: 0 auto;
+          display: flex;
+          gap: 30px;
+          align-items: flex-start;
+          justify-content: flex-end;
+        "
+      >
+        <div style="flex: 1; max-width: 1200px">
+          <!-- Issue content -->
+          <p
+            class="issue-content-text"
+            style="
+              font-family: 'Poppins', sans-serif;
+              font-size: 1.4rem;
+              line-height: 1.4;
+              color: #333;
+              margin-bottom: 30px;
+              font-weight: bold;
+            "
+          >
+            <!-- prettier-ignore -->
+            {% trans "For a private residence, our industrial designers were presented with the challenge of creating a staircase within a tightly confined space. The spatial limitations required precise planning and a deep understanding of form, proportion, and functionality to ensure the staircase complemented the home's interior layout. Every inch of the available area had to be optimized without compromising comfort or safety." %}
+          </p>
+
+          <p
+            class="issue-content-text"
+            style="
+              font-family: 'Poppins', sans-serif;
+              font-size: 1.4rem;
+              line-height: 1.4;
+              color: #333;
+              margin-bottom: 30px;
+            "
+          >
+            <!-- prettier-ignore -->
+            {% trans "Midway through the project, the client introduced a new requirement the inclusion of a landing before the stairwell. This addition had not been anticipated in the original architectural design, meaning our team had to revisit and rethink the entire staircase configuration. The challenge demanded a balance between meeting the client's functional needs and preserving the intended flow of the interior space." %}
+          </p>
+
+          <p
+            class="issue-content-text"
+            style="
+              font-family: 'Poppins', sans-serif;
+              font-size: 1.4rem;
+              line-height: 1.4;
+              color: #333;
+            "
+          >
+            <!-- prettier-ignore -->
+            {% trans "Through innovative problem-solving and collaboration between designers, architects, and builders, we developed a creative solution that seamlessly integrated the landing without disrupting the home's design language. The final result was a refined staircase that combined practicality with aesthetic sophistication, turning a spatial constraint into a defining architectural feature." %}
+          </p>
+
+          <h2
+            class="tackle-header"
+            style="
+              font-family: Georgia, serif;
+              font-size: 2.5rem;
+              margin-top: 60px;
+              margin-bottom: 30px;
+              margin-left: -100px;
+              color: #333;
+              font-weight: 400;
+            "
+          >
+            {% trans "How we tackle this issue:" %}
+          </h2>
+
+          <p
+            class="issue-content-text"
+            style="
+              font-family: 'Poppins', sans-serif;
+              font-size: 1.4rem;
+              line-height: 1.4;
+              color: #333;
+              margin-bottom: 30px;
+            "
+          >
+            <!-- prettier-ignore -->
+            {% trans "Collaborating closely, we engineered a winder staircase with a dog-leg configuration, breaking it into three parts: a starting section, a folded winder segment to maximize space, and a long landing for safe passage of two users, followed by a final dog-leg. Designed for steel fabricators, we detailed the structure in three modular parts for seamless assembly and installation." %}
+          </p>
+
+          <p
+            class="issue-content-text"
+            style="
+              font-family: 'Poppins', sans-serif;
+              font-size: 1.4rem;
+              line-height: 1.4;
+              color: #333;
+              margin-bottom: 60px;
+            "
+          >
+            <!-- prettier-ignore -->
+            {% trans "Our solution prioritized functionality, safety, and fabrication efficiency, delivering a bespoke staircase that transformed a constrained space into a practical and elegant feature." %}
+          </p>
+
+          <!-- Masonry Gallery -->
+          <div
+            id="masonry-container"
+            style="
+              position: relative;
+              width: 100%;
+              max-width: 1200px;
+              min-height: 400px;
+            "
+          >
+            <!-- Items will be dynamically positioned here -->
+          </div>
+        </div>
+
+        <!-- Discover More Box on Far Right -->
+        <div
+          class="discover-box"
+          style="
+            border: none;
+            border-radius: 15px;
+            padding: 30px;
+            min-width: 320px;
+            max-width: 320px;
+            background: #f5f5f5;
+            flex-shrink: 0;
+            align-self: flex-start;
+            position: sticky;
+            top: 100px;
+          "
+        >
+          <h3
+            style="
+              font-family: Georgia, serif;
+              font-size: 1.5rem;
+              color: #333;
+              margin-bottom: 20px;
+              font-weight: 400;
+            "
+          >
+            {% trans "Explore more services" %}
+          </h3>
+          <p
+            style="
+              font-family: Arial, sans-serif;
+              font-size: 1.1rem;
+              color: #666;
+              line-height: 1.6;
+              margin-bottom: 25px;
+            "
+          >
+            <!-- prettier-ignore -->
+            {% trans "Discover our comprehensive range of architectural solutions and design services." %}
+          </p>
+          <a
+            href="{% url 'services' %}"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 10px;
+              color: #333;
+              text-decoration: none;
+              font-family: Arial, sans-serif;
+              font-size: 1.1rem;
+              font-weight: 500;
+              border: 2px solid #333;
+              border-radius: 25px;
+              padding: 12px 24px;
+              transition: all 0.3s ease;
+            "
+          >
+            {% trans "Explore more" %}
+            <span style="font-size: 1.3rem">→</span>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Masonry Gallery Script -->
+    <script>
+      const masonryItems = [
+        {
+          id: "1",
+          img: "{% static 'main/img/1753531960543.jpg' %}",
+          height: 280,
+        },
+        {
+          id: "2",
+          img: "{% static 'main/img/1753531961377.jpg' %}",
+          height: 450,
+        },
+        {
+          id: "3",
+          img: "{% static 'main/img/1753531961827.jpg' %}",
+          height: 350,
+        },
+        {
+          id: "4",
+          img: "{% static 'main/img/1753531971197.jpg' %}",
+          height: 500,
+        },
+        {
+          id: "5",
+          img: "{% static 'main/img/1753531991983.jpg' %}",
+          height: 320,
+        },
+        {
+          id: "6",
+          img: "{% static 'main/img/1753531960389.jpg' %}",
+          height: 420,
+        },
+        {
+          id: "7",
+          img: "{% static 'main/img/1753531972817.jpg' %}",
+          height: 380,
+        },
+      ];
+
+      class MasonryGallery {
+        constructor(container, items, options = {}) {
+          this.container = container;
+          this.items = items;
+          this.options = {
+            ease: options.ease || "power3.out",
+            duration: options.duration || 0.6,
+            stagger: options.stagger || 0.05,
+            animateFrom: options.animateFrom || "bottom",
+            scaleOnHover: options.scaleOnHover !== false,
+            hoverScale: options.hoverScale || 0.98,
+            blurToFocus: options.blurToFocus !== false,
+            gap: options.gap || 15,
+          };
+
+          this.columns = this.getColumns();
+          this.grid = [];
+          this.resizeTimeout = null;
+
+          this.init();
+        }
+
+        getColumns() {
+          const width = window.innerWidth;
+          if (width >= 1400) return 3;
+          if (width >= 900) return 2;
+          return 1;
+        }
+
+        preloadImages() {
+          return Promise.all(
+            this.items.map(
+              (item) =>
+                new Promise((resolve) => {
+                  const img = new Image();
+                  img.src = item.img;
+                  img.onload = img.onerror = () => resolve();
+                })
+            )
+          );
+        }
+
+        calculateGrid() {
+          const containerWidth = this.container.offsetWidth;
+          const columnWidth =
+            (containerWidth - (this.columns - 1) * this.options.gap) /
+            this.columns;
+          const colHeights = new Array(this.columns).fill(0);
+
+          this.grid = this.items.map((item) => {
+            const col = colHeights.indexOf(Math.min(...colHeights));
+            const x = col * (columnWidth + this.options.gap);
+            const height = item.height;
+            const y = colHeights[col];
+
+            colHeights[col] += height + this.options.gap;
+
+            return { ...item, x, y, w: columnWidth, h: height };
+          });
+
+          // Set container height
+          this.container.style.height = Math.max(...colHeights) + "px";
+        }
+
+        createElements() {
+          this.container.innerHTML = "";
+
+          this.grid.forEach((item, index) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "masonry-item";
+            wrapper.setAttribute("data-id", item.id);
+            wrapper.style.cssText = `
+              position: absolute;
+              width: ${item.w}px;
+              height: ${item.h}px;
+              cursor: pointer;
+              overflow: hidden;
+              border-radius: 8px;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+              transition: box-shadow 0.3s ease;
+            `;
+
+            const img = document.createElement("div");
+            img.style.cssText = `
+              width: 100%;
+              height: 100%;
+              background-image: url('${item.img}');
+              background-size: cover;
+              background-position: center;
+            `;
+
+            wrapper.appendChild(img);
+            this.container.appendChild(wrapper);
+
+            // Add hover events
+            if (this.options.scaleOnHover) {
+              wrapper.addEventListener("mouseenter", () =>
+                this.handleHover(item.id, true)
+              );
+              wrapper.addEventListener("mouseleave", () =>
+                this.handleHover(item.id, false)
+              );
+            }
+          });
+        }
+
+        animateIn() {
+          this.grid.forEach((item, index) => {
+            const element = this.container.querySelector(
+              `[data-id="${item.id}"]`
+            );
+
+            const initialState = {
+              opacity: 0,
+              x: item.x,
+              y: this.getInitialY(item),
+              ...(this.options.blurToFocus && { filter: "blur(10px)" }),
+            };
+
+            gsap.fromTo(element, initialState, {
+              opacity: 1,
+              x: item.x,
+              y: item.y,
+              ...(this.options.blurToFocus && { filter: "blur(0px)" }),
+              duration: 0.8,
+              ease: this.options.ease,
+              delay: index * this.options.stagger,
+            });
+          });
+        }
+
+        getInitialY(item) {
+          switch (this.options.animateFrom) {
+            case "top":
+              return -200;
+            case "bottom":
+              return window.innerHeight + 200;
+            default:
+              return item.y + 100;
+          }
+        }
+
+        updatePositions() {
+          this.grid.forEach((item) => {
+            const element = this.container.querySelector(
+              `[data-id="${item.id}"]`
+            );
+            gsap.to(element, {
+              x: item.x,
+              y: item.y,
+              width: item.w,
+              height: item.h,
+              duration: this.options.duration,
+              ease: this.options.ease,
+            });
+          });
+        }
+
+        handleHover(id, isEntering) {
+          const element = this.container.querySelector(`[data-id="${id}"]`);
+
+          if (isEntering) {
+            gsap.to(element, {
+              scale: this.options.hoverScale,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+            element.style.boxShadow = "0 8px 24px rgba(0,0,0,0.2)";
+            element.style.zIndex = "10";
+          } else {
+            gsap.to(element, {
+              scale: 1,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+            element.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+            element.style.zIndex = "1";
+          }
+        }
+
+        handleResize() {
+          clearTimeout(this.resizeTimeout);
+          this.resizeTimeout = setTimeout(() => {
+            const newColumns = this.getColumns();
+            if (newColumns !== this.columns) {
+              this.columns = newColumns;
+              this.calculateGrid();
+              this.updatePositions();
+            }
+          }, 200);
+        }
+
+        async init() {
+          await this.preloadImages();
+          this.calculateGrid();
+          this.createElements();
+          this.animateIn();
+
+          window.addEventListener("resize", () => this.handleResize());
+        }
+      }
+
+      // Initialize masonry gallery when DOM is ready
+      document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("masonry-container");
+        if (container) {
+          new MasonryGallery(container, masonryItems, {
+            ease: "power3.out",
+            duration: 0.6,
+            stagger: 0.05,
+            animateFrom: "bottom",
+            scaleOnHover: true,
+            hoverScale: 0.98,
+            blurToFocus: true,
+            gap: 15,
+          });
+        }
+      });
+    </script>
+
+    <footer class="footer-right">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <h3 class="site-name">ABOD</h3>
+          <p class="site-desc">© 2025 ABOD — All rights reserved</p>
+          <p class="footer-blurb">
+            <!-- prettier-ignore -->
+            {% trans "Designing sustainable places and systems. We work across markets to make long-term, people-centred change." %}
+          </p>
+        </div>
+
+        <div class="footer-right-columns">
+          <nav class="footer-col">
+            <h4>{% trans "Explore" %}</h4>
+            <ul>
+              <li><a href="{% url 'markets' %}">{% trans "Markets" %}</a></li>
+              <li><a href="{% url 'services' %}">{% trans "Services" %}</a></li>
+              <li><a href="{% url 'projects' %}">{% trans "Projects" %}</a></li>
+              <li><a href="{% url 'insights' %}">{% trans "Insights" %}</a></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-col">
+            <h4>{% trans "Company" %}</h4>
+            <ul>
+              <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
+              <li><a href="{% url 'careers' %}">{% trans "Careers" %}</a></li>
+              <li><a href="{% url 'news' %}">{% trans "News" %}</a></li>
+              <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <hr class="footer-divider" />
+        <div class="footer-social">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Twitter"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{% static 'main/site-search.js' %}"></script>
+    <script>
+      const langToggle = document.getElementById("lang-toggle");
+      const langMenu = document.getElementById("lang-menu");
+      const mobileLangToggle = document.getElementById(
+        "mobile-menu-lang-toggle"
+      );
+      const mobileLangMenu = document.getElementById("mobile-menu-lang-menu");
+
+      if (langToggle && langMenu) {
+        langToggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          langMenu.classList.toggle("show");
+        });
+      }
+
+      if (mobileLangToggle && mobileLangMenu) {
+        mobileLangToggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          mobileLangMenu.classList.toggle("show");
+        });
+      }
+
+      document.addEventListener("click", (e) => {
+        if (
+          langToggle &&
+          langMenu &&
+          !langToggle.contains(e.target) &&
+          !langMenu.contains(e.target)
+        ) {
+          langMenu.classList.remove("show");
+        }
+        if (
+          mobileLangToggle &&
+          mobileLangMenu &&
+          !mobileLangToggle.contains(e.target) &&
+          !mobileLangMenu.contains(e.target)
+        ) {
+          mobileLangMenu.classList.remove("show");
+        }
+      });
+    </script>
+  </body>
+</html>
